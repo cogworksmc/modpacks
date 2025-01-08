@@ -1,0 +1,32 @@
+name: Package Modpack
+
+on:
+  push:
+    branches:
+      - create
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set Up Build Directory
+        run: |
+          mkdir -p build
+          zip -r build/create-modpack.zip overrides manifest.json modrinth.index.json
+
+      - name: Upload Modpack to GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: "Create Release v1.0.${{ github.run_number }}"
+          tag_name: "Create-v1.0.${{ github.run_number }}"
+          generate_release_notes: true
+          make_latest: true
+          files: build/create-modpack.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Notify Success
+        run: echo "Modpack successfully built and uploaded!"
