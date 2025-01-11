@@ -3,8 +3,8 @@ name: Package the Create Modpack
 on:
   push:
     paths:
-      - 'create/**''
-  workflow_dispach:
+      - 'create/**'
+  workflow_dispatch:
 
 jobs:
   build-and-release:
@@ -47,4 +47,4 @@ jobs:
           CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
 
       - name: Notify Success
-        run: echo "Modpack successfully built, uploaded to GitHub and Cloudflare R2!"
+        run: echo "Modpack successfully built & uploaded to GitHub and Cloudflare R2!"
