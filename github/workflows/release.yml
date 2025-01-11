@@ -1,9 +1,9 @@
-name: Package Modpack
+name: Package the Create Modpack
 
 on:
   push:
-    branches:
-      - create
+    paths:
+      - 'create/**'
 jobs:
   build-and-release:
     runs-on: ubuntu-latest
@@ -28,5 +28,21 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Install Wrangler CLI
+        run: npm install -g wrangler
+
+      - name: Configure Wrangler
+        run: |
+          wrangler config
+        env:
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+
+      - name: Upload to Cloudflare R2
+        run: |
+          wrangler r2 object put cogworks/modpacks/create-modpack.zip --file build/create-modpack.zip --bucket cogworks
+        env:
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+
       - name: Notify Success
-        run: echo "Modpack successfully built and uploaded!"
+        run: echo "Modpack successfully built, uploaded to GitHub and Cloudflare R2!"
