@@ -3,7 +3,9 @@ name: Package the Create Modpack
 on:
   push:
     paths:
-      - 'create/**'
+      - 'create/**''
+  workflow_dispach:
+
 jobs:
   build-and-release:
     runs-on: ubuntu-latest
@@ -15,7 +17,7 @@ jobs:
       - name: Set Up Build Directory
         run: |
           mkdir -p build
-          zip -r build/create-modpack.zip overrides manifest.json modrinth.index.json
+          zip -r build/create-modpack.zip ./create/overrides/ ./create/manifest.json ./create/modrinth.index.json
 
       - name: Upload Modpack to GitHub Release
         uses: softprops/action-gh-release@v2
