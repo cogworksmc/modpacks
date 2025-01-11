@@ -41,7 +41,7 @@ jobs:
 
       - name: Upload to Cloudflare R2
         run: |
-          wrangler r2 object put cogworks/modpacks/create-modpack.zip --file build/create-modpack.zip --bucket cogworks
+          wrangler r2 object put cogworks/modpacks/create-modpack.zip --file build/create-modpack.zip
         env:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
