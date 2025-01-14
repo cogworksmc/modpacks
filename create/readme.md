@@ -1,5 +1,9 @@
 # Cogworks Create Modpack
 
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/CogworksMC/CreateModpack)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/CogworksMC/CreateModpack/release.yml)
+![License](https://img.shields.io/github/license/CogworksMC/CreateModpack)
+
 Welcome to the Cogworks Create Modpack! This modpack is designed to enhance your Minecraft experience with a variety of mods focused on creativity and automation.
 
 ## Features

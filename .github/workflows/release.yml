@@ -86,6 +86,7 @@ jobs:
         with:
           name: "Create Release v${{ env.new_version }}"
           tag_name: "Create-v${{ env.new_version }}"
+          body: ${{ env.changelogs }}
           generate_release_notes: true
           make_latest: true
           files: build/create-modpack.zip
