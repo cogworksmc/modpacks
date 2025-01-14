@@ -22,7 +22,7 @@ jobs:
       - name: Determine Version Number
         id: determine_version
         run: |
-          VERSION_FILE="version.md"
+          VERSION_FILE="create/version.md"
           if [ ! -f $VERSION_FILE; then
             echo "1.0.0" > $VERSION_FILE
           fi
