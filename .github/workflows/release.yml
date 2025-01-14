@@ -45,6 +45,13 @@ jobs:
           echo $NEW_VERSION > $VERSION_FILE
           echo "new_version=$NEW_VERSION" >> $GITHUB_ENV
 
+      - name: Collect Changelogs
+        id: collect_changelogs
+        run: |
+          PREVIOUS_VERSION=$(git describe --tags --abbrev=0)
+          CHANGELOGS=$(git log $PREVIOUS_VERSION..HEAD --pretty=format:"%s" | grep -oP '(?<=\[Changelog\]: ).*')
+          echo "changelogs=$CHANGELOGS" >> $GITHUB_ENV
+
       - name: Upload Modpack to GitHub Release
         uses: softprops/action-gh-release@v2
         with:
@@ -74,3 +81,22 @@ jobs:
 
       - name: Notify Success
         run: echo "Modpack successfully built & uploaded to GitHub and Cloudflare R2!"
+
+      - name: Send Discord Notification
+        run: |
+          curl -H "Content-Type: application/json" \
+               -X POST \
+               -d '{
+                     "embeds": [{
+                       "title": "New Modpack Version Released!",
+                       "description": "Version v${{ env.new_version }} has been released.",
+                       "fields": [
+                         {
+                           "name": "Changelogs",
+                           "value": "'"${{ env.changelogs }}"'"
+                         }
+                       ],
+                       "color": 5814783
+                     }]
+                   }' \
+               ${{ secrets.DISCORD_WEBHOOK_URL }}
