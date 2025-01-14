@@ -45,16 +45,32 @@ jobs:
           echo $NEW_VERSION > $VERSION_FILE
           echo "new_version=$NEW_VERSION" >> $GITHUB_ENV
 
-      - name: Collect Changelogs
+      - name: Collect Changelogs Using Tags
         id: collect_changelogs
-        run: |
-          if git describe --tags --abbrev=0 > /dev/null 2>&1; then
-            PREVIOUS_VERSION=$(git describe --tags --abbrev=0)
-            CHANGELOGS=$(git log $PREVIOUS_VERSION..HEAD --pretty=format:"%s" | grep -oP '(?<=\[Changelog\]: ).*')
-          else
-            CHANGELOGS=$(git log --pretty=format:"%s" | grep -oP '(?<=\[Changelog\]: ).*')
-          fi
-          echo "changelogs=$CHANGELOGS" >> $GITHUB_ENV
+        uses: actions/github-script@v6
+        with:
+            script: |
+              const { execSync } = require('child_process');
+        
+              // Fetch tags
+              const tags = execSync('git tag --sort=-creatordate', { encoding: 'utf8' })
+                .split('\n')
+                .filter(tag => tag.startsWith('Create-v') && tag.trim() !== '');
+        
+              if (tags.length < 2) {
+                core.setOutput('changelogs', 'No previous tag found.');
+                return;
+              }
+        
+              const [latestTag, previousTag] = tags;
+              const changelogs = execSync(`git log ${previousTag}..${latestTag} --pretty=format:"%s"`, { encoding: 'utf8' })
+                .split('\n')
+                .filter(line => line.startsWith('[Changelog]: '))
+                .map(line => line.replace('[Changelog]: ', ''))
+                .join('\\n');
+        
+              core.setOutput('changelogs', changelogs);
+            result-encoding: string
 
       - name: Update Changelog in README
         run: |
