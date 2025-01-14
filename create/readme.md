@@ -24,6 +24,7 @@ To install the modpack, follow these steps:
 
 ## Changelog
 - **Version <!-- This is For the Github Runtime, It basically acts as a placeholder for the version -->..**: 
+- **Version <!-- This is For the Github Runtime, It basically acts as a placeholder for the version -->..**: 
 
 Stay up-to-date with the latest changes and improvements:
 
