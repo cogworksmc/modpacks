@@ -39,13 +39,14 @@ jobs:
 
       - name: Collect Changelogs
         run: |
-          CHANGELOG_FILE="./create/changelogs/version-$CURRENT_VERSION.txt"
+          CHANGELOG_FILE="./create/changelogs/version-${{ env.current_version }}.txt"
           if [ -f $CHANGELOG_FILE ]; then
             CHANGELOGS=$(cat $CHANGELOG_FILE)
             echo "$CHANGELOGS"
             echo "changelogs=$CHANGELOGS" >> $GITHUB_ENV
           else
             echo "Changelog file $CHANGELOG_FILE does not exist."
+            exit 1
           fi
 
       - name: Update Changelog in README

@@ -23,7 +23,6 @@ To install the modpack, follow these steps:
 5. Launch Minecraft and enjoy!
 
 ## Changelog
-- **Version 1.0.0**: 
 
 ## Support
 
