@@ -39,7 +39,7 @@ jobs:
 
       - name: Collect Changelogs Using Tags
         run: |
-          CHANGELOG_FILE="create/changelogs/version-${{ env.current_version }}.txt"
+          CHANGELOG_FILE="create/changelogs/version-$CURRENT_VERSION.txt"
           if [ -f $CHANGELOG_FILE ]; then
             CHANGELOGS=$(cat $CHANGELOG_FILE)
             echo "changelogs=$CHANGELOGS" >> $GITHUB_ENV
@@ -50,8 +50,10 @@ jobs:
 
       - name: Update Changelog in README
         run: |
-          sed -i '/## Changelog/,$d' create/readme.md
-          echo -e "## Changelog\n**Version ${{ env.current_version }}**:\n\`\`\`diff\n${{ env.changelogs }}\n\`\`\`\nYou can checkout the [previous changelogs here](https://github.com/cogworksmc/modpacks/tree/main/create/changelogs)" >> create/readme.md
+          awk '/## Changelog/{flag=1;next}/## Support/{flag=0}flag' create/readme.md > temp_readme.md
+          awk 'NR==FNR{if (/## Changelog/) {print;print "**Version '${{ env.current_version }}'**:\n```diff\n'${{ env.changelogs }}'\n```\nYou can checkout the [previous changelogs here](https://github.com/cogworksmc/modpacks/tree/main/create/changelogs)";next}1}1' temp_readme.md create/readme.md > updated_readme.md
+          mv updated_readme.md create/readme.md
+          rm temp_readme.md
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add create/readme.md
@@ -63,7 +65,7 @@ jobs:
         with:
           name: "Create Release v${{ env.current_version }}"
           tag_name: "Create-v${{ env.current_version }}"
-          body: "**Changlogs:** ```diff\n${{ env.changelogs }}```\n\n\n[Download the latest version here](https://cdn.cogworksmc.com/modpacks/create-modpack.zip)"
+          body: "**Changelogs:** ```diff\n${{ env.changelogs }}\n```\n\n\n[Download the latest version here](https://cdn.cogworksmc.com/modpacks/create-modpack.zip)"
           generate_release_notes: true
           make_latest: true
           files: build/create-modpack.zip
@@ -91,26 +93,19 @@ jobs:
 
       - name: Send Discord Notification
         run: |
+          CURRENT_TIME=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
           curl -H "Content-Type: application/json" \
                -X POST \
                -d '{
                      "embeds": [{
-                       "title": "New Modpack Version Released!",
-                       "description": "Version v${{ env.current_version }} has been released.",
+                       "title": "Version ${{ env.current_version }} has been released!",
+                       "description": "**Changelogs**\n```diff\n${{ env.changelogs }}\n```\n\nDownload the latest version [here](https://cdn.cogworksmc.com/modpacks/create-modpack.zip)",
                        "author": {
                          "name": "Cogworks",
                          "icon_url": "https://cogworksmc.com/CogworksLogo.gif"
                        },
-                       "fields": [
-                         {
-                           "name": "Changelogs",
-                           "value": "```diff\n${{ env.changelogs }}\n```"
-                         }
-                       ],
                        "color": 16753920,
-                       "footer": {
-                         "text": "Download the latest version here: https://github.com/cogworksmc/modpacks/releases/latest"
-                       }
+                       "timestamp": "'"$CURRENT_TIME"'"
                      }]
                    }' \
                ${{ secrets.DISCORD_WEBHOOK_URL }}
