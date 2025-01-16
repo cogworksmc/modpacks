@@ -22,7 +22,7 @@ jobs:
       - name: Determine Version Number
         id: determine_version
         run: |
-          VERSION_FILE="./create/version.txt"
+          VERSION_FILE="create/version.txt"
           if [ ! -f $VERSION_FILE ]; then
             echo "1.0.0" > $VERSION_FILE
           fi
@@ -37,12 +37,11 @@ jobs:
         run: |
           jq --arg version "$CURRENT_VERSION" '.version = $version' create/manifest.json > create/manifest.json.tmp && mv create/manifest.json.tmp create/manifest.json
 
-      - name: Collect Changelogs
+      - name: Collect Changelogs Using Tags
         run: |
-          CHANGELOG_FILE="./create/changelogs/version-${{ env.current_version }}.txt"
+          CHANGELOG_FILE="create/changelogs/version-$CURRENT_VERSION.txt"
           if [ -f $CHANGELOG_FILE ]; then
             CHANGELOGS=$(cat $CHANGELOG_FILE)
-            echo "$CHANGELOGS"
             echo "changelogs=$CHANGELOGS" >> $GITHUB_ENV
           else
             echo "Changelog file $CHANGELOG_FILE does not exist."
@@ -51,7 +50,8 @@ jobs:
 
       - name: Update Changelog in README
         run: |
-          sed -i "/## Changelog/a **Version ${{ env.current_version }}**:\n\`\`\`diff\n${{ env.changelogs }}\n\`\`\`\nYou can checkout the [previous changelogs here](https://github.com/cogworksmc/modpacks/tree/main/create/changelogs)" create/readme.md
+          sed -i '/## Changelog/,$d' create/readme.md
+          echo -e "## Changelog\n**Version ${{ env.current_version }}**:\n\`\`\`diff\n${{ env.changelogs }}\n\`\`\`\nYou can checkout the [previous changelogs here](https://github.com/cogworksmc/modpacks/tree/main/create/changelogs)" >> create/readme.md
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add create/readme.md
@@ -63,7 +63,7 @@ jobs:
         with:
           name: "Create Release v${{ env.current_version }}"
           tag_name: "Create-v${{ env.current_version }}"
-          body: ${{ env.changelogs }}
+          body: "**Changlogs:** ```diff\n${{ env.changelogs }}```\n\n\n[Download the latest version here](https://cdn.cogworksmc.com/modpacks/create-modpack.zip)"
           generate_release_notes: true
           make_latest: true
           files: build/create-modpack.zip
@@ -95,13 +95,22 @@ jobs:
                -X POST \
                -d '{
                      "embeds": [{
-                       "title": "Version ${{ env.current_version }} has been released",
-                       "description": "**Changelogs**\n```diff\n${{ env.changelogs }}\n```",
+                       "title": "New Modpack Version Released!",
+                       "description": "Version v${{ env.current_version }} has been released.",
                        "author": {
                          "name": "Cogworks",
                          "icon_url": "https://cogworksmc.com/CogworksLogo.gif"
                        },
-                       "color": 16753920
+                       "fields": [
+                         {
+                           "name": "Changelogs",
+                           "value": "```diff\n${{ env.changelogs }}\n```"
+                         }
+                       ],
+                       "color": 16753920,
+                       "footer": {
+                         "text": "Download the latest version here: https://github.com/cogworksmc/modpacks/releases/latest"
+                       }
                      }]
                    }' \
                ${{ secrets.DISCORD_WEBHOOK_URL }}

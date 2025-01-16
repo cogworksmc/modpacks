@@ -1,8 +1,9 @@
 # Cogworks Create Modpack
 
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/CogworksMC/CreateModpack)
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/CogworksMC/CreateModpack/release.yml)
-![License](https://img.shields.io/github/license/CogworksMC/CreateModpack)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/CogworksMC/modpacks?style=for-the-badge)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/CogworksMC/modpacks/release.yml?style=for-the-badge)
+[![Discord](https://img.shields.io/discord/1316080367542997064?style=for-the-badge)](https://discord.gg/rTwU28ukgB)
+[![Website](https://img.shields.io/badge/website-visit-brightgreen?style=for-the-badge)](https://cogworksmc.com)
 
 Welcome to the Cogworks Create Modpack! This modpack is designed to enhance your Minecraft experience with a variety of mods focused on creativity and automation.
 
@@ -16,7 +17,7 @@ Welcome to the Cogworks Create Modpack! This modpack is designed to enhance your
 
 To install the modpack, follow these steps:
 
-1. Download the modpack from the [Cogworks CDN](https://cdn.cogworksmc.com/modpacks/create-modpack.zip).
+1. Download the modpack from [Github](https://github.com/cogworksmc/modpacks/releases/latest/download/create-modpack.zip) or the [Cogworks CDN](https://cdn.cogworksmc.com/modpacks/create-modpack.zip).
 2. Open the CurseForge or Modrinth launcher.
 3. Click on the "Import" button and select the downloaded zip file.
 4. Wait for the launcher to import the modpack.
