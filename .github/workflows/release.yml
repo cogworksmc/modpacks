@@ -39,7 +39,7 @@ jobs:
 
       - name: Collect Changelogs Using Tags
         run: |
-          CHANGELOG_FILE="create/changelogs/version-$CURRENT_VERSION.txt"
+          CHANGELOG_FILE="create/changelogs/version-${{ env.current_version }}.txt"
           if [ -f $CHANGELOG_FILE ]; then
             CHANGELOGS=$(cat $CHANGELOG_FILE)
             echo "changelogs=$CHANGELOGS" >> $GITHUB_ENV
