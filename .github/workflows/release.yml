@@ -27,7 +27,6 @@ jobs:
             echo "1.0.0" > $VERSION_FILE
           fi
           CURRENT_VERSION=$(cat $VERSION_FILE)
-          z
           echo "current_version=$CURRENT_VERSION" >> $GITHUB_ENV
 
       - name: Update Version in modrinth.index.json
