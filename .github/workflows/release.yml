@@ -22,7 +22,7 @@ jobs:
       - name: Determine Version Number
         id: determine_version
         run: |
-          VERSION_FILE="create/version.txt"
+          VERSION_FILE="./create/version.txt"
           if [ ! -f $VERSION_FILE ]; then
             echo "1.0.0" > $VERSION_FILE
           fi
@@ -37,11 +37,12 @@ jobs:
         run: |
           jq --arg version "$CURRENT_VERSION" '.version = $version' create/manifest.json > create/manifest.json.tmp && mv create/manifest.json.tmp create/manifest.json
 
-      - name: Collect Changelogs Using Tags
+      - name: Collect Changelogs
         run: |
-          CHANGELOG_FILE="create/changelogs/version-$CURRENT_VERSION.txt"
+          CHANGELOG_FILE="./create/changelogs/version-$CURRENT_VERSION.txt"
           if [ -f $CHANGELOG_FILE ]; then
             CHANGELOGS=$(cat $CHANGELOG_FILE)
+            echo "$CHANGELOGS"
             echo "changelogs=$CHANGELOGS" >> $GITHUB_ENV
           else
             echo "Changelog file $CHANGELOG_FILE does not exist."
