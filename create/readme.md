@@ -29,15 +29,3 @@ To install the modpack, follow these steps:
 + Initial Release!!!
 ```
 You can checkout the [previous changelogs here](https://github.com/cogworksmc/modpacks/tree/main/create/changelogs)
-
-## Support
-
-If you encounter any issues or have any questions, please join our [Discord server](https://cogworksmc.com/discord) for support and community discussions.
-
-## Contributing
-
-We welcome contributions from the community! If you'd like to contribute, please fork the repository and submit a pull request with your changes.
-
-## License
-
-This modpack is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
