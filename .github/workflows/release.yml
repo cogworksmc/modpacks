@@ -28,6 +28,7 @@ jobs:
           fi
           CURRENT_VERSION=$(cat $VERSION_FILE)
           echo "current_version=$CURRENT_VERSION" >> $GITHUB_ENV
+
       - name: Update Version in modrinth.index.json
         run: |
           jq --arg version "$CURRENT_VERSION" '.versionId = $version' create/modrinth.index.json > create/modrinth.index.json.tmp && mv create/modrinth.index.json.tmp create/modrinth.index.json
@@ -37,46 +38,29 @@ jobs:
           jq --arg version "$CURRENT_VERSION" '.version = $version' create/manifest.json > create/manifest.json.tmp && mv create/manifest.json.tmp create/manifest.json
 
       - name: Collect Changelogs Using Tags
-        id: collect_changelogs
-        uses: actions/github-script@v6
-        with:
-            script: |
-              const { execSync } = require('child_process');
-        
-              // Fetch tags
-              const tags = execSync('git tag --sort=-creatordate', { encoding: 'utf8' })
-                .split('\n')
-                .filter(tag => tag.startsWith('Create-v') && tag.trim() !== '');
-        
-              if (tags.length < 2) {
-                core.setOutput('changelogs', 'No previous tag found.');
-                return;
-              }
-        
-              const [latestTag, previousTag] = tags;
-              const changelogs = execSync(`git log ${previousTag}..${latestTag} --pretty=format:"%s"`, { encoding: 'utf8' })
-                .split('\n')
-                .filter(line => line.startsWith('[Changelog]: '))
-                .map(line => line.replace('[Changelog]: ', ''))
-                .join('\\n');
-        
-              core.setOutput('changelogs', changelogs);
-            result-encoding: string
+        run: |
+          CHANGELOG_FILE="create/changelogs/version-$CURRENT_VERSION.txt"
+          if [ -f $CHANGELOG_FILE]; then
+            CHANGELOG=$(cat $CHANGELOG_FILE)
+            echo "changelog=$CHANGELOG" >> $GITHUB_ENV
+          else
+            echo "Changelog file $CHANGELOG_FILE does not exist."
+          fi
 
       - name: Update Changelog in README
         run: |
-          sed -i "/## Changelog/a - **Version ${{ env.new_version }}**: ${{ env.changelogs }}" create/readme.md
+          sed -i "/## Changelog/a - **Version ${{ env.current_version }}**: ${{ env.changelogs }}" create/readme.md
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add create/readme.md
-          git commit -m "Update changelog for version ${{ env.new_version }}"
+          git commit -m "Update changelog for version ${{ env.current_version }}"
           git push
 
       - name: Upload Modpack to GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          name: "Create Release v${{ env.new_version }}"
-          tag_name: "Create-v${{ env.new_version }}"
+          name: "Create Release v${{ env.current_version }}"
+          tag_name: "Create-v${{ env.current_version }}"
           body: ${{ env.changelogs }}
           generate_release_notes: true
           make_latest: true
@@ -110,14 +94,18 @@ jobs:
                -d '{
                      "embeds": [{
                        "title": "New Modpack Version Released!",
-                       "description": "Version v${{ env.new_version }} has been released.",
+                       "description": "Version v${{ env.current_version }} has been released.",
+                       "author": {
+                         "name": "Cogworks",
+                         "icon_url": "https://cogworksmc.com/CogworksLogo.gif"
+                       },
                        "fields": [
                          {
                            "name": "Changelogs",
-                           "value": "'"${{ env.changelogs }}"'"
+                           "value": "'"${{ env.changelog }}"'"
                          }
                        ],
-                       "color": 5814783
+                       "color": 16753920
                      }]
                    }' \
                ${{ secrets.DISCORD_WEBHOOK_URL }}
