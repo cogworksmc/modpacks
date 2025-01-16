@@ -23,16 +23,7 @@ To install the modpack, follow these steps:
 5. Launch Minecraft and enjoy!
 
 ## Changelog
-- **Version **: 
-- **Version <!-- This is For the Github Runtime, It basically acts as a placeholder for the version -->..**: 
-- **Version <!-- This is For the Github Runtime, It basically acts as a placeholder for the version -->..**: 
-- **Version <!-- This is For the Github Runtime, It basically acts as a placeholder for the version -->..**: 
 
-Stay up-to-date with the latest changes and improvements:
-
-- **Version 1.0.0**: Initial release with core features and mods.
-- **Version 1.0.1**: Bug fixes and performance improvements.
-- **Version 1.0.2**: Added new mods and updated existing ones.
 
 ## Support
 

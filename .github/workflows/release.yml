@@ -40,9 +40,9 @@ jobs:
       - name: Collect Changelogs Using Tags
         run: |
           CHANGELOG_FILE="create/changelogs/version-$CURRENT_VERSION.txt"
-          if [ -f $CHANGELOG_FILE]; then
-            CHANGELOG=$(cat $CHANGELOG_FILE)
-            echo "changelog=$CHANGELOG" >> $GITHUB_ENV
+          if [ -f $CHANGELOG_FILE ]; then
+            CHANGELOGS=$(cat $CHANGELOG_FILE)
+            echo "changelogs=$CHANGELOGS" >> $GITHUB_ENV
           else
             echo "Changelog file $CHANGELOG_FILE does not exist."
           fi
@@ -102,7 +102,7 @@ jobs:
                        "fields": [
                          {
                            "name": "Changelogs",
-                           "value": "'"${{ env.changelog }}"'"
+                           "value": "```diff\n${{ env.changelogs }}\n```"
                          }
                        ],
                        "color": 16753920
