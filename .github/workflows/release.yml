@@ -51,7 +51,7 @@ jobs:
 
       - name: Update Changelog in README
         run: |
-          sed -i "/## Changelog/a - **Version ${{ env.current_version }}**: ${{ env.changelogs }}" create/readme.md
+          sed -i "/## Changelog/a **Version ${{ env.current_version }}**:\n\`\`\`diff\n${{ env.changelogs }}\n\`\`\`\nYou can checkout the [previous changelogs here](https://github.com/cogworksmc/modpacks/tree/main/create/changelogs)" create/readme.md
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add create/readme.md
@@ -95,18 +95,12 @@ jobs:
                -X POST \
                -d '{
                      "embeds": [{
-                       "title": "New Modpack Version Released!",
-                       "description": "Version v${{ env.current_version }} has been released.",
+                       "title": "Version ${{ env.current_version }} has been released",
+                       "description": "**Changelogs**\n```diff\n${{ env.changelogs }}\n```",
                        "author": {
                          "name": "Cogworks",
                          "icon_url": "https://cogworksmc.com/CogworksLogo.gif"
                        },
-                       "fields": [
-                         {
-                           "name": "Changelogs",
-                           "value": "```diff\n${{ env.changelogs }}\n```"
-                         }
-                       ],
                        "color": 16753920
                      }]
                    }' \
