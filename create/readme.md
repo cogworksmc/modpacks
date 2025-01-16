@@ -24,6 +24,7 @@ To install the modpack, follow these steps:
 
 ## Changelog
 - **Version 1.0.0**: + Initial Release!!!
+- **Version 1.0.0**: + Initial Release!!!
 **Version 1.0.0**:
 ```diff
 + Initial Release!!!
