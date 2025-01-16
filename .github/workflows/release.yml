@@ -50,10 +50,7 @@ jobs:
 
       - name: Update Changelog in README
         run: |
-          awk '/## Changelog/{flag=1;next}/## Support/{flag=0}flag' create/readme.md > temp_readme.md
-          awk 'NR==FNR{if (/## Changelog/) {print;print "**Version '${{ env.current_version }}'**:\n```diff\n'${{ env.changelogs }}'\n```\nYou can checkout the [previous changelogs here](https://github.com/cogworksmc/modpacks/tree/main/create/changelogs)";next}1}1' temp_readme.md create/readme.md > updated_readme.md
-          mv updated_readme.md create/readme.md
-          rm temp_readme.md
+          perl -i -pe 'BEGIN{undef $/;} s/## Changelog.*?## Support/## Changelog\n**Version $ENV{current_version}**:\n```diff\n$ENV{changelogs}\n```\nYou can checkout the [previous changelogs here](https://github.com/cogworksmc/modpacks/tree/main/create/changelogs)\n\n## Support/s' create/readme.md
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add create/readme.md
