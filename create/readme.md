@@ -24,9 +24,9 @@ To install the modpack, follow these steps:
 5. Launch Minecraft and enjoy!
 
 ## Changelog
-**Version 1.0.1**:
+**Version 1.1.0**:
 ```diff
-+ Fix Create Deco being the forge version of the mod (We switched it to the fabric version)
++ Add https://github.com/WeidosOddities/Extended-Bogeys-Borked (Suggested By JeSuisRoux)
 ```
 You can checkout the [previous changelogs here](https://github.com/cogworksmc/modpacks/tree/main/create/changelogs)
 
