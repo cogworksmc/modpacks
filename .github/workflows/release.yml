@@ -40,7 +40,7 @@ jobs:
       - name: Collect Changelogs Using Tags
         run: |
           CHANGELOG_FILE="create/changelogs/version-${{ env.current_version }}.txt"
-          if [ -f $CHANGELOG_FILE ]; then
+          if [ -f $CHANGELOG_FILE]; then
             CHANGELOGS=$(cat $CHANGELOG_FILE)
             echo "changelogs=$CHANGELOGS" >> $GITHUB_ENV
           else
@@ -108,7 +108,6 @@ jobs:
 
       - name: Send Discord Notification
         run: |
-          CURRENT_TIME=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
           curl -H "Content-Type: application/json" \
                -X POST \
                -d '{
@@ -119,7 +118,7 @@ jobs:
                          "name": "Cogworks",
                          "icon_url": "https://cogworksmc.com/CogworksLogo.gif"
                        },
-                       "color": 16753920,
+                       "color": 16753920
                      }]
                    }' \
                ${{ secrets.DISCORD_WEBHOOK_URL }}
