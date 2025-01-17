@@ -112,13 +112,12 @@ jobs:
                -d '{
                      "embeds": [{
                        "title": "Version ${{ env.current_version }} has been released!",
-                       "description": "**Changelogs**\n```diff\n${{ env.changelogs }}\n```\n\nDownload the latest version [here](https://cdn.cogworksmc.com/modpacks/create-modpack.zip)",
+                       "description": "**Changelogs**\n```diff\n${{ env.changelogs }}\n```\nDownload the latest version [here](https://cdn.cogworksmc.com/modpacks/create-modpack.zip)",
                        "author": {
                          "name": "Cogworks",
                          "icon_url": "https://cogworksmc.com/CogworksLogo.gif"
                        },
                        "color": 16753920,
-                       "timestamp": "'"$CURRENT_TIME"'"
                      }]
                    }' \
                ${{ secrets.DISCORD_WEBHOOK_URL }}
