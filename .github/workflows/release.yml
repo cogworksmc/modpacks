@@ -14,13 +14,6 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Set Up Build Directory
-        run: |
-          mkdir -p build
-          cd create
-          zip -r ../build/create-modpack.zip overrides/ manifest.json modrinth.index.json
-          cd ..
-
       - name: Determine Version Number
         id: determine_version
         run: |
@@ -39,7 +32,14 @@ jobs:
         run: |
           jq --arg version "$CURRENT_VERSION" '.version = $version' create/manifest.json > create/manifest.json.tmp && mv create/manifest.json.tmp create/manifest.json
 
-      - name: Collect Changelogs Using Tags
+      - name: Set Up Build Directory
+        run: |
+          mkdir -p build
+          cd create
+          zip -r ../build/cogworks-create.zip overrides/ manifest.json modrinth.index.json
+          cd ..
+
+      - name: Collect Changelogs from File
         run: |
           CHANGELOG_FILE="create/changelogs/version-${{ env.current_version }}.txt"
           if [ -f $CHANGELOG_FILE ]; then
@@ -88,10 +88,10 @@ jobs:
             ${{ env.changelogs }}
             ```
             
-            [Download the latest version here](https://cdn.cogworksmc.com/modpacks/create-modpack.zip)
+            [Download the latest version here](https://cdn.cogworksmc.com/modpacks/cogworks-create.zip)
           generate_release_notes: true
           make_latest: true
-          files: build/create-modpack.zip
+          files: build/cogworks-create.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -106,7 +106,7 @@ jobs:
 
       - name: Upload to Cloudflare R2
         run: |
-          wrangler r2 object put cogworks/modpacks/create-modpack.zip --file build/create-modpack.zip
+          wrangler r2 object put cogworks/modpacks/cogworks-create.zip --file build/cogworks-create.zip
         env:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
@@ -121,7 +121,7 @@ jobs:
                -d '{
                      "embeds": [{
                        "title": "Version ${{ env.current_version }} has been released!",
-                       "description": "**Changelogs**\n```diff\n${{ env.changelogs }}\n```\nDownload the latest version [here](https://cdn.cogworksmc.com/modpacks/create-modpack.zip)",
+                       "description": "**Changelogs**\n```diff\n${{ env.changelogs }}\n```\nDownload the latest version [here](https://cdn.cogworksmc.com/modpacks/cogworks-create.zip)",
                        "author": {
                          "name": "Cogworks",
                          "icon_url": "https://cogworksmc.com/CogworksLogo.gif"
