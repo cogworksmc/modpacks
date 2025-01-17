@@ -11,7 +11,7 @@
   "manifestType": "minecraftModpack",
   "manifestVersion": 1,
   "name": "CogworksMC Official",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Duckyoski & The Cogworks Team",
   "files": [
     {
@@ -57,11 +57,6 @@
     {
       "projectID": 547434,
       "fileID": 5902421,
-      "required": true
-    },
-    {
-      "projectID": 509285,
-      "fileID": 5293982,
       "required": true
     },
     {
@@ -842,6 +837,11 @@
     {
       "projectID": 225608,
       "fileID": 4586218,
+      "required": true
+    },
+    {
+      "projectID": 739872,
+      "fileID": 5293979,
       "required": true
     }
   ],

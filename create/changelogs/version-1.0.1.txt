@@ -1,0 +1,1 @@
++ Fix Create Deco being the forge version of the mod (We switched it to the fabric version)
