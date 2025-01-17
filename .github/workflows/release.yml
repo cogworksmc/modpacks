@@ -50,7 +50,23 @@ jobs:
 
       - name: Update Changelog in README
         run: |
-          perl -i -pe 'BEGIN{undef $/;} s/## Changelog.*?## Support/## Changelog\n**Version $ENV{current_version}**:\n```diff\n$ENV{changelogs}\n```\nYou can checkout the [previous changelogs here](https://github.com/cogworksmc/modpacks/tree/main/create/changelogs)\n\n## Support/s' create/readme.md
+          node -e "
+            const fs = require('fs');
+            const path = require('path');
+
+            const currentVersion = process.env.current_version;
+            const changelogs = process.env.changelogs;
+
+            const readmePath = path.join(__dirname, 'create', 'readme.md');
+            const readmeContent = fs.readFileSync(readmePath, 'utf8');
+
+            const updatedContent = readmeContent.replace(
+              /## Changelog[\\s\\S]*?## Support/,
+              \`## Changelog\\n**Version \${currentVersion}**:\\n\\\`\\\`\\\`diff\\n\${changelogs}\\n\\\`\\\`\\\`\\nYou can checkout the [previous changelogs here](https://github.com/cogworksmc/modpacks/tree/main/create/changelogs)\\n\\n## Support\`
+            );
+
+            fs.writeFileSync(readmePath, updatedContent);
+          "
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add create/readme.md
