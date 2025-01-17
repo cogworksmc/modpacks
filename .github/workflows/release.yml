@@ -50,6 +50,8 @@ jobs:
 
       - name: Update Changelog in README
         run: |
+          echo "Current Version: ${{ env.current_version }}"
+          echo "Changelogs: ${{ env.changelogs }}"
           node -e "
             const fs = require('fs');
             const path = require('path');
