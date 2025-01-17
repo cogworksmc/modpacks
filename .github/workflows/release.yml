@@ -17,7 +17,9 @@ jobs:
       - name: Set Up Build Directory
         run: |
           mkdir -p build
-          zip -r build/create-modpack.zip ./create/overrides/ ./create/manifest.json ./create/modrinth.index.json
+          cd create
+          zip -r ../build/create-modpack.zip overrides/ manifest.json modrinth.index.json
+          cd ..
 
       - name: Determine Version Number
         id: determine_version
