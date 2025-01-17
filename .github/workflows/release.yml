@@ -80,7 +80,13 @@ jobs:
         with:
           name: "Create Release v${{ env.current_version }}"
           tag_name: "Create-v${{ env.current_version }}"
-          body: "**Changelogs:** ```diff\n${{ env.changelogs }}\n```\n\n\n[Download the latest version here](https://cdn.cogworksmc.com/modpacks/create-modpack.zip)"
+          body: |
+            **Changelogs:**
+            ```diff
+            ${{ env.changelogs }}
+            ```
+            
+            [Download the latest version here](https://cdn.cogworksmc.com/modpacks/create-modpack.zip)
           generate_release_notes: true
           make_latest: true
           files: build/create-modpack.zip
