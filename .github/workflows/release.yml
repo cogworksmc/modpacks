@@ -36,7 +36,7 @@ jobs:
         run: |
           mkdir -p build
           cd create
-          zip -r ../build/cogworks-create.zip overrides/ manifest.json modrinth.index.json
+          zip -r ../build/cogworks-create.zip overrides/ modlist.html manifest.json modrinth.index.json
           cd ..
 
       - name: Collect Changelogs from File
