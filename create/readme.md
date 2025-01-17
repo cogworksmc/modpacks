@@ -24,7 +24,11 @@ To install the modpack, follow these steps:
 5. Launch Minecraft and enjoy!
 
 ## Changelog
-ee
+**Version 1.0.0**:
+```diff
++ Initial Release!!!
+```
+You can checkout the [previous changelogs here](https://github.com/cogworksmc/modpacks/tree/main/create/changelogs)
 
 ## Support
 
