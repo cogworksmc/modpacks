@@ -25,6 +25,7 @@ mode = "fancy"
 				item = true
 				axolotl = true
 				salmon = true
+				zombie_villager = true
 				boat = true
 				skeleton = true
 				area_effect_cloud = true
@@ -33,8 +34,10 @@ mode = "fancy"
 				zombie = true
 				cod = true
 				glow_squid = true
+				witch = true
 				glow_item_frame = false
 				squid = true
+				drowned = true
 				spider = true
 				creeper = true
 				sheep = true
@@ -45,12 +48,17 @@ mode = "fancy"
 				straw_statue = true
 
 			[light_sources.settings.entities.naturalist]
+				deer = true
+				firefly = true
 				duck = true
 
 			[light_sources.settings.entities.easy_npc]
 				chicken = true
 				humanoid = true
 				cat = true
+
+			[light_sources.settings.entities.handcrafted]
+				seat = true
 
 			[light_sources.settings.entities.supplementaries]
 				hat_stand = true
