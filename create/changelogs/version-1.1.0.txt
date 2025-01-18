@@ -1,0 +1,7 @@
++ Add controlling (Suggested by benb and blooper)
++ Add Configured (Suggested by benb)
++ Add The performance mods (Sodium, Lithium, Krypton, Dynamic FPS, FerriteCore, Enhanced Block Entities)
++ Add Modmenu, zoomify, Dynamic lights, iris shaders, clickthrough, appleskin 
++ Add Create Jetpack (Suggested by blooper)
++ Add Squaremap (Bluemap was suggested, bluemap too resource heavy, Squaremap was avalable, we do Squaremap, Suggested by the Discord)
+- Removed https://github.com/WeidosOddities/Extended-Bogeys-Borked due to possible world issues..
