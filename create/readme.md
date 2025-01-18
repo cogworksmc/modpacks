@@ -24,9 +24,9 @@ To install the modpack, follow these steps:
 5. Launch Minecraft and enjoy!
 
 ## Changelog
-**Version 1.1.0**:
+**Version 1.0.2**:
 ```diff
-+ Add https://github.com/WeidosOddities/Extended-Bogeys-Borked (Suggested By JeSuisRoux)
++ Hopefully fix modridnth by including all its files
 ```
 You can checkout the [previous changelogs here](https://github.com/cogworksmc/modpacks/tree/main/create/changelogs)
 
