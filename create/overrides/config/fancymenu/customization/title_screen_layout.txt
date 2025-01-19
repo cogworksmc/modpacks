@@ -140,7 +140,7 @@ element {
 
 element {
   button_element_executable_block_identifier = c9ab3ad4-1583-414b-971f-bfec32ca9369-1736095950622
-  [executable_action_instance:0dbd6ee8-7515-470f-b955-bc1b97da4fac-1736096009695][action_type:joinserver] = gh4.aquahost.io:19158
+  [executable_action_instance:0dbd6ee8-7515-470f-b955-bc1b97da4fac-1736096009695][action_type:joinserver] = create.cogworksmc.com
   [executable_block:c9ab3ad4-1583-414b-971f-bfec32ca9369-1736095950622][type:generic] = [executables:0dbd6ee8-7515-470f-b955-bc1b97da4fac-1736096009695;]
   backgroundnormal = [source:local]/config/fancymenu/assets/button.png
   backgroundhovered = [source:local]/config/fancymenu/assets/button_highlighted.png
