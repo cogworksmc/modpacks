@@ -24,9 +24,9 @@ To install the modpack, follow these steps:
 5. Launch Minecraft and enjoy!
 
 ## Changelog
-**Version 1.1.1**:
+**Version 1.1.2**:
 ```diff
-- Remove Create Trackmap due to it crashing the server
+- Remove connected textures
 ```
 You can checkout the [previous changelogs here](https://github.com/cogworksmc/modpacks/tree/main/create/changelogs)
 
