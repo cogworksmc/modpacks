@@ -24,9 +24,9 @@ To install the modpack, follow these steps:
 5. Launch Minecraft and enjoy!
 
 ## Changelog
-**Version 1.1.3**:
+**Version 1.1.4**:
 ```diff
-+ THANK YOU THEO FOR HARDCODING THE AQUAHOST IP INTO THE MAIN MENU (CHANGE IT TO CREATE.COGWORKSMC.COM)
+- Remove Fancymenu, gui scaling was a issue, and it just was messy
 ```
 You can checkout the [previous changelogs here](https://github.com/cogworksmc/modpacks/tree/main/create/changelogs)
 
