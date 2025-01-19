@@ -24,9 +24,9 @@ To install the modpack, follow these steps:
 5. Launch Minecraft and enjoy!
 
 ## Changelog
-**Version 1.1.2**:
+**Version 1.1.3**:
 ```diff
-- Remove connected textures
++ THANK YOU THEO FOR HARDCODING THE AQUAHOST IP INTO THE MAIN MENU (CHANGE IT TO CREATE.COGWORKSMC.COM)
 ```
 You can checkout the [previous changelogs here](https://github.com/cogworksmc/modpacks/tree/main/create/changelogs)
 
