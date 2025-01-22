@@ -117,19 +117,15 @@ jobs:
         run: echo "Modpack successfully built & uploaded to GitHub, Cloudflare R2"
 
       - name: Send Discord Notification
-        run: |
-          CHANGELOGS=$(echo ${{ env.changelogs }} | jq -r .)
-          curl -H "Content-Type: application/json" \
-               -X POST \
-               -d '{
-                     "embeds": [{
-                       "title": "Version ${{ env.current_version }} has been released!",
-                       "description": "**Changelogs**\n```diff\n'"$CHANGELOGS"'\n```\nDownload the latest version [here](https://cdn.cogworksmc.com/modpacks/cogworks-create.zip)",
-                       "author": {
-                         "name": "Cogworks",
-                         "icon_url": "https://cogworksmc.com/CogworksLogo.gif"
-                       },
-                       "color": 16753920
-                     }]
-                   }' \
-               ${{ secrets.DISCORD_WEBHOOK_URL }}
+        uses: sarisia/actions-status-discord@v1
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          nodetail: true
+          title: "Create Modpack v${{ env.current_version }} has been released!"
+          color: 0xFFA500
+          description: |
+            **Changelogs:**
+                ```diff
+                ${{ fromJSON(env.changelogs) }}
+                ```
+            [Download the latest version here](https://cdn.cogworksmc.com/modpacks/cogworks-create.zip)
