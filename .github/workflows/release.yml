@@ -8,7 +8,7 @@ on:
 
 jobs:
   build-and-release:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Checkout Repository
@@ -22,16 +22,18 @@ jobs:
             echo "No changelog file found."
             exit 1
           fi
-          VERSION=$(basename $CHANGELOG_FILE .txt | sed 's/version-//')
+          VERSION=$(basename "$CHANGELOG_FILE" .txt | sed 's/version-//')
           echo "current_version=$VERSION" >> $GITHUB_ENV
 
       - name: Update Version in modrinth.index.json
         run: |
-          jq --arg version "$CURRENT_VERSION" '.versionId = $version' create/modrinth.index.json > create/modrinth.index.json.tmp && mv create/modrinth.index.json.tmp create/modrinth.index.json
+          jq --arg version "$CURRENT_VERSION" '.versionId = $version' create/modrinth.index.json > create/modrinth.index.json.tmp
+          mv create/modrinth.index.json.tmp create/modrinth.index.json
   
       - name: Update Version in manifest.json
         run: |
-          jq --arg version "$CURRENT_VERSION" '.version = $version' create/manifest.json > create/manifest.json.tmp && mv create/manifest.json.tmp create/manifest.json
+          jq --arg version "$CURRENT_VERSION" '.version = $version' create/manifest.json > create/manifest.json.tmp
+          mv create/manifest.json.tmp create/manifest.json
 
       - name: Set Up Build Directory
         run: |
@@ -41,10 +43,11 @@ jobs:
           cd ..
 
       - name: Collect Changelogs from File
+        id: changelogs
         run: |
           CHANGELOG_FILE="create/changelogs/version-${{ env.current_version }}.txt"
-          if [ -f $CHANGELOG_FILE ]; then
-            CHANGELOGS=$(cat $CHANGELOG_FILE)
+          if [ -f "$CHANGELOG_FILE" ]; then
+            CHANGELOGS=$(jq -R -s . < "$CHANGELOG_FILE")
             echo "changelogs=$CHANGELOGS" >> $GITHUB_ENV
           else
             echo "Changelog file $CHANGELOG_FILE does not exist."
@@ -53,14 +56,12 @@ jobs:
 
       - name: Update Changelog in README
         run: |
-          echo "Current Version: ${{ env.current_version }}"
-          echo "Changelogs: ${{ env.changelogs }}"
           node -e "
             const fs = require('fs');
             const path = require('path');
 
             const currentVersion = process.env.current_version;
-            const changelogs = process.env.changelogs;
+            const changelogs = JSON.parse(process.env.changelogs);
 
             const readmePath = path.join(__dirname, 'create', 'readme.md');
             const readmeContent = fs.readFileSync(readmePath, 'utf8');
@@ -75,7 +76,7 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add create/readme.md
-          git commit -m "Update changelog for version ${{ env.current_version }} " || echo "No changes to commit"
+          git commit -m "Update changelog for version ${{ env.current_version }}" || echo "No changes to commit"
           git push
 
       - name: Upload Modpack to GitHub Release
@@ -86,7 +87,7 @@ jobs:
           body: |
             **Changelogs:**
             ```diff
-            ${{ env.changelogs }}
+            ${{ fromJSON(env.changelogs) }}
             ```
             
             [Download the latest version here](https://cdn.cogworksmc.com/modpacks/cogworks-create.zip)
@@ -112,26 +113,18 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
       
-      # Disabled ATM
-      # - name: Upload Modpack to CurseForge
-      #   run: |
-      #     curl -X POST "https://minecraft.curseforge.com/api/projects/1181366/upload-file" \
-      #     -H "x-api-token: ${{ secrets.CURSEFORGE_API_TOKEN }}" \
-      #     -F "file=@build/cogworks-create.zip" \
-      #     -F "metadata={\"changelog\":\"${{ env.changelogs }}\",\"changelogType\":\"markdown\",\"releaseType\":\"release\"}" \
-      #     -F "gameVersions=[\"1.20.1\"]"
-      
       - name: Notify Success
         run: echo "Modpack successfully built & uploaded to GitHub, Cloudflare R2"
 
       - name: Send Discord Notification
         run: |
+          CHANGELOGS=$(echo ${{ env.changelogs }} | jq -r .)
           curl -H "Content-Type: application/json" \
                -X POST \
                -d '{
                      "embeds": [{
                        "title": "Version ${{ env.current_version }} has been released!",
-                       "description": "**Changelogs**\n```diff\n${{ env.changelogs }}\n```\nDownload the latest version [here](https://cdn.cogworksmc.com/modpacks/cogworks-create.zip)",
+                       "description": "**Changelogs**\n```diff\n'"$CHANGELOGS"'\n```\nDownload the latest version [here](https://cdn.cogworksmc.com/modpacks/cogworks-create.zip)",
                        "author": {
                          "name": "Cogworks",
                          "icon_url": "https://cogworksmc.com/CogworksLogo.gif"
