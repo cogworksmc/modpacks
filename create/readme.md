@@ -24,9 +24,21 @@ To install the modpack, follow these steps:
 5. Launch Minecraft and enjoy!
 
 ## Changelog
-**Version 1.1.4**:
+**Version 1.2.0**:
 ```diff
-- Remove Fancymenu, gui scaling was a issue, and it just was messy
++ Add Chimes to decorate your base
++ Add Create Breaking Bad (yk, yk)
++ Add Exposure, for cameras
++ Add Factory Blocks
++ Add AudioPlayer for music
++ Add Cosmetic Armor (Suggested By Mat)
++ Add Create Oxidised (Suggested by The 77th Warrior)
++ Add Create Cobblestone (Suggested by GGTurtle123)
++ Add The Musket Mod (Suggested by The 77th Warrior)
++ Add Create: Structures (Suggested by Blooper)
++ Add Man of many planes (Suggested by Blooper)
++ Add Toms Simple Storage (Suggested By BenB)
+
 ```
 You can checkout the [previous changelogs here](https://github.com/cogworksmc/modpacks/tree/main/create/changelogs)
 
