@@ -43,8 +43,8 @@ jobs:
       - name: Collect Changelogs from File
         run: |
           CHANGELOG_FILE="create/changelogs/version-${{ env.current_version }}.txt"
-          if [ -f $CHANGELOG_FILE ]; then
-            CHANGELOGS=$(cat $CHANGELOG_FILE)
+          if [ -f $CHANGELOG_FILE]; then
+            CHANGELOGS=$(cat $CHANGELOG_FILE | jq -sRr @uri)
             echo "changelogs=$CHANGELOGS" >> $GITHUB_ENV
           else
             echo "Changelog file $CHANGELOG_FILE does not exist."
@@ -58,9 +58,10 @@ jobs:
           node -e "
             const fs = require('fs');
             const path = require('path');
+            const querystring = require('querystring');
 
             const currentVersion = process.env.current_version;
-            const changelogs = process.env.changelogs;
+            const changelogs = querystring.unescape(process.env.changelogs);
 
             const readmePath = path.join(__dirname, 'create', 'readme.md');
             const readmeContent = fs.readFileSync(readmePath, 'utf8');
