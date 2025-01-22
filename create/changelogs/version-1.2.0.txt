@@ -1,5 +1,5 @@
 + Add Chimes to decorate your base
-+ Add Create Breaking Bad (if yk, yk)
++ Add Create Breaking Bad (if yk yk)
 + Add Exposure, for cameras
 + Add Factory Blocks
 + Add AudioPlayer for music
