@@ -121,6 +121,7 @@ jobs:
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK_URL }}
           nodetail: true
+          content: "Hey <@&1329954969268523139>"
           title: "Create Modpack v${{ env.current_version }} has been released!"
           color: 0xFFA500
           description: |
