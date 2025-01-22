@@ -22,6 +22,7 @@ mode = "fancy"
 		[light_sources.settings.entities]
 
 			[light_sources.settings.entities.minecraft]
+				panda = true
 				axolotl = true
 				bee = true
 				egg = true
@@ -32,6 +33,10 @@ mode = "fancy"
 				skeleton = true
 				llama = true
 				bat = true
+				husk = true
+				frog = true
+				hoglin = true
+				camel = true
 				rabbit = true
 				armor_stand = true
 				drowned = true
@@ -39,19 +44,26 @@ mode = "fancy"
 				dolphin = true
 				item = true
 				turtle = true
+				shulker = true
 				salmon = true
 				wither_skeleton = true
+				wandering_trader = true
+				goat = true
 				ocelot = true
+				furnace_minecart = true
 				item_frame = true
 				horse = true
+				minecart = true
 				leash_knot = true
 				glow_squid = true
 				glow_item_frame = false
 				squid = true
 				parrot = true
 				creeper = true
+				lightning_bolt = true
 				enderman = true
 				chicken = true
+				trader_llama = true
 				donkey = true
 				tropical_fish = true
 				chest_minecart = true
@@ -65,19 +77,27 @@ mode = "fancy"
 				piglin = true
 				cat = true
 				zombie = true
+				ender_pearl = true
+				guardian = true
 				ghast = true
 				sheep = true
+				fireball = true
 				player = true
 				pufferfish = true
+				trident = true
 				wolf = true
 				villager = true
+				fishing_bobber = true
 				zombie_villager = true
+				elder_guardian = true
 				boat = true
 				small_fireball = true
 				strider = true
+				polar_bear = true
 				cave_spider = true
 				cod = true
 				witch = true
+				snow_golem = true
 				spider = true
 
 			[light_sources.settings.entities.strawstatues]
@@ -96,6 +116,7 @@ mode = "fancy"
 
 			[light_sources.settings.entities.vinery]
 				mule = true
+				wandering_winemaker = true
 
 			[light_sources.settings.entities.naturalist]
 				deer = true
@@ -103,6 +124,7 @@ mode = "fancy"
 				rhino = true
 				bluejay = true
 				snake = true
+				catfish = true
 				boar = true
 				robin = true
 				duck_egg = true
@@ -116,6 +138,7 @@ mode = "fancy"
 				zebra = true
 				canary = true
 				firefly = true
+				hippo = true
 				coral_snake = true
 				cardinal = true
 				lion = true
@@ -125,17 +148,27 @@ mode = "fancy"
 				elephant = true
 				finch = true
 
+			[light_sources.settings.entities.smallships]
+				galley = true
+				brigg = true
+
 			[light_sources.settings.entities.immersive_aircraft]
 				cargo_airship = true
 				gyrodyne = true
+				quadrocopter = true
 				biplane = true
+				bullet = true
 
 			[light_sources.settings.entities.supplementaries]
 				hat_stand = true
 
 			[light_sources.settings.entities.create]
 				stationary_contraption = true
+				contraption = true
 				super_glue = true
+
+			[light_sources.settings.entities.terraform]
+				boat = true
 
 			[light_sources.settings.entities.artifacts]
 				mimic = true
@@ -145,4 +178,11 @@ mode = "fancy"
 
 			[light_sources.settings.entities.ad_astra]
 				tier_1_rocket = true
+				tier_2_rocket = true
+				corrupted_lunarian = true
+				lunarian = true
+				tier_7_rocket = true
+				star_crawler = true
+				tier_1_rover = true
+				lander = true
 
