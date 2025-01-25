@@ -1,0 +1,21 @@
+{
+  "$schema": "file:///C:/Users/haxbo/Documents/vscode/Nebula/schemas/ServerMetaSchema.schema.json",
+  "meta": {
+    "version": "1.2.0",
+    "name": "CogworksMC",
+    "description": "CogworksMC",
+    "icon": "https://raw.githubusercontent.com/cogworksmc/modpacks/refs/heads/main/launcher/logo(1).png",
+    "address": "create.cogworksmc.com",
+    "discord": {
+      "shortId": "<FILL IN OR REMOVE DISCORD OBJECT>",
+      "largeImageText": "<FILL IN OR REMOVE DISCORD OBJECT>",
+      "largeImageKey": "<FILL IN OR REMOVE DISCORD OBJECT>"
+    },
+    "mainServer": true,
+    "autoconnect": true
+  },
+  "fabric": {
+    "version": "0.16.9"
+  },
+  "untrackedFiles": []
+}
