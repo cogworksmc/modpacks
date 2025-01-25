@@ -1,0 +1,4518 @@
+{
+  "version": "1.0.0",
+  "rss": "<LINK TO RSS FEED>",
+  "discord": {
+    "clientId": "<FILL IN OR REMOVE DISCORD OBJECT>",
+    "smallImageText": "<FILL IN OR REMOVE DISCORD OBJECT>",
+    "smallImageKey": "<FILL IN OR REMOVE DISCORD OBJECT>"
+  },
+  "servers": [
+    {
+      "id": "CogworksMC-1.20.1",
+      "name": "CogworksMC",
+      "description": "CogworksMC",
+      "icon": "https://raw.githubusercontent.com/cogworksmc/modpacks/refs/heads/main/launcher/logo(1).png",
+      "version": "1.2.0",
+      "address": "create.cogworksmc.com",
+      "minecraftVersion": "1.20.1",
+      "discord": {
+        "shortId": "<FILL IN OR REMOVE DISCORD OBJECT>",
+        "largeImageText": "<FILL IN OR REMOVE DISCORD OBJECT>",
+        "largeImageKey": "<FILL IN OR REMOVE DISCORD OBJECT>"
+      },
+      "mainServer": true,
+      "autoconnect": true,
+      "modules": [
+        {
+          "id": "net.fabricmc:fabric-loader:0.16.9",
+          "name": "Fabric (fabric-loader)",
+          "type": "Fabric",
+          "artifact": {
+            "size": 1387357,
+            "MD5": "27a6ef87676ce6316c777d81c1cd2962",
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/repo/lib/net/fabricmc/fabric-loader/0.16.9/fabric-loader-0.16.9.jar"
+          },
+          "subModules": [
+            {
+              "id": "1.20.1-fabric-0.16.9",
+              "name": "Fabric (version.json)",
+              "type": "VersionManifest",
+              "artifact": {
+                "size": 2857,
+                "MD5": "67a07bd5b13f1427b343acdaf7d31074",
+                "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/repo/versions/1.20.1-fabric-0.16.9/1.20.1-fabric-0.16.9.json"
+              }
+            },
+            {
+              "id": "org.ow2.asm:asm:9.7.1",
+              "name": "Fabric (asm)",
+              "type": "Library",
+              "artifact": {
+                "size": 126093,
+                "MD5": "e2cdd32d198ad31427d298eee9d39d8d",
+                "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/repo/lib/org/ow2/asm/asm/9.7.1/asm-9.7.1.jar"
+              }
+            },
+            {
+              "id": "org.ow2.asm:asm-analysis:9.7.1",
+              "name": "Fabric (asm-analysis)",
+              "type": "Library",
+              "artifact": {
+                "size": 35126,
+                "MD5": "4cd9e7178dfb85371bba3077e40cd514",
+                "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/repo/lib/org/ow2/asm/asm-analysis/9.7.1/asm-analysis-9.7.1.jar"
+              }
+            },
+            {
+              "id": "org.ow2.asm:asm-commons:9.7.1",
+              "name": "Fabric (asm-commons)",
+              "type": "Library",
+              "artifact": {
+                "size": 73459,
+                "MD5": "8344aea3c8b7d707e9d35a62710e77c9",
+                "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/repo/lib/org/ow2/asm/asm-commons/9.7.1/asm-commons-9.7.1.jar"
+              }
+            },
+            {
+              "id": "org.ow2.asm:asm-tree:9.7.1",
+              "name": "Fabric (asm-tree)",
+              "type": "Library",
+              "artifact": {
+                "size": 51939,
+                "MD5": "e85029f613b6469989cc7cf53fe06b74",
+                "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/repo/lib/org/ow2/asm/asm-tree/9.7.1/asm-tree-9.7.1.jar"
+              }
+            },
+            {
+              "id": "org.ow2.asm:asm-util:9.7.1",
+              "name": "Fabric (asm-util)",
+              "type": "Library",
+              "artifact": {
+                "size": 94519,
+                "MD5": "36d373a9cd6cad9b35db9f984c6b4bbb",
+                "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/repo/lib/org/ow2/asm/asm-util/9.7.1/asm-util-9.7.1.jar"
+              }
+            },
+            {
+              "id": "net.fabricmc:sponge-mixin:0.15.4+mixin.0.8.7",
+              "name": "Fabric (sponge-mixin)",
+              "type": "Library",
+              "artifact": {
+                "size": 1494834,
+                "MD5": "991ca8be2c408fe19eb64014d8a18243",
+                "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/repo/lib/net/fabricmc/sponge-mixin/0.15.4+mixin.0.8.7/sponge-mixin-0.15.4+mixin.0.8.7.jar"
+              }
+            },
+            {
+              "id": "net.fabricmc:intermediary:1.20.1",
+              "name": "Fabric (intermediary)",
+              "type": "Library",
+              "artifact": {
+                "size": 573365,
+                "MD5": "3f4768ac751cac3418266d1d7aa15f55",
+                "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/repo/lib/net/fabricmc/intermediary/1.20.1/intermediary-1.20.1.jar"
+              }
+            }
+          ]
+        },
+        {
+          "id": "net.celsiusqc:ad_astra_rocketed:1.0.3@jar",
+          "name": "Ad Astra: Rocketed",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 4090393,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/ad_astra_rocketed-fabric-1.20.1-1.0.3.jar",
+            "MD5": "9d1773ff7242c3fcc29c3575501640c0"
+          }
+        },
+        {
+          "id": "earth.terrarium.adastra:ad_astra:1.15.19@jar",
+          "name": "Ad Astra",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 7317497,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/ad_astra-fabric-1.20.1-1.15.19.jar",
+            "MD5": "edb74342baa581fdd8c9bd593bd87685"
+          }
+        },
+        {
+          "id": "juuxel.adorn:adorn:5.0.1+1.20.1@jar",
+          "name": "Adorn",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 4128916,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/Adorn-5.0.1+1.20.1-fabric.jar",
+            "MD5": "9beca831c7b9e83305dfb8697f564a73"
+          }
+        },
+        {
+          "id": "net.mehvahdjukaar:amendments:1.20-1.2.12@jar",
+          "name": "Amendments",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 963837,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/amendments-1.20-1.2.12-fabric.jar",
+            "MD5": "972b0696b702fba1658ac202a721d907"
+          }
+        },
+        {
+          "id": "com.starfish_studios:another_furniture:1.20.1-3.0.1@jar",
+          "name": "Another Furniture",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 2733280,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/another_furniture-fabric-1.20.1-3.0.1.jar",
+            "MD5": "ad7757e3ad83a5a789cdf5932d9a20f9"
+          }
+        },
+        {
+          "id": "squeek.appleskin:appleskin:2.5.1+mc1.20@jar",
+          "name": "AppleSkin",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 1064362,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/appleskin-fabric-mc1.20.1-2.5.1.jar",
+            "MD5": "723370be246a876144ae424cbbfd60f4"
+          }
+        },
+        {
+          "id": "dev.architectury.utils:architectury:9.2.14@jar",
+          "name": "Architectury",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 585207,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/architectury-9.2.14-fabric.jar",
+            "MD5": "2ae04e0dad60a390031ee341e0b2ab45"
+          }
+        },
+        {
+          "id": "fuzs.armorstatues:armorstatues:8.0.6@jar",
+          "name": "Armor Statues",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 574046,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/ArmorStatues-v8.0.6-1.20.1-Fabric.jar",
+            "MD5": "792d9fb8c7645a337e90aacf6181558d"
+          }
+        },
+        {
+          "id": "artifacts:artifacts:9.5.13@jar",
+          "name": "Artifacts",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 953629,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/artifacts-fabric-9.5.13.jar",
+            "MD5": "b6e427afc547af3604dccdfbde5ff760"
+          }
+        },
+        {
+          "id": "earth.terrarium.athena.impl:athena:3.1.2@jar",
+          "name": "Athena",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 74370,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/athena-fabric-1.20.1-3.1.2.jar",
+            "MD5": "4fd1c38eaf802239c3faeda982a77f2d"
+          }
+        },
+        {
+          "id": "de.maxhenkel:audioplayer:1.20.1-1.13.2@jar",
+          "name": "AudioPlayer",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 781487,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/audioplayer-fabric-1.20.1-1.13.2.jar",
+            "MD5": "f01a87e07aa7a85f5181d9699c16ceae"
+          }
+        },
+        {
+          "id": "mod.azure:azurelib:2.0.39@jar",
+          "name": "AzureLib",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 813915,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/azurelib-fabric-1.20.1-2.0.39.jar",
+            "MD5": "70f3ebb007843a580bea7ae42b8b0170"
+          }
+        },
+        {
+          "id": "com.sudolev:bellsandwhistles:0.4.5@jar",
+          "name": "Create: Bells & Whistles",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 216802,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/bellsandwhistles-0.4.5+1.20.1-FABRIC.jar",
+            "MD5": "a72bb86edd12291414298957dab9bc5a"
+          }
+        },
+        {
+          "id": "com.betterchunkloading:betterchunkloading:1.20.1-5.1@jar",
+          "name": "Better chunk loading mod",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 56144,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/betterchunkloading-fabric-1.20.1-5.1.jar",
+            "MD5": "02a57b7c4c5381fb84fcc4e58e680386"
+          }
+        },
+        {
+          "id": "fuzs.bettertridents:bettertridents:8.0.1@jar",
+          "name": "Better Tridents",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 168115,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/BetterTridents-v8.0.1-1.20.1-Fabric.jar",
+            "MD5": "8852bdd33431f4c7e1e75d2933cc6c65"
+          }
+        },
+        {
+          "id": "net.darkhax:bookshelf:20.2.13@jar",
+          "name": "Bookshelf",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 322180,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/Bookshelf-Fabric-1.20.1-20.2.13.jar",
+            "MD5": "6aae84a4b71657b5f06634230651b3f9"
+          }
+        },
+        {
+          "id": "net.darkhax:botanypots:13.0.39@jar",
+          "name": "BotanyPots",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 1042619,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/BotanyPots-Fabric-1.20.1-13.0.39.jar",
+            "MD5": "581777c4b3a899afacb053fa6fe26012"
+          }
+        },
+        {
+          "id": "generated.fabricmod:botanytrees:9.0.17@jar",
+          "name": "BotanyTrees",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 244918,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/BotanyTrees-Fabric-1.20.1-9.0.17.jar",
+            "MD5": "ed542ed0ac770ba57b95b9f5bbe8bfca"
+          }
+        },
+        {
+          "id": "earth.terrarium:botarium:2.3.4@jar",
+          "name": "Botarium",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 188388,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/botarium-fabric-1.20.1-2.3.4.jar",
+            "MD5": "7e7ab50854a3084771346ebc260c91b5"
+          }
+        },
+        {
+          "id": "dev.sterner:brewinandchewin:3.0.6+1.20.1@jar",
+          "name": "Brewin And Chewin",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 525600,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/brewinandchewin-3.0.6+1.20.1.jar",
+            "MD5": "b68b4d1e5f91c3be112f0187a9668ac3"
+          }
+        },
+        {
+          "id": "generated.fabricmod:cardinal-components:5.2.2@jar",
+          "name": "Cardinal Components API",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 221901,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/cardinal-components-api-5.2.2.jar",
+            "MD5": "c313d46cc78e169f0ce4e954d3a09761"
+          }
+        },
+        {
+          "id": "tschipp.carryon:carryon:2.1.2.7@jar",
+          "name": "Carry On",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 443033,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/carryon-fabric-1.20.1-2.1.2.7.jar",
+            "MD5": "c050f3d0934bbd8893fe2353eab906bb"
+          }
+        },
+        {
+          "id": "com.nick:chimes:2.0.1@jar",
+          "name": "Chimes",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 11844738,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/Chimes-v2.0.1-1.20.1-Fabric.jar",
+            "MD5": "19c787b98182728444dc38f229e68a28"
+          }
+        },
+        {
+          "id": "earth.terrarium:chipped:3.0.7@jar",
+          "name": "Chipped",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 15057458,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/chipped-fabric-1.20.1-3.0.7.jar",
+            "MD5": "776f440f3ba3c8024f3b60eb92a20f6f"
+          }
+        },
+        {
+          "id": "com.chunksending:chunksending:1.20.1-2.8@jar",
+          "name": "Chunksending Mod",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 11318,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/chunksending-fabric-1.20.1-2.8.jar",
+            "MD5": "e0754cf0c89a2362d9cb91c897604cad"
+          }
+        },
+        {
+          "id": "de.guntram.mcmod:clickthrough:1.20-fabric0.83.0-0.4.1@jar",
+          "name": "ClickThrough",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 95682,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/clickthrough-1.20-fabric0.83.0-0.4.1.jar",
+            "MD5": "83219162e13a4257ec9d204d7ff69c94"
+          }
+        },
+        {
+          "id": "me.shedaniel.autoconfig.example:cloth-config:11.1.136@jar",
+          "name": "Cloth Config v11",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 1172214,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/cloth-config-11.1.136-fabric.jar",
+            "MD5": "45d8bada7797af61d1f5543313b1f9f0"
+          }
+        },
+        {
+          "id": "com.blamejared:clumps:12.0.0.4@jar",
+          "name": "Clumps",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 21987,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/Clumps-fabric-1.20.1-12.0.0.4.jar",
+            "MD5": "9bd27566262e06642637b78a6bc4fe8c"
+          }
+        },
+        {
+          "id": "com.mrcrayfish:configured:2.2.3@jar",
+          "name": "Configured",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 591886,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/configured-fabric-1.20.1-2.2.3.jar",
+            "MD5": "04b8682e530bb58a8514f9763331662d"
+          }
+        },
+        {
+          "id": "generated.fabricmod:controlling:12.0.2@jar",
+          "name": "Controlling For Fabric",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 122778,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/Controlling-fabric-1.20.1-12.0.2.jar",
+            "MD5": "87c6431504ff6a040da4533c933d6b12"
+          }
+        },
+        {
+          "id": "com.github.mim1q:convenientdecor:0.4.3@jar",
+          "name": "Convenient Decor",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 722441,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/convenientdecor-0.4.3.jar",
+            "MD5": "a9e08be7305ed90c5b658ed12928cdfc"
+          }
+        },
+        {
+          "id": "com.copycatsplus:copycats:2.1.4+mc.1.20.1-fabric@jar",
+          "name": "Create: Copycats+",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 1741160,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/copycats-2.1.4+mc.1.20.1-fabric.jar",
+            "MD5": "f4f8f18a4e2e720229e1c92ab330e43e"
+          }
+        },
+        {
+          "id": "com.corosus.coroutil.loader:coroutil:1.20.1-1.3.7@jar",
+          "name": "CoroUtil",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 2392617,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/coroutil-fabric-1.20.1-1.3.7.jar",
+            "MD5": "44365b7447c9b4c3aeadcadf454494aa"
+          }
+        },
+        {
+          "id": "io.github.apace100.cosmetic_armor:cosmetic-armor:1.6.0@jar",
+          "name": "Cosmetic Armor",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 20221,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/CosmeticArmor-1.20-1.6.0.jar",
+            "MD5": "642e2ebbfc66a3bd063994b54f6467ca"
+          }
+        },
+        {
+          "id": "com.blamejared:crafttweaker:14.0.44@jar",
+          "name": "CraftTweaker",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 3984054,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/CraftTweaker-fabric-1.20.1-14.0.44.jar",
+            "MD5": "3ecdf9b94b9dc4c2a8c6372660976d1f"
+          }
+        },
+        {
+          "id": "ru.fewizz:crawl:0.12.0@jar",
+          "name": "Crawl",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 97866,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/crawl-0.12.0.jar",
+            "MD5": "693b2f07bf2b8280507f32d52bca388e"
+          }
+        },
+        {
+          "id": "generated.fabricmod:create_armor_trims:2.0.1@jar",
+          "name": "Create_armor_trims",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 113676,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/create_armor_trims-1.20.1-2.0.1.jar",
+            "MD5": "16d753860deb575eb46817282b5b056b"
+          }
+        },
+        {
+          "id": "pyzpre.createbicyclesbitterballen:create_bic_bit:0.0.86+1.20.1-fabric@jar",
+          "name": "Create: Bitterballen",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 569515,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/create_bitterballen-0.0.86+1.20.1-fabric.jar",
+            "MD5": "87817a2c9e480d55456cc7cba8ffde57"
+          }
+        },
+        {
+          "id": "uwu.lopyluna:create_dd:0.1d@jar",
+          "name": "Create: Dreams & Desires",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 4373010,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/create_dd-0.1d.jar",
+            "MD5": "7184899616ae2783d93f610c32ec139f"
+          }
+        },
+        {
+          "id": "pyzpre.create_deepfried:create_deepfried:0.1.1+1.20.1@jar",
+          "name": "Create Deepfried",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 74261,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/create_deepfried-0.1.1+1.20.1.jar",
+            "MD5": "36b93ef6605e5e7e53c997b57f6b4532"
+          }
+        },
+        {
+          "id": "plus.dragons.createenchantmentindustry:create_enchantment_industry:1.2.16@jar",
+          "name": "Create Enchantment Industry",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 520093,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/create_enchantment_industry-1.2.16.jar",
+            "MD5": "8648cd486595617d8428c5327c19defe"
+          }
+        },
+        {
+          "id": "create_ironworks:create_ironworks:3.1.0@jar",
+          "name": "Create: Ironworks",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 751832,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/create_ironworks-3.1.0-fabric-1.20.1.jar",
+            "MD5": "a6dbfa973f7bc8f17dbe56bbdc0a136f"
+          }
+        },
+        {
+          "id": "create_jetpack_curios:create_jetpack_curios:1.2.0@jar",
+          "name": "Create: Jetpack Curios",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 418913,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/create_jetpack_curios-1.2.0-fabric-1.20.1.jar",
+            "MD5": "4af6946054c3ad2c3c5ad6a4ab65b4df"
+          }
+        },
+        {
+          "id": "com.possible_triangle:create_jetpack:4.2.1@jar",
+          "name": "Create Jetpack",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 223957,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/create_jetpack-fabric-4.2.1.jar",
+            "MD5": "b6068a7bc4b2e04577882bb2115dda7a"
+          }
+        },
+        {
+          "id": "pyzpre.create_oxidized:create_oxidized:0.1.1+1.20.1@jar",
+          "name": "Create: Oxidized",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 282035,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/create_oxidized-0.1.1+1.20.1.jar",
+            "MD5": "ba7b769cc3751a161c7f03d218a26173"
+          }
+        },
+        {
+          "id": "elocindev.create_questing:create_questing:1.0.0@jar",
+          "name": "Create Questing",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 583483,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/Create_Questing-FABRIC-1.20.1-1.0.0.jar",
+            "MD5": "5d03cf2f740b10a1f52e28cdc62d64bc"
+          }
+        },
+        {
+          "id": "com.gearworks.notifier:create-discord-notifications:1.0.1@jar",
+          "name": "Create Discord Notifications",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 8111688,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/create-discord-notifications-1.0.1.jar",
+            "MD5": "92827507ecda7182cc098e8ee7be7f83"
+          }
+        },
+        {
+          "id": "top.leonx.dynlight:createdynlight:1.0.2@jar",
+          "name": "Create: Dynamic Light",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 142609,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/create-dyn-light-fabric1.20.1+1.0.2.jar",
+            "MD5": "c6f2a8b2b97b93f6d95162c65b921b7c"
+          }
+        },
+        {
+          "id": "com.simibubi:create:0.5.1-f-build.1417+mc1.20.1@jar",
+          "name": "Create",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 21952417,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/create-fabric-0.5.1-f-build.1417+mc1.20.1.jar",
+            "MD5": "a9ecc9268b3b7c7e56f794cf4a27007c"
+          }
+        },
+        {
+          "id": "generated.fabricmod:mr_create_manofmanyplanes:1.0@jar",
+          "name": "Create Man of Many Planes",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 1921476,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/create-man-of-many-planes-1.0.jar",
+            "MD5": "908923c0084de928e4ecf6d1050053ef"
+          }
+        },
+        {
+          "id": "org.antarcticgardens.newage:create_new_age:1.1.2@jar",
+          "name": "Create: New Age",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 657516,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/create-new-age-fabric-1.20.1-1.1.2.jar",
+            "MD5": "adbcf100c350d23dcaffc452261700a7"
+          }
+        },
+        {
+          "id": "generated.fabricmod:create_structures:1.1.0@jar",
+          "name": "Create: Structures",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 484457,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/create-structures-0.1.1-1.20.1-FABRIC.jar",
+            "MD5": "ed0c2368482da1181e37e3e40831ba36"
+          }
+        },
+        {
+          "id": "com.mrh0:createaddition:1.2.4@jar",
+          "name": "Create Crafts & Additions",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 1596988,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/createaddition-fabric+1.20.1-1.2.4.jar",
+            "MD5": "c6228472638db756dea4d6b908326bc8"
+          }
+        },
+        {
+          "id": "com.jetpacker06.CreateBrokenBad:createbb:3.1.2@jar",
+          "name": "Create: Broken Bad",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 158751,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/createbb1.20.1.jar",
+            "MD5": "29c0bda73c209b89316813663e2e4dc1"
+          }
+        },
+        {
+          "id": "rbasamoyai.createbigcannons:createbigcannons:5.5.1+mc.1.20.1-fabric@jar",
+          "name": "Create Big Cannons",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 6134636,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/createbigcannons-5.5.1-mc.1.20.1-fabric.jar",
+            "MD5": "466fb4717ddb4731510d6f0c5b5790a5"
+          }
+        },
+        {
+          "id": "net.createcobblestone:createcobblestone:1.4+fabric-1.20.1-51@jar",
+          "name": "Create Cobblestone",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 224553,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/createcobblestone-1.4+fabric-1.20.1-51.jar",
+            "MD5": "aee33fa4b909217e502822b2910d0cc2"
+          }
+        },
+        {
+          "id": "com.tom.createterminal:createcontraptionterminals:1.1.0@jar",
+          "name": "Create Contraption Terminals",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 87992,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/createcontraptionterminals-fabric-1.20-1.1.0.jar",
+            "MD5": "ec13b6bc46101d527afbe37777e777f1"
+          }
+        },
+        {
+          "id": "com.github.talrey:createdeco:2.0.2-1.20.1-fabric@jar",
+          "name": "Create Deco",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 3971046,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/createdeco-2.0.2-1.20.1-fabric.jar",
+            "MD5": "5898cfdf230cf101a01128662a1d11b3"
+          }
+        },
+        {
+          "id": "net.dakotapride:createframed:1.5.8+1.20.1@jar",
+          "name": "Create: Framed",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 841065,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/createframed-1.5.8+1.20.1.jar",
+            "MD5": "3bf664552dd2a4637e947222e8a76124"
+          }
+        },
+        {
+          "id": "com.robocraft999:creategoggles:0.5.5.g@jar",
+          "name": "Create Goggles",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 159341,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/creategoggles-1.20.1-0.5.5.g.jar",
+            "MD5": "90a77ee39b5957733a99f4dc7a0434f2"
+          }
+        },
+        {
+          "id": "dev.ithundxr.createnumismatics:numismatics:1.0.4+fabric-mc1.20.1@jar",
+          "name": "Create: Numismatics",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 696433,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/CreateNumismatics-1.0.4+fabric-mc1.20.1.jar",
+            "MD5": "1df342fae531aaa109f09bb806d57cad"
+          }
+        },
+        {
+          "id": "de.mrjulsen.crn:createrailwaysnavigator:1.20.1-0.6.0@jar",
+          "name": "Create Railways Navigator",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 2850030,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/createrailwaysnavigator-fabric-1.20.1-0.6.0.jar",
+            "MD5": "b9d0548f65af6e4e715d32b73585ceaa"
+          }
+        },
+        {
+          "id": "generated.fabricmod:createtweaker:4.0.13@jar",
+          "name": "CreateTweaker",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 307384,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/CreateTweaker-fabric-1.20.1-4.0.13.jar",
+            "MD5": "3440028cb5e3403c4e33a6447e476731"
+          }
+        },
+        {
+          "id": "com.cyvack:crystal_clear:0.0@jar",
+          "name": "Crystal-Clear",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 203765,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/Crystal-Clear-2.1-Beta-fabric.jar",
+            "MD5": "01482a989036fadc9d4791039a696739"
+          }
+        },
+        {
+          "id": "com.cupboard:cupboard:1.20.1-2.7@jar",
+          "name": "Cupboard",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 25668,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/cupboard-fabric-1.20.1-2.7.jar",
+            "MD5": "a7a05a32b4a66d64c6c050666e16d744"
+          }
+        },
+        {
+          "id": "lilypuree.decorative_blocks:decorative_blocks:4.1.3@jar",
+          "name": "Decorative Blocks",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 546719,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/decorative_blocks-fabric-1.20.1-4.1.3.jar",
+            "MD5": "39a67e78370299975d3a172b582aed24"
+          }
+        },
+        {
+          "id": "net.ahmed4363.decorativeladders:decorative-ladders:1.1.0@jar",
+          "name": "Decorative Ladders",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 191417,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/decorative-ladders-1.1.0.jar",
+            "MD5": "bc7fa281d91f72428eae9e462a80ca98"
+          }
+        },
+        {
+          "id": "flomik.delightfulcreators:delightfulcreators:1.3-1.20.x-FDR-support@jar",
+          "name": "Delightful Creators",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 456835,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/delightful-creators-1.3-1.20.x-FDR-support.jar",
+            "MD5": "9b941ae1ea2440e7ef22113a576d079e"
+          }
+        },
+        {
+          "id": "com.mangomilk:design_decor:0.4.0b_fabric+1.20.1@jar",
+          "name": "Create: Design n' Decor",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 2219641,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/design_decor-0.4.0b_fabric+1.20.1.jar",
+            "MD5": "d55e21fb2a68b38ca3664e2e3f5363bc"
+          }
+        },
+        {
+          "id": "fuzs.diagonalfences:diagonalfences:8.1.5@jar",
+          "name": "Diagonal Fences",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 167185,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/DiagonalFences-v8.1.5-1.20.1-Fabric.jar",
+            "MD5": "e76d148e4681fd3e8911cbe54375dddd"
+          }
+        },
+        {
+          "id": "fuzs.diagonalwalls:diagonalwalls:8.0.4@jar",
+          "name": "Diagonal Walls",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 158486,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/DiagonalWalls-v8.0.4-1.20.1-Fabric.jar",
+            "MD5": "934fbe9ae66ec15a451936fbd40e8d67"
+          }
+        },
+        {
+          "id": "fuzs.diagonalwindows:diagonalwindows:8.1.5@jar",
+          "name": "Diagonal Windows",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 167797,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/DiagonalWindows-v8.1.5-1.20.1-Fabric.jar",
+            "MD5": "a9383871df3fdb963542070ad775700c"
+          }
+        },
+        {
+          "id": "yes.mediumdifficulty:disableelytra:1.0.0@jar",
+          "name": "Disable Elytra",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 11838,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/disable-elytra-1.0.0.jar",
+            "MD5": "6239c744ac1157e91e721226df32073d"
+          }
+        },
+        {
+          "id": "net.mehvahdjukaar:dummmmmmy:1.20-2.0.3@jar",
+          "name": "MmmMmmMmmMmm",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 350280,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/dummmmmmy-1.20-2.0.3-fabric.jar",
+            "MD5": "c596095c09e002f6c58716bd75d3e1fb"
+          }
+        },
+        {
+          "id": "net.mhaks:dustydecorations:1.1-1.20.1+1.20.2@jar",
+          "name": "Dusty Decorations Refabricated",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 450672,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/DustyDecoRefabricated-1.1-1.20.1+1.20.2.jar",
+            "MD5": "94564d106b353a08ec7e68cb274bb3dd"
+          }
+        },
+        {
+          "id": "net.lostluma.dynamic_fps.impl.textile.compat:dynamic_fps:3.7.7@jar",
+          "name": "Dynamic FPS",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 187558,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/dynamic-fps-3.7.7+minecraft-1.20.0-fabric.jar",
+            "MD5": "f6af92ce46383fc83f2c558b1cc2404c"
+          }
+        },
+        {
+          "id": "de.markusbordihn.easynpc:easy_npc:5.8.0@jar",
+          "name": "Easy NPC",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 1599722,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/easy_npc-fabric-1.20.1-5.8.0.jar",
+            "MD5": "3978e559279d99b93fd4979df3590688"
+          }
+        },
+        {
+          "id": "fuzs.easyanvils:easyanvils:8.0.2@jar",
+          "name": "Easy Anvils",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 129625,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/EasyAnvils-v8.0.2-1.20.1-Fabric.jar",
+            "MD5": "c9ba3b47dcd5f93002ee1a5237abdf03"
+          }
+        },
+        {
+          "id": "foundationgames.enhancedblockentities:enhancedblockentities:0.9+1.20@jar",
+          "name": "Enhanced Block Entities",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 490690,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/enhancedblockentities-0.9+1.20.jar",
+            "MD5": "bfc7a62a2834f824bb426b73f383e0cb"
+          }
+        },
+        {
+          "id": "dev.tr7zw:entityculling:1.7.1@jar",
+          "name": "EntityCulling",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 68347,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/entityculling-fabric-1.7.1-mc1.20.1.jar",
+            "MD5": "4bf7f15e6e245a9c4a298ea9ece560e1"
+          }
+        },
+        {
+          "id": "com.magistuarmory:magistuarmory:9.18@jar",
+          "name": "Epic Knights Mod",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 2571900,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/Epic-Knights-9.18.jar",
+            "MD5": "d7e5c4936c573783c586be59e60cb21a"
+          }
+        },
+        {
+          "id": "io.github.mortuusars:exposure:1.7.7@jar",
+          "name": "Exposure",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 1308074,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/exposure-1.20.1-1.7.7-fabric.jar",
+            "MD5": "490a6b540b28606f20af6e9b18dbc15b"
+          }
+        },
+        {
+          "id": "generated.fabricmod:fabric-api:0.92.2+1.20.1@jar",
+          "name": "Fabric API",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 2107289,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/fabric-api-0.92.2+1.20.1.jar",
+            "MD5": "92c58961866741106aae126558c9d4a7"
+          }
+        },
+        {
+          "id": "generated.fabricmod:fabric-language-kotlin:1.13.0+kotlin.2.1.0@jar",
+          "name": "Fabric Language Kotlin",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 7089756,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/fabric-language-kotlin-1.13.0+kotlin.2.1.0.jar",
+            "MD5": "f6623d8c006095c4e08323f084e6c00e"
+          }
+        },
+        {
+          "id": "fr.juke:fabric-tab:2.0.0@jar",
+          "name": "Fabric-tab",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 36037,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/fabric-tab-2.0.0.jar",
+            "MD5": "06ecbf93d3bb95d742a29fe9d9690a0a"
+          }
+        },
+        {
+          "id": "com.slaincow.factoryblocks:factory_blocks:1.3.1@jar",
+          "name": "Factory Blocks Mod",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 807887,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/factory_blocks+fabric-1.3.1.jar",
+            "MD5": "68b8f8bc8b611a2010a561348fde60f0"
+          }
+        },
+        {
+          "id": "vectorwing.farmersdelight:farmersdelight:1.20.1-2.2.0+refabricated@jar",
+          "name": "Farmer's Delight",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 6193396,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/FarmersDelight-1.20.1-2.2.0+refabricated.jar",
+            "MD5": "42d086a3baf859713bb5287cec7007d6"
+          }
+        },
+        {
+          "id": "com.chefsdelights.farmersrespite.core:farmersrespite:3.0.2@jar",
+          "name": "Farmer's Respite",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 733624,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/Farmersrespite-Fabric-3.0.2.jar",
+            "MD5": "65e78c74a22af5efd28607685d069254"
+          }
+        },
+        {
+          "id": "generated.fabricmod:faux-custom-entity-data:6.0.1@jar",
+          "name": "Faux-Custom-Entity-Data",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 16177,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/FauxCustomEntityData-fabric-1.20.1-6.0.1.jar",
+            "MD5": "5b60a0524ed3e23b3c6243e4ae1ea266"
+          }
+        },
+        {
+          "id": "generated.fabricmod:ferritecore:6.0.1@jar",
+          "name": "FerriteCore",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 125197,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/ferritecore-6.0.1-fabric.jar",
+            "MD5": "a19272e427f75fea59127de6610ea26b"
+          }
+        },
+        {
+          "id": "io.github.leonard1504:fetzisasiandeco:1.7.0@jar",
+          "name": "Fetzi's Asian Decoration",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 16208459,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/fetzisasiandeco-fabric-1.7.0-1.20.1.jar",
+            "MD5": "2429588912d82249143c95d6ec535526"
+          }
+        },
+        {
+          "id": "org.figuramc:figura:0.1.4+1.20.1@jar",
+          "name": "Figura",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 2313608,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/figura-0.1.4+1.20.1-fabric-mc.jar",
+            "MD5": "f4a65db9c13a6c53fecb4ab2d0ad10df"
+          }
+        },
+        {
+          "id": "fuzs.forgeconfigapiport.impl:forgeconfigapiport:8.0.1@jar",
+          "name": "Forge Config API Port",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 396955,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/ForgeConfigAPIPort-v8.0.1-1.20.1-Fabric.jar",
+            "MD5": "0842b1a68c115149c95a25e14d67acad"
+          }
+        },
+        {
+          "id": "com.mrcrayfish:framework:0.7.12@jar",
+          "name": "Framework",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 1393788,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/framework-fabric-1.20.1-0.7.12.jar",
+            "MD5": "89154eb502e44f37269cc4075016dc68"
+          }
+        },
+        {
+          "id": "dev.ftb.mods:ftblibrary:2001.2.6@jar",
+          "name": "FTB Library",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 780521,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/ftb-library-fabric-2001.2.6.jar",
+            "MD5": "f9cd31f1552d99eb8b591c7b543a6c25"
+          }
+        },
+        {
+          "id": "dev.ftb.mods:ftbquests:2001.4.9@jar",
+          "name": "FTB Quests",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 1191817,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/ftb-quests-fabric-2001.4.9.jar",
+            "MD5": "d0a7b2aef8c4ca1db5670dd5f11edaac"
+          }
+        },
+        {
+          "id": "dev.ftb.mods:ftbteams:2001.3.0@jar",
+          "name": "FTB Teams",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 243962,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/ftb-teams-fabric-2001.3.0.jar",
+            "MD5": "273629c8ea913e2e50707b06bcd801d0"
+          }
+        },
+        {
+          "id": "com.supermartijn642:fusion:1.1.1@jar",
+          "name": "Fusion",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 215909,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/fusion-1.1.1-fabric-mc1.20.1.jar",
+            "MD5": "43684fc020fa629b859c61d0b1fa4016"
+          }
+        },
+        {
+          "id": "net.dakotapride:garnished:2.0.2+1.20.1-fabric@jar",
+          "name": "Create: Garnished",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 3728505,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/garnished-2.0.2+1.20.1-fabric.jar",
+            "MD5": "8b675324297cfd193e3de6c10501309d"
+          }
+        },
+        {
+          "id": "software.bernie.example:geckolib:4.4.9@jar",
+          "name": "GeckoLib 4",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 1019731,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/geckolib-fabric-1.20.1-4.4.9.jar",
+            "MD5": "43283e490633976f9e2b46c473a87b62"
+          }
+        },
+        {
+          "id": "elocindev.geckoanimfix:geckoanimfix:1.0.0@jar",
+          "name": "GeckoLibIrisCompat",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 6202,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/GeckoLibIrisCompat-Fabric-1.0.0.jar",
+            "MD5": "85f182bac71775e7ca47216f33523bc3"
+          }
+        },
+        {
+          "id": "com.gpumemleakfix:gpumemleakfix:1.20.1-1.8@jar",
+          "name": "Gpu memory leak fix mod",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 6949,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/gpumemleakfix-fabric-1.20.1-1.8.jar",
+            "MD5": "166ae7ae556227b7cfb74856b171ec74"
+          }
+        },
+        {
+          "id": "earth.terrarium:handcrafted:3.0.6@jar",
+          "name": "Handcrafted",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 7106384,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/handcrafted-fabric-1.20.1-3.0.6.jar",
+            "MD5": "0cb41833dc35949cb23625d2e2b3579d"
+          }
+        },
+        {
+          "id": "com.starfish_studios:hearth_and_home:1.20.1-2.0.3@jar",
+          "name": "Hearth & Home",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 1174045,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/hearth_and_home-fabric-1.20.1-2.0.3.jar",
+            "MD5": "3877ad0db3d3f37f33bc28bbb0f83323"
+          }
+        },
+        {
+          "id": "immersive_aircraft:immersive_aircraft:1.1.5+1.20.1@jar",
+          "name": "Immersive Aircraft",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 2165801,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/immersive_aircraft-1.1.5+1.20.1-fabric.jar",
+            "MD5": "e32e040dc8732fd3f53778d5c939f42f"
+          }
+        },
+        {
+          "id": "immersive_melodies:immersive_melodies:0.3.0+1.20.1@jar",
+          "name": "Immersive Melodies",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 2561091,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/immersive_melodies-0.3.0+1.20.1-fabric.jar",
+            "MD5": "4ee59e003fcd57ed09c05c8ef1bcc6ec"
+          }
+        },
+        {
+          "id": "immersive_paintings:immersive_paintings:0.6.7+1.20.1@jar",
+          "name": "Immersive Paintings",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 4839553,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/immersive_paintings-0.6.7+1.20.1-fabric.jar",
+            "MD5": "e76d3cb55491aef71050ec96863b81ca"
+          }
+        },
+        {
+          "id": "link.infra:indium:1.0.34+mc1.20.1@jar",
+          "name": "Indium",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 105359,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/indium-1.0.34+mc1.20.1.jar",
+            "MD5": "91f3ce08edec42ee8f6b45fd6ae0c8b3"
+          }
+        },
+        {
+          "id": "com.sudolev:interiors:0.5.3+fabric-mc1.20.1@jar",
+          "name": "Create: Interiors",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 393253,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/interiors-0.5.3+fabric-mc1.20.1.jar",
+            "MD5": "709b59f762293fb5e5b06b001184a1d4"
+          }
+        },
+        {
+          "id": "generated.fabricmod:iris:1.7.5+mc1.20.1@jar",
+          "name": "Iris",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 2730664,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/iris-1.7.5+mc1.20.1.jar",
+            "MD5": "902528a82a843300ecf9027af9f8fb8c"
+          }
+        },
+        {
+          "id": "snownee.jade:jade:11.11.0+fabric@jar",
+          "name": "Jade",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 570166,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/Jade-1.20-fabric-11.11.0.jar",
+            "MD5": "04eb36a1b93c9e2761a8bcb2ee9f0a47"
+          }
+        },
+        {
+          "id": "mezz.jei:jei:15.12.2.51@jar",
+          "name": "Just Enough Items",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 1372227,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/jei-1.20.1-fabric-15.12.2.51.jar",
+            "MD5": "71a3effbcb74836cbe486126ee8b26a5"
+          }
+        },
+        {
+          "id": "de.keksuccino:konkrete:1.8.1@jar",
+          "name": "Konkrete",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 892067,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/konkrete_fabric_1.8.1_MC_1.20.1.jar",
+            "MD5": "a816ca0f5272f0e60c745f7fe6bef1d6"
+          }
+        },
+        {
+          "id": "me.steinborn.krypton.mod.shared:krypton:0.2.3@jar",
+          "name": "Krypton",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 185895,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/krypton-0.2.3.jar",
+            "MD5": "3bf353c1ab576b57c003109c079e2ec8"
+          }
+        },
+        {
+          "id": "dev.latvian.mods:kubejs:2001.6.5-build.16@jar",
+          "name": "KubeJS",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 1604251,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/kubejs-fabric-2001.6.5-build.16.jar",
+            "MD5": "c43bf8e7aa075df68558638d372e4d58"
+          }
+        },
+        {
+          "id": "dev.lambdaurora:lambdynlights:2.3.2+1.20.1@jar",
+          "name": "LambDynamicLights",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 573183,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/lambdynamiclights-2.3.2+1.20.1.jar",
+            "MD5": "9e931a5331bfe8cee677a413b8aea776"
+          }
+        },
+        {
+          "id": "com.github.quiltservertools:ledger:1.2.8@jar",
+          "name": "Ledger",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 16743830,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/ledger-1.2.8.jar",
+            "MD5": "461ffcd6d294f25d85130341d6e2cad3"
+          }
+        },
+        {
+          "id": "de.cristelknight:doapi:1.2.15@jar",
+          "name": "[Let's Do] API",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 1702813,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/letsdo-API-fabric-1.2.15-fabric.jar",
+            "MD5": "572b3414c6e93d6679f6e89a2ae49995"
+          }
+        },
+        {
+          "id": "satisfy.beachparty:beachparty:1.1.5@jar",
+          "name": "[Let's Do] Beachparty",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 3539138,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/letsdo-beachparty-fabric-1.1.5.jar",
+            "MD5": "18f1647b527f03183e99d8aa5b7f826c"
+          }
+        },
+        {
+          "id": "net.satisfy:vinery:1.4.28@jar",
+          "name": "[Let's Do] Vinery",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 3051912,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/letsdo-vinery-fabric-1.4.28.jar",
+            "MD5": "b451db7760907dd4c99883319695fefe"
+          }
+        },
+        {
+          "id": "me.jellysquid.mods:lithium:0.11.2@jar",
+          "name": "Lithium",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 645865,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/lithium-fabric-mc1.20.1-0.11.2.jar",
+            "MD5": "026ca4110d57f16f701b400ad5d2ca26"
+          }
+        },
+        {
+          "id": "me.lucko:luckperms:5.4.102@jar",
+          "name": "LuckPerms",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 1551904,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/LuckPerms-Fabric-5.4.102.jar",
+            "MD5": "2ce3eca6d4bafcbf3289f48c14d2b1c1"
+          }
+        },
+        {
+          "id": "lillouarts.magicvibedecorations:magic_vibe_decorations:2.6.0@jar",
+          "name": "Magic Vibe Decorations",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 2061375,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/magic_vibe_decorations-2.6.0-fabric-1.20.1.jar",
+            "MD5": "08f888497ed562386d93876ab0cd3903"
+          }
+        },
+        {
+          "id": "net.conczin:man_of_many_planes:0.2.0+1.20.1@jar",
+          "name": "Man of Many Planes",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 308327,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/man_of_many_planes-0.2.0+1.20.1-fabric.jar",
+            "MD5": "e38549213e20aa5ae81cc99120f8b6e8"
+          }
+        },
+        {
+          "id": "net.kikoz:mcwbridges:3.0.0@jar",
+          "name": "Macaw's Bridges",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 768682,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/mcw-bridges-3.0.0-mc1.20.1fabric.jar",
+            "MD5": "b1c94aad7aa496b92d712a375baa17b5"
+          }
+        },
+        {
+          "id": "net.kikoz:mcwdoors:1.1.1@jar",
+          "name": "Macaw's Doors",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 1386968,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/mcw-doors-1.1.1fabric-mc1.20.1.jar",
+            "MD5": "d75f694c0417efbc962e4cf8d849e545"
+          }
+        },
+        {
+          "id": "net.kikoz:mcwfences:1.1.2@jar",
+          "name": "Macaw's Fences and Walls",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 573737,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/mcw-fences-1.1.2-mc1.20.1fabric.jar",
+            "MD5": "2f815dd2d465409a1e1b871f55c7cd48"
+          }
+        },
+        {
+          "id": "net.kikoz:mcwholidays:1.1.0@jar",
+          "name": "Macaw's Holidays",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 1028698,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/mcw-holidays-1.1.0-mc1.20.1fabric.jar",
+            "MD5": "5825dd6c01b5c76eed472e6924c041a6"
+          }
+        },
+        {
+          "id": "net.kikoz:mcwlights:1.1.1@jar",
+          "name": "Macaw's Lights and Lamps",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 548778,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/mcw-lights-1.1.1-mc1.20.1fabric.jar",
+            "MD5": "950b1dda3ccb281914bc27619e3f5593"
+          }
+        },
+        {
+          "id": "com.mcwpaths.kikoz:mcwpaths:1.0.5@jar",
+          "name": "Macaw's Paths and Pavings",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 688289,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/mcw-paths-1.0.5-1.20.1fabric.jar",
+            "MD5": "05e20d8619f168c9d2273a8e97d495c5"
+          }
+        },
+        {
+          "id": "com.mcwstairs.kikoz:mcwstairs:1.0.0@jar",
+          "name": "Macaw's Stairs and Balconies",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 622169,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/mcw-stairs-1.0.0-1.20.1fabric.jar",
+            "MD5": "5a338debc4b14e959b1e9e20c1e72e6d"
+          }
+        },
+        {
+          "id": "net.kikoz:mcwwindows:2.3.0@jar",
+          "name": "Macaw's Windows",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 1344964,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/mcw-windows-2.3.0-mc1.20.1fabric.jar",
+            "MD5": "4fde8914eda8f1f55e72b85ac03eff32"
+          }
+        },
+        {
+          "id": "com.cookiecraftmods:mdm:2.1.11@jar",
+          "name": "ModernDecorMod",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 1022649,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/mdm-1.20.1-fabric-2.1.11.jar",
+            "MD5": "2e3897b46b1f5c12785542c0ebf79137"
+          }
+        },
+        {
+          "id": "net.mcreator.playticsdeco:medieval_deco:1.2@jar",
+          "name": "PlayTics Deco",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 261997,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/Medieval%20Decoration%20v.1.2%201.20.1%20Fabric.jar",
+            "MD5": "2e82ad4c23f42ef9aa79daab5b534f24"
+          }
+        },
+        {
+          "id": "de.keksuccino:melody:1.0.3@jar",
+          "name": "Melody",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 39696,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/melody_fabric_1.0.4_MC_1.20.1-1.20.4.jar",
+            "MD5": "8095b46d324586b3cf3d2f5bffe8b417"
+          }
+        },
+        {
+          "id": "com.memorysettings:memorysettings:1.20.1-5.5@jar",
+          "name": "Memorysettings Mod",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 20999,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/memorysettings-fabric-1.20.1-5.5.jar",
+            "MD5": "e177393a91773c73abf0873f089b07ed"
+          }
+        },
+        {
+          "id": "org.embeddedt:modernfix:5.19.5+mc1.20.1@jar",
+          "name": "ModernFix",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 648469,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/modernfix-fabric-5.19.5+mc1.20.1.jar",
+            "MD5": "80f5b7209cc653acb60c66fd9cce41dd"
+          }
+        },
+        {
+          "id": "com.dugkse:moderntrainparts:0.1.7-fabric-mc1.20.1-cr0.5.1-f@jar",
+          "name": "Modern Train Parts",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 1090651,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/moderntrainparts-0.1.7-fabric-mc1.20.1-cr0.5.1-f.jar",
+            "MD5": "be5c4481c64976cdbd4ed7636b57af95"
+          }
+        },
+        {
+          "id": "com.terraformersmc:modmenu:7.2.2@jar",
+          "name": "Mod Menu",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 721366,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/modmenu-7.2.2.jar",
+            "MD5": "2629511a2d3b141d9f2a24dc9685637e"
+          }
+        },
+        {
+          "id": "com.ordana:molten_metals:1.20.1-0.1.4@jar",
+          "name": "Create: Molten Metals",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 505670,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/molten_metals-1.20.1-0.1.4-fabric.jar",
+            "MD5": "308d34777c383c154c31fd80c0fbf035"
+          }
+        },
+        {
+          "id": "net.mehvahdjukaar:moonlight:1.20-2.13.33@jar",
+          "name": "Moonlight",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 1181954,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/moonlight-1.20-2.13.33-fabric.jar",
+            "MD5": "607a4f3121185b1e177aa24ffb23774d"
+          }
+        },
+        {
+          "id": "yalter.mousetweaks:mousetweaks:2.26@jar",
+          "name": "Mouse Tweaks",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 77943,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/MouseTweaks-fabric-mc1.20-2.26.jar",
+            "MD5": "3138c776d370c90603938eb54d17469a"
+          }
+        },
+        {
+          "id": "ewewukek.musketmod:musketmod:1.5.4@jar",
+          "name": "Musket Mod",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 450841,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/musketmod-1.20.1-fabric-1.5.4.jar",
+            "MD5": "96f52563c3dc053a2c0d629da217b103"
+          }
+        },
+        {
+          "id": "com.starfish_studios:naturalist:4.0.3@jar",
+          "name": "Naturalist",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 4310075,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/naturalist-fabric-4.0.3-1.20.1.jar",
+            "MD5": "5313f863f10d2fd2abaa30c18d3c7b02"
+          }
+        },
+        {
+          "id": "com.chaosthedude:naturescompass:1.20.1-2.2.3-fabric@jar",
+          "name": "Nature's Compass",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 230344,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/NaturesCompass-1.20.1-2.2.3-fabric.jar",
+            "MD5": "9a7621b925ff3f502ea690ffc4cdd774"
+          }
+        },
+        {
+          "id": "elocindev.necronomicon:necronomicon:1.6.0@jar",
+          "name": "Necronomicon",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 37533,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/Necronomicon-Fabric-1.6.0+1.20.1.jar",
+            "MD5": "e38a3d26ec2246667afb418630438daa"
+          }
+        },
+        {
+          "id": "observable:observable:4.4.1@jar",
+          "name": "Observable",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 478076,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/observable-4.4.1.jar",
+            "MD5": "c4e43fb70045d2a17fe3621aef491c2c"
+          }
+        },
+        {
+          "id": "xaero.pac.extension.fabric.create:opaccreatesupport:1.6.0@jar",
+          "name": "OPAC Create Mod Support",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 71023,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/opac-fabric-create-support-mc1.20-1.6.0.jar",
+            "MD5": "afacaa63a02f248d14406996859c33e7"
+          }
+        },
+        {
+          "id": "xaero.pac:openpartiesandclaims:0.23.4@jar",
+          "name": "Open Parties and Claims",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 1327268,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/open-parties-and-claims-fabric-1.20.1-0.23.4.jar",
+            "MD5": "b3124e79c363a4b161c19ff6b11fdabd"
+          }
+        },
+        {
+          "id": "generated.fabricmod:placeholder-api:2.1.3+1.20.1@jar",
+          "name": "Placeholder API",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 146553,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/placeholder-api-2.1.3+1.20.1.jar",
+            "MD5": "ef7726eabf35ded1152cf10cd31204fb"
+          }
+        },
+        {
+          "id": "fuzs.puzzleslib.impl:puzzleslib:8.1.25@jar",
+          "name": "Puzzles Lib",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 980317,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/PuzzlesLib-v8.1.25-1.20.1-Fabric.jar",
+            "MD5": "49793f101337dcf4eaa05bf7bb63cd5f"
+          }
+        },
+        {
+          "id": "com.supermartijn642:rechiseled:1.1.6@jar",
+          "name": "Rechiseled",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 3577691,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/rechiseled-1.1.6-fabric-mc1.20.jar",
+            "MD5": "90af959efd53e54bb9ec7c1794860361"
+          }
+        },
+        {
+          "id": "com.supermartijn642.rechiseled.create:rechiseledcreate:1.0.2+a@jar",
+          "name": "Rechiseled: Create",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 752288,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/rechiseledcreate-1.0.2a-fabric-mc1.20.jar",
+            "MD5": "fcd83cc69b57c37f54f4aed09761cadc"
+          }
+        },
+        {
+          "id": "generated.fabricmod:reeses-sodium-options:1.7.2+mc1.20.1-build.101@jar",
+          "name": "Reese's Sodium Options",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 77304,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/reeses_sodium_options-1.7.2+mc1.20.1-build.101.jar",
+            "MD5": "0db2ef332dd00de8c64e34f192317118"
+          }
+        },
+        {
+          "id": "com.mrcrayfish.furniture.refurbished:refurbished_furniture:1.0.8@jar",
+          "name": "MrCrayfish's Furniture Mod: Refurbished",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 6094571,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/refurbished_furniture-fabric-1.20.1-1.0.8.jar",
+            "MD5": "85bceaf3c8e2dc35dd2d0328b0b313a4"
+          }
+        },
+        {
+          "id": "com.replaymod.core:replaymod:1.20.1-2.6.13@jar",
+          "name": "Replay Mod",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 13075030,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/replaymod-1.20.1-2.6.13.jar",
+            "MD5": "a21e94698cebef2a52b13f9871a6ca96"
+          }
+        },
+        {
+          "id": "com.teamresourceful.resourcefulconfig.web.server:resourcefulconfig:2.1.2@jar",
+          "name": "Resourcefulconfig",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 134793,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/resourcefulconfig-fabric-1.20.1-2.1.2.jar",
+            "MD5": "84b1427c5d4cfd30e54c20ba4120e8d3"
+          }
+        },
+        {
+          "id": "com.teamresourceful:resourcefullib:2.1.29@jar",
+          "name": "Resourceful Lib",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 431646,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/resourcefullib-fabric-1.20.1-2.1.29.jar",
+            "MD5": "9d4e1e80304edc8a672d0173c46c7514"
+          }
+        },
+        {
+          "id": "flomik.respitecreators:respitecreators:1.3.0-FDR@jar",
+          "name": "Respite Creators",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 171791,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/respite-creators-1.3.0-FDR.jar",
+            "MD5": "b6d1b5ca6f0ea953d294f9d6295f8e4c"
+          }
+        },
+        {
+          "id": "dev.latvian.mods.rhino.mod:rhino:2001.2.3-build.6@jar",
+          "name": "Rhino",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 1741934,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/rhino-fabric-2001.2.3-build.6.jar",
+            "MD5": "5317ab3c993c4a3588afb265f0882867"
+          }
+        },
+        {
+          "id": "generated.fabricmod:searchables:1.0.3@jar",
+          "name": "Searchables",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 80283,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/Searchables-fabric-1.20.1-1.0.3.jar",
+            "MD5": "57cbf00f9bb837538a3a694cad095a11"
+          }
+        },
+        {
+          "id": "com.sunekaer:sdrp:4.0.3-build.40+mc1.20.1@jar",
+          "name": "Simple Discord Rich Presence",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 1198603,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/SimpleDiscordRichPresence-fabric-4.0.3-build.40+mc1.20.1.jar",
+            "MD5": "3d96fe3f758d9e08a71ce2c30147e6e2"
+          }
+        },
+        {
+          "id": "com.possible_triangle:sliceanddice:3.3.1@jar",
+          "name": "Create Slice & Dice",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 563207,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/sliceanddice-fabric-3.3.1.jar",
+            "MD5": "c9038bc0c4ac424c5cb8cf193c1962eb"
+          }
+        },
+        {
+          "id": "com.talhanation:smallships:2.0.0-b1.4@jar",
+          "name": "Small Ships",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 2160482,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/smallships-fabric-1.20.1-2.0.0-b1.4.jar",
+            "MD5": "55a119178db5c795f5589c75d0400384"
+          }
+        },
+        {
+          "id": "com.smoothchunk:smoothchunk:1.20.1-3.8@jar",
+          "name": "Smooth chunk save Mod",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 16300,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/smoothchunk-fabric-1.20.1-3.8.jar",
+            "MD5": "ea2829190000e43e9e82d45fe0a72498"
+          }
+        },
+        {
+          "id": "me.flashyreese.mods.sodiumextra:sodium-extra:0.5.4+mc1.20.1-build.115@jar",
+          "name": "Sodium Extra",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 385539,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/sodium-extra-0.5.4+mc1.20.1-build.115.jar",
+            "MD5": "9eaed09a486eee9a1326de5dd80faa0a"
+          }
+        },
+        {
+          "id": "me.jellysquid.mods:sodium:0.5.11+mc1.20.1@jar",
+          "name": "Sodium",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 968419,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/sodium-fabric-0.5.11+mc1.20.1.jar",
+            "MD5": "9880bae748957d1cb6c4de50c8e0452a"
+          }
+        },
+        {
+          "id": "me.lucko:spark:1.10.53@jar",
+          "name": "Spark",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 3082974,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/spark-1.10.53-fabric.jar",
+            "MD5": "d590c2c10bb832130029c37d1bdd6bf9"
+          }
+        },
+        {
+          "id": "xyz.jpenilla:squaremap:1.2.0@jar",
+          "name": "Squaremap",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 8183654,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/squaremap-fabric-mc1.20.1-1.2.0.jar",
+            "MD5": "e900a7c80ae3c52be312e91d3e552b09"
+          }
+        },
+        {
+          "id": "net.fabricmc.starbidou.portallinking:starbidous_portal_linking:1.0.0@jar",
+          "name": "Corner Portal Linking",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 44114,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/starbidous-portal-linking-fabric-1.0.0+1.20.1.jar",
+            "MD5": "290653616f0f305bc490136bb5e2e380"
+          }
+        },
+        {
+          "id": "com.railwayteam:railways:1.6.3+fabric-mc1.20.1@jar",
+          "name": "Create: Steam 'n' Rails",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 9109925,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/Steam_Rails-1.6.3+fabric-mc1.20.1.jar",
+            "MD5": "d2e0ac5bd81fbdfce1c12b9ec902165f"
+          }
+        },
+        {
+          "id": "com.jaquadro.minecraft:storagedrawers:12.10.4@jar",
+          "name": "Storage Drawers",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 986320,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/Storage%20Drawers-fabric-1.20.1-12.10.4.jar",
+            "MD5": "b9b2a698e680519f936c4537f3e47e5d"
+          }
+        },
+        {
+          "id": "fuzs.strawstatues:strawstatues:8.0.3@jar",
+          "name": "Straw Statues",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 613503,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/StrawStatues-v8.0.3-1.20.1-Fabric.jar",
+            "MD5": "ab64953180adc0366e8c3743f254c290"
+          }
+        },
+        {
+          "id": "eu.pb4:styledchat:2.2.3+1.20.1@jar",
+          "name": "Styled Chat",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 391719,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/styled-chat-2.2.3+1.20.1.jar",
+            "MD5": "db2c1801e3d16f286e34fec1022d04f1"
+          }
+        },
+        {
+          "id": "com.supermartijn642.configlib:supermartijn642configlib:1.1.8+a@jar",
+          "name": "SuperMartijn642's Config Lib",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 207990,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/supermartijn642configlib-1.1.8a-fabric-mc1.20.jar",
+            "MD5": "b8e27e4c98a70e3034774f5b31a3044e"
+          }
+        },
+        {
+          "id": "com.supermartijn642.core:supermartijn642corelib:1.1.17+a@jar",
+          "name": "SuperMartijn642's Core Lib",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 564983,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/supermartijn642corelib-1.1.17a-fabric-mc1.20.1.jar",
+            "MD5": "a82a3eb390248d58b6c986990b6bf04b"
+          }
+        },
+        {
+          "id": "net.mehvahdjukaar:supplementaries:1.20-3.1.11@jar",
+          "name": "Supplementaries",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 17875076,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/supplementaries-1.20-3.1.11-fabric.jar",
+            "MD5": "e4b3a40e0336ac3d6a55e285ce80dcc3"
+          }
+        },
+        {
+          "id": "net.mehvahdjukaar:suppsquared:1.20-1.1.18@jar",
+          "name": "Supplementaries Squared",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 727463,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/suppsquared-1.20-1.1.18-fabric.jar",
+            "MD5": "55811cef1de332795410bc331fe57c1e"
+          }
+        },
+        {
+          "id": "com.tom.storagemod:toms_storage:1.7.0@jar",
+          "name": "Tom's Simple Storage Mod",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 1537251,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/toms_storage_fabric-1.20-1.7.0.jar",
+            "MD5": "dd1b2c6d426fb7a6c6fbfff47df0819d"
+          }
+        },
+        {
+          "id": "com.tiviacz:travelersbackpack:9.1.18@jar",
+          "name": "Traveler's Backpack",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 1033649,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/travelersbackpack-fabric-1.20.1-9.1.18.jar",
+            "MD5": "fc1330229db1a7cff7bd08c84f6835d0"
+          }
+        },
+        {
+          "id": "dev.emi:trinkets:3.7.2@jar",
+          "name": "Trinkets",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 238532,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/trinkets-3.7.2.jar",
+            "MD5": "c010ccc2015e5b1f3cb1994694ecc512"
+          }
+        },
+        {
+          "id": "fuzs.visualworkbench:visualworkbench:8.0.0@jar",
+          "name": "Visual Workbench",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 79100,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/VisualWorkbench-v8.0.0-1.20.1-Fabric.jar",
+            "MD5": "a672f9370fdc92bc4874d8494da58b81"
+          }
+        },
+        {
+          "id": "de.maxhenkel:voicechat:1.20.1-2.5.26@jar",
+          "name": "Simple Voice Chat",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 8082081,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/voicechat-fabric-1.20.1-2.5.26.jar",
+            "MD5": "2c9d809c1b1c53863840ee3bce6f73a5"
+          }
+        },
+        {
+          "id": "com.corosus.watut.loader:watut:1.20.1-1.1.3@jar",
+          "name": "What Are They Up To",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 704329,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/watut-fabric-1.20.1-1.1.3.jar",
+            "MD5": "1248429e3288292a2c12808886a2e5e3"
+          }
+        },
+        {
+          "id": "com.sk89q:worldedit:7.2.15+6463-5ca4dff@jar",
+          "name": "WorldEdit",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 5825402,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/worldedit-mod-7.2.15.jar",
+            "MD5": "bd0e7cff7896348faab92e43300d0639"
+          }
+        },
+        {
+          "id": "xaero.minimap:xaerominimap:24.6.1@jar",
+          "name": "Xaero's Minimap",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 1637571,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/Xaeros_Minimap_24.6.1_Fabric_1.20.jar",
+            "MD5": "d91e34db6427c98f5e564579fea69ef1"
+          }
+        },
+        {
+          "id": "xaero.map:xaeroworldmap:1.39.0@jar",
+          "name": "Xaero's World Map",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 948816,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/XaerosWorldMap_1.39.0_Fabric_1.20.jar",
+            "MD5": "10fc5fdbf7640474d6e718873d77218a"
+          }
+        },
+        {
+          "id": "dev.isxander.yacl3.platform:yet_another_config_lib_v3:3.6.2+1.20.1-fabric@jar",
+          "name": "YetAnotherConfigLib",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 1106630,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/YetAnotherConfigLib-3.6.2+1.20.1-fabric.jar",
+            "MD5": "976f29a1a0754edf18c349cf644f9f78"
+          }
+        },
+        {
+          "id": "com.b1n_ry:yigd:2.0.11@jar",
+          "name": "You're in Grave Danger",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 822623,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/youre-in-grave-danger-fabric-2.0.11.jar",
+            "MD5": "14d73fae0321730fd18d849bcb5a9092"
+          }
+        },
+        {
+          "id": "dev.isxander:zoomify:2.14.2+1.20.1@jar",
+          "name": "Zoomify",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 807877,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/Zoomify-2.14.2+1.20.1.jar",
+            "MD5": "57d42c12e06bf4c8bbdd3f2d14a786ba"
+          }
+        },
+        {
+          "id": "Adorn.json5",
+          "name": "Adorn.json5",
+          "type": "File",
+          "artifact": {
+            "size": 1164,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/Adorn.json5",
+            "MD5": "cd1acb3b2342ea7bd03a3530ba1780be",
+            "path": "config/Adorn.json5"
+          }
+        },
+        {
+          "id": "ad_astra-client.jsonc",
+          "name": "ad_astra-client.jsonc",
+          "type": "File",
+          "artifact": {
+            "size": 494,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/ad_astra-client.jsonc",
+            "MD5": "8af8fbeeeab3fe78df45762aeb23d754",
+            "path": "config/ad_astra-client.jsonc"
+          }
+        },
+        {
+          "id": "ad_astra.jsonc",
+          "name": "ad_astra.jsonc",
+          "type": "File",
+          "artifact": {
+            "size": 3039,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/ad_astra.jsonc",
+            "MD5": "0b79631c51910ae6cc58c92c4a9b74bf",
+            "path": "config/ad_astra.jsonc"
+          }
+        },
+        {
+          "id": "amendments-client.json",
+          "name": "amendments-client.json",
+          "type": "File",
+          "artifact": {
+            "size": 1597,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/amendments-client.json",
+            "MD5": "ac3c3c059d882e200fd4dbec016ee10c",
+            "path": "config/amendments-client.json"
+          }
+        },
+        {
+          "id": "amendments-common.json",
+          "name": "amendments-common.json",
+          "type": "File",
+          "artifact": {
+            "size": 2050,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/amendments-common.json",
+            "MD5": "9b5e5a50b0e92aa8015d0e6c39adcd0b",
+            "path": "config/amendments-common.json"
+          }
+        },
+        {
+          "id": "appleskin.json5",
+          "name": "appleskin.json5",
+          "type": "File",
+          "artifact": {
+            "size": 1327,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/appleskin.json5",
+            "MD5": "406b4584562fb60304a8adc824de0000",
+            "path": "config/appleskin.json5"
+          }
+        },
+        {
+          "id": "armorstatues-client.toml",
+          "name": "armorstatues-client.toml",
+          "type": "File",
+          "artifact": {
+            "size": 795,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/armorstatues-client.toml",
+            "MD5": "fec86dec48ca9c30bee7476e222a15e9",
+            "path": "config/armorstatues-client.toml"
+          }
+        },
+        {
+          "id": "client.json5",
+          "name": "client.json5",
+          "type": "File",
+          "artifact": {
+            "size": 686,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/artifacts/client.json5",
+            "MD5": "f997037999589c46b1f50a1e50348a0c",
+            "path": "config/artifacts/client.json5"
+          }
+        },
+        {
+          "id": "common.json5",
+          "name": "common.json5",
+          "type": "File",
+          "artifact": {
+            "size": 1584,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/artifacts/common.json5",
+            "MD5": "1b1e1f00fbb688a7fa95536ebf7abc6c",
+            "path": "config/artifacts/common.json5"
+          }
+        },
+        {
+          "id": "audioplayer-server.properties",
+          "name": "audioplayer-server.properties",
+          "type": "File",
+          "artifact": {
+            "size": 2229,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/audioplayer/audioplayer-server.properties",
+            "MD5": "356f6ae37d2203dedf314a3a635b62ea",
+            "path": "config/audioplayer/audioplayer-server.properties"
+          }
+        },
+        {
+          "id": "azurelib.json",
+          "name": "azurelib.json",
+          "type": "File",
+          "artifact": {
+            "size": 101,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/azurelib.json",
+            "MD5": "18db61298e3be152ec0998cf4926aaf8",
+            "path": "config/azurelib.json"
+          }
+        },
+        {
+          "id": "betterchunkloading.json",
+          "name": "betterchunkloading.json",
+          "type": "File",
+          "artifact": {
+            "size": 2049,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/betterchunkloading.json",
+            "MD5": "faa09474eac3c491d98fa85d9510f4e5",
+            "path": "config/betterchunkloading.json"
+          }
+        },
+        {
+          "id": "bettertridents-common.toml",
+          "name": "bettertridents-common.toml",
+          "type": "File",
+          "artifact": {
+            "size": 153,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/bettertridents-common.toml",
+            "MD5": "e87edfccd27fa6b02769e8bc59df2b04",
+            "path": "config/bettertridents-common.toml"
+          }
+        },
+        {
+          "id": "bettertridents-server.toml",
+          "name": "bettertridents-server.toml",
+          "type": "File",
+          "artifact": {
+            "size": 563,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/bettertridents-server.toml",
+            "MD5": "ad1d4d1f53649b9d329e8074c4cc6608",
+            "path": "config/bettertridents-server.toml"
+          }
+        },
+        {
+          "id": "cardinal-components-api.properties",
+          "name": "cardinal-components-api.properties",
+          "type": "File",
+          "artifact": {
+            "size": 273,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/cardinal-components-api.properties",
+            "MD5": "7ca22fadddc61aebd6de92cf16952f74",
+            "path": "config/cardinal-components-api.properties"
+          }
+        },
+        {
+          "id": "carryon-client.json",
+          "name": "carryon-client.json",
+          "type": "File",
+          "artifact": {
+            "size": 676,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/carryon-client.json",
+            "MD5": "97fd1f204b8095535a98a85c4ca9b049",
+            "path": "config/carryon-client.json"
+          }
+        },
+        {
+          "id": "carryon-common.json",
+          "name": "carryon-common.json",
+          "type": "File",
+          "artifact": {
+            "size": 8921,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/carryon-common.json",
+            "MD5": "0770caf1a4fbdf100c6ed15b96b671c3",
+            "path": "config/carryon-common.json"
+          }
+        },
+        {
+          "id": "chunksending.json",
+          "name": "chunksending.json",
+          "type": "File",
+          "artifact": {
+            "size": 301,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/chunksending.json",
+            "MD5": "d0e7c00107d9b14b5f465a0a7a7e0d80",
+            "path": "config/chunksending.json"
+          }
+        },
+        {
+          "id": "clickthrough.json",
+          "name": "clickthrough.json",
+          "type": "File",
+          "artifact": {
+            "size": 1596,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/clickthrough.json",
+            "MD5": "781718a3cbc95dff8eee4098e4392f72",
+            "path": "config/clickthrough.json"
+          }
+        },
+        {
+          "id": "configured-client.toml",
+          "name": "configured-client.toml",
+          "type": "File",
+          "artifact": {
+            "size": 89,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/configured-client.toml",
+            "MD5": "4c26454cc7a5fa894a35e4e4db05fa66",
+            "path": "config/configured-client.toml"
+          }
+        },
+        {
+          "id": "continuity.json",
+          "name": "continuity.json",
+          "type": "File",
+          "artifact": {
+            "size": 122,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/continuity.json",
+            "MD5": "16114edbb9460c49373bb12561ddf7c3",
+            "path": "config/continuity.json"
+          }
+        },
+        {
+          "id": "convenientdecor.json5",
+          "name": "convenientdecor.json5",
+          "type": "File",
+          "artifact": {
+            "size": 1091,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/convenientdecor.json5",
+            "MD5": "f42f6e7e630a55d400d05f87e7625417",
+            "path": "config/convenientdecor.json5"
+          }
+        },
+        {
+          "id": "copycats-client.toml",
+          "name": "copycats-client.toml",
+          "type": "File",
+          "artifact": {
+            "size": 342,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/copycats-client.toml",
+            "MD5": "ab8d56d84f2f6e457c812b76fa598c36",
+            "path": "config/copycats-client.toml"
+          }
+        },
+        {
+          "id": "copycats-common.toml",
+          "name": "copycats-common.toml",
+          "type": "File",
+          "artifact": {
+            "size": 1927,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/copycats-common.toml",
+            "MD5": "30a750abe9b0f12b764982eb1919c39d",
+            "path": "config/copycats-common.toml"
+          }
+        },
+        {
+          "id": "General.toml",
+          "name": "General.toml",
+          "type": "File",
+          "artifact": {
+            "size": 133,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/CoroUtil/General.toml",
+            "MD5": "807d9cd61e8d8e97058eb49ac7fcfdba",
+            "path": "config/CoroUtil/General.toml"
+          }
+        },
+        {
+          "id": "create-client.toml",
+          "name": "create-client.toml",
+          "type": "File",
+          "artifact": {
+            "size": 5297,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/create-client.toml",
+            "MD5": "789e694177c020525e35f631a86cce5f",
+            "path": "config/create-client.toml"
+          }
+        },
+        {
+          "id": "create-common.toml",
+          "name": "create-common.toml",
+          "type": "File",
+          "artifact": {
+            "size": 157,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/create-common.toml",
+            "MD5": "7503e1571dd136604d3a78582d1a6cb0",
+            "path": "config/create-common.toml"
+          }
+        },
+        {
+          "id": "create-server.toml",
+          "name": "create-server.toml",
+          "type": "File",
+          "artifact": {
+            "size": 15304,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/create-server.toml",
+            "MD5": "f28a53400939f5a52c9ec930d3a9326f",
+            "path": "config/create-server.toml"
+          }
+        },
+        {
+          "id": "create-track-map.json",
+          "name": "create-track-map.json",
+          "type": "File",
+          "artifact": {
+            "size": 1677,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/create-track-map.json",
+            "MD5": "0cc298fa13fd72f58cd60f5ec59fa070",
+            "path": "config/create-track-map.json"
+          }
+        },
+        {
+          "id": "createaddition-common.toml",
+          "name": "createaddition-common.toml",
+          "type": "File",
+          "artifact": {
+            "size": 4748,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/createaddition-common.toml",
+            "MD5": "8864ec3c3c3f01a36a2a6edf7e561ab9",
+            "path": "config/createaddition-common.toml"
+          }
+        },
+        {
+          "id": "createbigcannons-client.toml",
+          "name": "createbigcannons-client.toml",
+          "type": "File",
+          "artifact": {
+            "size": 3230,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/createbigcannons-client.toml",
+            "MD5": "32ff2cb9618c7c52daa4394b33281e0e",
+            "path": "config/createbigcannons-client.toml"
+          }
+        },
+        {
+          "id": "createbigcannons-common.toml",
+          "name": "createbigcannons-common.toml",
+          "type": "File",
+          "artifact": {
+            "size": 2,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/createbigcannons-common.toml",
+            "MD5": "81051bcc2cf1bedf378224b0a93e2877",
+            "path": "config/createbigcannons-common.toml"
+          }
+        },
+        {
+          "id": "createbigcannons-server.toml",
+          "name": "createbigcannons-server.toml",
+          "type": "File",
+          "artifact": {
+            "size": 8525,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/createbigcannons-server.toml",
+            "MD5": "36c030d816718cadc9adbcef5eab0f37",
+            "path": "config/createbigcannons-server.toml"
+          }
+        },
+        {
+          "id": "createdynlight-client.toml",
+          "name": "createdynlight-client.toml",
+          "type": "File",
+          "artifact": {
+            "size": 591,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/createdynlight-client.toml",
+            "MD5": "8536765647483780d9d72f96f16a64e0",
+            "path": "config/createdynlight-client.toml"
+          }
+        },
+        {
+          "id": "createdynlight-server.toml",
+          "name": "createdynlight-server.toml",
+          "type": "File",
+          "artifact": {
+            "size": 324,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/createdynlight-server.toml",
+            "MD5": "dc458c587a491c5c865fa5f6582f3618",
+            "path": "config/createdynlight-server.toml"
+          }
+        },
+        {
+          "id": "creategoggles-client.toml",
+          "name": "creategoggles-client.toml",
+          "type": "File",
+          "artifact": {
+            "size": 228,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/creategoggles-client.toml",
+            "MD5": "32483b1571b3612b3116953455d1694b",
+            "path": "config/creategoggles-client.toml"
+          }
+        },
+        {
+          "id": "creategoggles-common.toml",
+          "name": "creategoggles-common.toml",
+          "type": "File",
+          "artifact": {
+            "size": 353,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/creategoggles-common.toml",
+            "MD5": "114deac110d7c4b9df6e5141eae0c97b",
+            "path": "config/creategoggles-common.toml"
+          }
+        },
+        {
+          "id": "createrailwaysnavigator-client.toml",
+          "name": "createrailwaysnavigator-client.toml",
+          "type": "File",
+          "artifact": {
+            "size": 1954,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/createrailwaysnavigator-client.toml",
+            "MD5": "9dadc163ed67417b4ac6b2e517da666e",
+            "path": "config/createrailwaysnavigator-client.toml"
+          }
+        },
+        {
+          "id": "createrailwaysnavigator-common.toml",
+          "name": "createrailwaysnavigator-common.toml",
+          "type": "File",
+          "artifact": {
+            "size": 2202,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/createrailwaysnavigator-common.toml",
+            "MD5": "61d32c8d25741d43f57c2d2952150152",
+            "path": "config/createrailwaysnavigator-common.toml"
+          }
+        },
+        {
+          "id": "create_dd-client.toml",
+          "name": "create_dd-client.toml",
+          "type": "File",
+          "artifact": {
+            "size": 228,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/create_dd-client.toml",
+            "MD5": "de37c27412706e967b18c6e8d0c092cb",
+            "path": "config/create_dd-client.toml"
+          }
+        },
+        {
+          "id": "create_dd-common.toml",
+          "name": "create_dd-common.toml",
+          "type": "File",
+          "artifact": {
+            "size": 219,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/create_dd-common.toml",
+            "MD5": "d5dacc9bb075bcca75565ea10d40c86a",
+            "path": "config/create_dd-common.toml"
+          }
+        },
+        {
+          "id": "create_dd-server.toml",
+          "name": "create_dd-server.toml",
+          "type": "File",
+          "artifact": {
+            "size": 4472,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/create_dd-server.toml",
+            "MD5": "ed9337d56d3e567fdbcc02150a2141d9",
+            "path": "config/create_dd-server.toml"
+          }
+        },
+        {
+          "id": "create_enchantment_industry-server.toml",
+          "name": "create_enchantment_industry-server.toml",
+          "type": "File",
+          "artifact": {
+            "size": 2038,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/create_enchantment_industry-server.toml",
+            "MD5": "2570a39d948d64fa7636cc94bb8321cb",
+            "path": "config/create_enchantment_industry-server.toml"
+          }
+        },
+        {
+          "id": "create_jetpack-client.toml",
+          "name": "create_jetpack-client.toml",
+          "type": "File",
+          "artifact": {
+            "size": 270,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/create_jetpack-client.toml",
+            "MD5": "adf76f592dbee130cc8c5060eb95534f",
+            "path": "config/create_jetpack-client.toml"
+          }
+        },
+        {
+          "id": "create_jetpack-common.toml",
+          "name": "create_jetpack-common.toml",
+          "type": "File",
+          "artifact": {
+            "size": 356,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/create_jetpack-common.toml",
+            "MD5": "a909ef0b9be3c56079888b278741b47a",
+            "path": "config/create_jetpack-common.toml"
+          }
+        },
+        {
+          "id": "create_new_age-client.toml",
+          "name": "create_new_age-client.toml",
+          "type": "File",
+          "artifact": {
+            "size": 254,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/create_new_age-client.toml",
+            "MD5": "278b11350fd8eff150facb35b09548c0",
+            "path": "config/create_new_age-client.toml"
+          }
+        },
+        {
+          "id": "create_new_age-common.toml",
+          "name": "create_new_age-common.toml",
+          "type": "File",
+          "artifact": {
+            "size": 3445,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/create_new_age-common.toml",
+            "MD5": "94f78585858bbc72b4ffccd19aa2826f",
+            "path": "config/create_new_age-common.toml"
+          }
+        },
+        {
+          "id": "create_questing.json",
+          "name": "create_questing.json",
+          "type": "File",
+          "artifact": {
+            "size": 356,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/create_questing.json",
+            "MD5": "e879d206a3fa51e8e8e02017f820e73e",
+            "path": "config/create_questing.json"
+          }
+        },
+        {
+          "id": "crowdin.txt",
+          "name": "crowdin.txt",
+          "type": "File",
+          "artifact": {
+            "size": 69,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/crowdin.txt",
+            "MD5": "18d4207bd4949bd6322709b41ef420a2",
+            "path": "config/crowdin.txt"
+          }
+        },
+        {
+          "id": "cupboard.json",
+          "name": "cupboard.json",
+          "type": "File",
+          "artifact": {
+            "size": 1090,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/cupboard.json",
+            "MD5": "7725e2ad17f08b6221f0ecdeda137888",
+            "path": "config/cupboard.json"
+          }
+        },
+        {
+          "id": "discord_notifier.properties",
+          "name": "discord_notifier.properties",
+          "type": "File",
+          "artifact": {
+            "size": 148,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/discord_notifier.properties",
+            "MD5": "58150cf4c1e6ae24018b8845ad2978fd",
+            "path": "config/discord_notifier.properties"
+          }
+        },
+        {
+          "id": "recipebook.json5",
+          "name": "recipebook.json5",
+          "type": "File",
+          "artifact": {
+            "size": 307,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/doapi/recipebook.json5",
+            "MD5": "3b25dc320aa8123a6ffed9215e3370cc",
+            "path": "config/doapi/recipebook.json5"
+          }
+        },
+        {
+          "id": "dsbg-server.toml",
+          "name": "dsbg-server.toml",
+          "type": "File",
+          "artifact": {
+            "size": 154,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/dsbg-server.toml",
+            "MD5": "ef00c0b70cdb69417c2aa2fa7f8af4be",
+            "path": "config/dsbg-server.toml"
+          }
+        },
+        {
+          "id": "dummmmmmy-client.json",
+          "name": "dummmmmmy-client.json",
+          "type": "File",
+          "artifact": {
+            "size": 1048,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/dummmmmmy-client.json",
+            "MD5": "f7fe4b713e37635b6c79ae8fa79a1389",
+            "path": "config/dummmmmmy-client.json"
+          }
+        },
+        {
+          "id": "dummmmmmy-common.json",
+          "name": "dummmmmmy-common.json",
+          "type": "File",
+          "artifact": {
+            "size": 578,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/dummmmmmy-common.json",
+            "MD5": "e4f6729ae4a578c3a20e790dcca62b98",
+            "path": "config/dummmmmmy-common.json"
+          }
+        },
+        {
+          "id": "dynamic_fps.json",
+          "name": "dynamic_fps.json",
+          "type": "File",
+          "artifact": {
+            "size": 3,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/dynamic_fps.json",
+            "MD5": "8a80554c91d9fca8acb82f023de02f11",
+            "path": "config/dynamic_fps.json"
+          }
+        },
+        {
+          "id": "easyanvils-client.toml",
+          "name": "easyanvils-client.toml",
+          "type": "File",
+          "artifact": {
+            "size": 73,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/easyanvils-client.toml",
+            "MD5": "54c2205cf1bcfc9015908147f38e4d45",
+            "path": "config/easyanvils-client.toml"
+          }
+        },
+        {
+          "id": "easyanvils-server.toml",
+          "name": "easyanvils-server.toml",
+          "type": "File",
+          "artifact": {
+            "size": 3484,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/easyanvils-server.toml",
+            "MD5": "66a635c9295c15636d03869b49c86516",
+            "path": "config/easyanvils-server.toml"
+          }
+        },
+        {
+          "id": "render_entity_type_support.cfg",
+          "name": "render_entity_type_support.cfg",
+          "type": "File",
+          "artifact": {
+            "size": 5821,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/easy_npc/render_entity_type_support.cfg",
+            "MD5": "a6827d2465ad52d544109aaba8f791fa",
+            "path": "config/easy_npc/render_entity_type_support.cfg"
+          }
+        },
+        {
+          "id": "allay_template.png",
+          "name": "allay_template.png",
+          "type": "File",
+          "artifact": {
+            "size": 246,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/easy_npc/skin/allay/allay_template.png",
+            "MD5": "dc449d0dd6cb93d91fa6e34ecd44376a",
+            "path": "config/easy_npc/skin/allay/allay_template.png"
+          }
+        },
+        {
+          "id": "cat_template.png",
+          "name": "cat_template.png",
+          "type": "File",
+          "artifact": {
+            "size": 283,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/easy_npc/skin/cat/cat_template.png",
+            "MD5": "ddb9d8f03724aa1fe201fd7fbefb81da",
+            "path": "config/easy_npc/skin/cat/cat_template.png"
+          }
+        },
+        {
+          "id": "chicken_template.png",
+          "name": "chicken_template.png",
+          "type": "File",
+          "artifact": {
+            "size": 287,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/easy_npc/skin/chicken/chicken_template.png",
+            "MD5": "f06078d2850eb0020f2e86dd93c84a5a",
+            "path": "config/easy_npc/skin/chicken/chicken_template.png"
+          }
+        },
+        {
+          "id": "fairy_template.png",
+          "name": "fairy_template.png",
+          "type": "File",
+          "artifact": {
+            "size": 434,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/easy_npc/skin/fairy/fairy_template.png",
+            "MD5": "531b238034eb6fdcf494378d6de62d69",
+            "path": "config/easy_npc/skin/fairy/fairy_template.png"
+          }
+        },
+        {
+          "id": "humanoid_template.png",
+          "name": "humanoid_template.png",
+          "type": "File",
+          "artifact": {
+            "size": 360,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/easy_npc/skin/humanoid/humanoid_template.png",
+            "MD5": "a39224182358dcbf6615b9faeb732933",
+            "path": "config/easy_npc/skin/humanoid/humanoid_template.png"
+          }
+        },
+        {
+          "id": "humanoid_slim_template.png",
+          "name": "humanoid_slim_template.png",
+          "type": "File",
+          "artifact": {
+            "size": 384,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/easy_npc/skin/humanoid_slim/humanoid_slim_template.png",
+            "MD5": "41f831333d68c3a4535adbe574f0511c",
+            "path": "config/easy_npc/skin/humanoid_slim/humanoid_slim_template.png"
+          }
+        },
+        {
+          "id": "illager_template.png",
+          "name": "illager_template.png",
+          "type": "File",
+          "artifact": {
+            "size": 300,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/easy_npc/skin/illager/illager_template.png",
+            "MD5": "62e2eafe9879c26a5d39f6eed5a0d4c0",
+            "path": "config/easy_npc/skin/illager/illager_template.png"
+          }
+        },
+        {
+          "id": "iron_golem_template.png",
+          "name": "iron_golem_template.png",
+          "type": "File",
+          "artifact": {
+            "size": 451,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/easy_npc/skin/iron_golem/iron_golem_template.png",
+            "MD5": "041e19a3a9e328e569c1572c60bf7f82",
+            "path": "config/easy_npc/skin/iron_golem/iron_golem_template.png"
+          }
+        },
+        {
+          "id": "orc_template.png",
+          "name": "orc_template.png",
+          "type": "File",
+          "artifact": {
+            "size": 521,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/easy_npc/skin/orc/orc_template.png",
+            "MD5": "529d5d314ad4dc8f697f7341f35cab74",
+            "path": "config/easy_npc/skin/orc/orc_template.png"
+          }
+        },
+        {
+          "id": "pig_template.png",
+          "name": "pig_template.png",
+          "type": "File",
+          "artifact": {
+            "size": 270,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/easy_npc/skin/pig/pig_template.png",
+            "MD5": "cfc2538d1df812a5ee4ced14b78f9fd3",
+            "path": "config/easy_npc/skin/pig/pig_template.png"
+          }
+        },
+        {
+          "id": "piglin_template.png",
+          "name": "piglin_template.png",
+          "type": "File",
+          "artifact": {
+            "size": 361,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/easy_npc/skin/piglin/piglin_template.png",
+            "MD5": "54ae451400c57b4832f976487e7bf629",
+            "path": "config/easy_npc/skin/piglin/piglin_template.png"
+          }
+        },
+        {
+          "id": "skeleton_template.png",
+          "name": "skeleton_template.png",
+          "type": "File",
+          "artifact": {
+            "size": 259,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/easy_npc/skin/skeleton/skeleton_template.png",
+            "MD5": "b6f689ff48f8cd4b03a51947133a3857",
+            "path": "config/easy_npc/skin/skeleton/skeleton_template.png"
+          }
+        },
+        {
+          "id": "villager_template.png",
+          "name": "villager_template.png",
+          "type": "File",
+          "artifact": {
+            "size": 357,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/easy_npc/skin/villager/villager_template.png",
+            "MD5": "30e84778924e6c66aef598b8a3cd728a",
+            "path": "config/easy_npc/skin/villager/villager_template.png"
+          }
+        },
+        {
+          "id": "villager_without_hat_template.png",
+          "name": "villager_without_hat_template.png",
+          "type": "File",
+          "artifact": {
+            "size": 331,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/easy_npc/skin/villager/villager_without_hat_template.png",
+            "MD5": "3d8bca495a0fad6240e900d343c9f1d7",
+            "path": "config/easy_npc/skin/villager/villager_without_hat_template.png"
+          }
+        },
+        {
+          "id": "wolf_template.png",
+          "name": "wolf_template.png",
+          "type": "File",
+          "artifact": {
+            "size": 321,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/easy_npc/skin/wolf/wolf_template.png",
+            "MD5": "0adf39c4b15ec11850e85fdfcd8e0a59",
+            "path": "config/easy_npc/skin/wolf/wolf_template.png"
+          }
+        },
+        {
+          "id": "zombie_template.png",
+          "name": "zombie_template.png",
+          "type": "File",
+          "artifact": {
+            "size": 292,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/easy_npc/skin/zombie/zombie_template.png",
+            "MD5": "a38b0b7043eb7c0e91379628aeed1db2",
+            "path": "config/easy_npc/skin/zombie/zombie_template.png"
+          }
+        },
+        {
+          "id": "zombie_villager_template.png",
+          "name": "zombie_villager_template.png",
+          "type": "File",
+          "artifact": {
+            "size": 356,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/easy_npc/skin/zombie_villager/zombie_villager_template.png",
+            "MD5": "b0748467bd2149105ad4d922c7799ed0",
+            "path": "config/easy_npc/skin/zombie_villager/zombie_villager_template.png"
+          }
+        },
+        {
+          "id": "enhanced_bes.properties",
+          "name": "enhanced_bes.properties",
+          "type": "File",
+          "artifact": {
+            "size": 512,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/enhanced_bes.properties",
+            "MD5": "1c055fc4ba5a1ce6fffcb2294a72ed62",
+            "path": "config/enhanced_bes.properties"
+          }
+        },
+        {
+          "id": "entityculling.json",
+          "name": "entityculling.json",
+          "type": "File",
+          "artifact": {
+            "size": 1019,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/entityculling.json",
+            "MD5": "302e699b13ea91b9e952be98d5088465",
+            "path": "config/entityculling.json"
+          }
+        },
+        {
+          "id": "armor.json5",
+          "name": "armor.json5",
+          "type": "File",
+          "artifact": {
+            "size": 5783,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/epicknights/armor.json5",
+            "MD5": "4abb16b71098b3ff8bcad2edc673842a",
+            "path": "config/epicknights/armor.json5"
+          }
+        },
+        {
+          "id": "general.json5",
+          "name": "general.json5",
+          "type": "File",
+          "artifact": {
+            "size": 1915,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/epicknights/general.json5",
+            "MD5": "5dea2ff6e22d354a92ea4cff2cbfb49d",
+            "path": "config/epicknights/general.json5"
+          }
+        },
+        {
+          "id": "mobs_equipment.json5",
+          "name": "mobs_equipment.json5",
+          "type": "File",
+          "artifact": {
+            "size": 1991,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/epicknights/mobs_equipment.json5",
+            "MD5": "9c12e8a1310abffc5574e5ea4f6fc0a5",
+            "path": "config/epicknights/mobs_equipment.json5"
+          }
+        },
+        {
+          "id": "shields.json5",
+          "name": "shields.json5",
+          "type": "File",
+          "artifact": {
+            "size": 276,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/epicknights/shields.json5",
+            "MD5": "802ed78e1fc9fdd10000e9abf6738a6e",
+            "path": "config/epicknights/shields.json5"
+          }
+        },
+        {
+          "id": "weapons.json5",
+          "name": "weapons.json5",
+          "type": "File",
+          "artifact": {
+            "size": 3912,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/epicknights/weapons.json5",
+            "MD5": "cd4bb769486d77b71597e93db153d6bd",
+            "path": "config/epicknights/weapons.json5"
+          }
+        },
+        {
+          "id": "indigo-renderer.properties",
+          "name": "indigo-renderer.properties",
+          "type": "File",
+          "artifact": {
+            "size": 290,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/fabric/indigo-renderer.properties",
+            "MD5": "8244255c323db92942ceffc1bb95115b",
+            "path": "config/fabric/indigo-renderer.properties"
+          }
+        },
+        {
+          "id": "fabric-tab.json",
+          "name": "fabric-tab.json",
+          "type": "File",
+          "artifact": {
+            "size": 263,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/fabric-tab.json",
+            "MD5": "61f0caa21b624ed22943a73a3f93a9ae",
+            "path": "config/fabric-tab.json"
+          }
+        },
+        {
+          "id": "farmersdelight-client.toml",
+          "name": "farmersdelight-client.toml",
+          "type": "File",
+          "artifact": {
+            "size": 369,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/farmersdelight-client.toml",
+            "MD5": "b00b8b023174e9f208b0a7649c87ad7b",
+            "path": "config/farmersdelight-client.toml"
+          }
+        },
+        {
+          "id": "farmersdelight-common.toml",
+          "name": "farmersdelight-common.toml",
+          "type": "File",
+          "artifact": {
+            "size": 4425,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/farmersdelight-common.toml",
+            "MD5": "e2f29e986c388d1974e79b99f872c410",
+            "path": "config/farmersdelight-common.toml"
+          }
+        },
+        {
+          "id": "farmersrespite-common.toml",
+          "name": "farmersrespite-common.toml",
+          "type": "File",
+          "artifact": {
+            "size": 166,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/farmersrespite-common.toml",
+            "MD5": "a3b2d3cca7053c584b235005adacfb04",
+            "path": "config/farmersrespite-common.toml"
+          }
+        },
+        {
+          "id": "ferritecore.mixin.properties",
+          "name": "ferritecore.mixin.properties",
+          "type": "File",
+          "artifact": {
+            "size": 1525,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/ferritecore.mixin.properties",
+            "MD5": "bf3e6be63e300b0290cfc849beb64ede",
+            "path": "config/ferritecore.mixin.properties"
+          }
+        },
+        {
+          "id": "fetzis-asian-deco-config.properties",
+          "name": "fetzis-asian-deco-config.properties",
+          "type": "File",
+          "artifact": {
+            "size": 760,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/fetzis_asian_deco/fetzis-asian-deco-config.properties",
+            "MD5": "9a67e760e772f66c34e6a570c0c18001",
+            "path": "config/fetzis_asian_deco/fetzis-asian-deco-config.properties"
+          }
+        },
+        {
+          "id": "figura.json",
+          "name": "figura.json",
+          "type": "File",
+          "artifact": {
+            "size": 76,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/figura.json",
+            "MD5": "07904649839f59c57be1d6e80b9b2988",
+            "path": "config/figura.json"
+          }
+        },
+        {
+          "id": "flywheel.json",
+          "name": "flywheel.json",
+          "type": "File",
+          "artifact": {
+            "size": 78,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/flywheel.json",
+            "MD5": "c87b9752e4ce87efbfca9d6aeb6ca335",
+            "path": "config/flywheel.json"
+          }
+        },
+        {
+          "id": "forgeconfigapiport.toml",
+          "name": "forgeconfigapiport.toml",
+          "type": "File",
+          "artifact": {
+            "size": 1582,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/forgeconfigapiport.toml",
+            "MD5": "d7a4bb7824a6e62553e5c6df78441291",
+            "path": "config/forgeconfigapiport.toml"
+          }
+        },
+        {
+          "id": "fxntstorage-common.toml",
+          "name": "fxntstorage-common.toml",
+          "type": "File",
+          "artifact": {
+            "size": 556,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/fxntstorage-common.toml",
+            "MD5": "6d6fbb30fb95ff8967d07ece0aacd0cd",
+            "path": "config/fxntstorage-common.toml"
+          }
+        },
+        {
+          "id": "immersive_aircraft.json",
+          "name": "immersive_aircraft.json",
+          "type": "File",
+          "artifact": {
+            "size": 1366,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/immersive_aircraft.json",
+            "MD5": "5dc465fe7f8cd078f521fa40ffd612dc",
+            "path": "config/immersive_aircraft.json"
+          }
+        },
+        {
+          "id": "immersive_melodies.json",
+          "name": "immersive_melodies.json",
+          "type": "File",
+          "artifact": {
+            "size": 532,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/immersive_melodies.json",
+            "MD5": "efd843b9a344d011cb9d7a80c0975ace",
+            "path": "config/immersive_melodies.json"
+          }
+        },
+        {
+          "id": "immersive_paintings.json",
+          "name": "immersive_paintings.json",
+          "type": "File",
+          "artifact": {
+            "size": 584,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/immersive_paintings.json",
+            "MD5": "72c5293b46e5663c3fef32c654217721",
+            "path": "config/immersive_paintings.json"
+          }
+        },
+        {
+          "id": "indium-renderer.properties",
+          "name": "indium-renderer.properties",
+          "type": "File",
+          "artifact": {
+            "size": 115,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/indium-renderer.properties",
+            "MD5": "b5ccce54767d112d9c6db66b4df8a401",
+            "path": "config/indium-renderer.properties"
+          }
+        },
+        {
+          "id": "iris.properties",
+          "name": "iris.properties",
+          "type": "File",
+          "artifact": {
+            "size": 284,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/iris.properties",
+            "MD5": "de9f8dbf2f65b883cc137d514099adcd",
+            "path": "config/iris.properties"
+          }
+        },
+        {
+          "id": "hide-blocks.json",
+          "name": "hide-blocks.json",
+          "type": "File",
+          "artifact": {
+            "size": 191,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/jade/hide-blocks.json",
+            "MD5": "da56a1383649dd1ebbbf41d9cfddb0da",
+            "path": "config/jade/hide-blocks.json"
+          }
+        },
+        {
+          "id": "hide-entities.json",
+          "name": "hide-entities.json",
+          "type": "File",
+          "artifact": {
+            "size": 325,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/jade/hide-entities.json",
+            "MD5": "7b674db14cfdc978fa9786641eec8df6",
+            "path": "config/jade/hide-entities.json"
+          }
+        },
+        {
+          "id": "jade.json",
+          "name": "jade.json",
+          "type": "File",
+          "artifact": {
+            "size": 974,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/jade/jade.json",
+            "MD5": "bfdbc8df70932e88399bd6c039163be0",
+            "path": "config/jade/jade.json"
+          }
+        },
+        {
+          "id": "plugins.json",
+          "name": "plugins.json",
+          "type": "File",
+          "artifact": {
+            "size": 1730,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/jade/plugins.json",
+            "MD5": "82994d0bec532ed798c7087fcbf96b14",
+            "path": "config/jade/plugins.json"
+          }
+        },
+        {
+          "id": "sort-order.json",
+          "name": "sort-order.json",
+          "type": "File",
+          "artifact": {
+            "size": 1621,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/jade/sort-order.json",
+            "MD5": "dd6c7bf991d3f96d758257cb0b9ae25c",
+            "path": "config/jade/sort-order.json"
+          }
+        },
+        {
+          "id": "usernamecache.json",
+          "name": "usernamecache.json",
+          "type": "File",
+          "artifact": {
+            "size": 2382,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/jade/usernamecache.json",
+            "MD5": "ccb27e3a140ccf49bd4188aa45ae4f83",
+            "path": "config/jade/usernamecache.json"
+          }
+        },
+        {
+          "id": "blacklist.cfg",
+          "name": "blacklist.cfg",
+          "type": "File",
+          "artifact": {
+            "size": 0,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/jei/blacklist.cfg",
+            "MD5": "d41d8cd98f00b204e9800998ecf8427e",
+            "path": "config/jei/blacklist.cfg"
+          }
+        },
+        {
+          "id": "ingredient-list-mod-sort-order.ini",
+          "name": "ingredient-list-mod-sort-order.ini",
+          "type": "File",
+          "artifact": {
+            "size": 1493,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/jei/ingredient-list-mod-sort-order.ini",
+            "MD5": "a756820e4d2db25e300a262fa281e9a7",
+            "path": "config/jei/ingredient-list-mod-sort-order.ini"
+          }
+        },
+        {
+          "id": "ingredient-list-type-sort-order.ini",
+          "name": "ingredient-list-type-sort-order.ini",
+          "type": "File",
+          "artifact": {
+            "size": 86,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/jei/ingredient-list-type-sort-order.ini",
+            "MD5": "a297d9637a74577adaed06e68221a8a0",
+            "path": "config/jei/ingredient-list-type-sort-order.ini"
+          }
+        },
+        {
+          "id": "jei-client.ini",
+          "name": "jei-client.ini",
+          "type": "File",
+          "artifact": {
+            "size": 7325,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/jei/jei-client.ini",
+            "MD5": "63ff01b18fca422f2f4c7f5cf327aca8",
+            "path": "config/jei/jei-client.ini"
+          }
+        },
+        {
+          "id": "jei-colors.ini",
+          "name": "jei-colors.ini",
+          "type": "File",
+          "artifact": {
+            "size": 1337,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/jei/jei-colors.ini",
+            "MD5": "a23718add9e4884ca9d259aedd73161b",
+            "path": "config/jei/jei-colors.ini"
+          }
+        },
+        {
+          "id": "jei-debug.ini",
+          "name": "jei-debug.ini",
+          "type": "File",
+          "artifact": {
+            "size": 731,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/jei/jei-debug.ini",
+            "MD5": "d73fe54f763b29ece25f8545cf78b792",
+            "path": "config/jei/jei-debug.ini"
+          }
+        },
+        {
+          "id": "jei-mod-id-format.ini",
+          "name": "jei-mod-id-format.ini",
+          "type": "File",
+          "artifact": {
+            "size": 416,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/jei/jei-mod-id-format.ini",
+            "MD5": "d9df39bf869d7344ef78697b986e3b05",
+            "path": "config/jei/jei-mod-id-format.ini"
+          }
+        },
+        {
+          "id": "recipe-category-sort-order.ini",
+          "name": "recipe-category-sort-order.ini",
+          "type": "File",
+          "artifact": {
+            "size": 2454,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/jei/recipe-category-sort-order.ini",
+            "MD5": "96175d3542a540cf0a9d2b23a3c47377",
+            "path": "config/jei/recipe-category-sort-order.ini"
+          }
+        },
+        {
+          "id": "bookmarks.ini",
+          "name": "bookmarks.ini",
+          "type": "File",
+          "artifact": {
+            "size": 55,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/jei/world/server/gh4_aquahost_io_19158_70b38aa7/bookmarks.ini",
+            "MD5": "e1e42f58b9bb8c7f9f7b969174bb8197",
+            "path": "config/jei/world/server/gh4_aquahost_io_19158_70b38aa7/bookmarks.ini"
+          }
+        },
+        {
+          "id": "bookmarks.ini",
+          "name": "bookmarks.ini",
+          "type": "File",
+          "artifact": {
+            "size": 670,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/jei/world/server/Minecraft_Server_486ce202/bookmarks.ini",
+            "MD5": "e7898a56c29bfcd7731cd5c9a0afeb04",
+            "path": "config/jei/world/server/Minecraft_Server_486ce202/bookmarks.ini"
+          }
+        },
+        {
+          "id": "de_de.local",
+          "name": "de_de.local",
+          "type": "File",
+          "artifact": {
+            "size": 369,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/konkrete/locals/de_de.local",
+            "MD5": "3aac3df2519057d2305f894c37771e30",
+            "path": "config/konkrete/locals/de_de.local"
+          }
+        },
+        {
+          "id": "en_us.local",
+          "name": "en_us.local",
+          "type": "File",
+          "artifact": {
+            "size": 426,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/konkrete/locals/en_us.local",
+            "MD5": "56c7ccaa193ba73c0d5c50aff28bb807",
+            "path": "config/konkrete/locals/en_us.local"
+          }
+        },
+        {
+          "id": "pl_pl.local",
+          "name": "pl_pl.local",
+          "type": "File",
+          "artifact": {
+            "size": 313,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/konkrete/locals/pl_pl.local",
+            "MD5": "c1f5aa5c2d2ac414f75f0ec3cab3b9c8",
+            "path": "config/konkrete/locals/pl_pl.local"
+          }
+        },
+        {
+          "id": "pt_br.local",
+          "name": "pt_br.local",
+          "type": "File",
+          "artifact": {
+            "size": 322,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/konkrete/locals/pt_br.local",
+            "MD5": "2d055da094c115b94f0e4373a2e06ebe",
+            "path": "config/konkrete/locals/pt_br.local"
+          }
+        },
+        {
+          "id": "lambdynlights.toml",
+          "name": "lambdynlights.toml",
+          "type": "File",
+          "artifact": {
+            "size": 4090,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/lambdynlights.toml",
+            "MD5": "8e5b8003e9a4a1638580ca40d5de5012",
+            "path": "config/lambdynlights.toml"
+          }
+        },
+        {
+          "id": "libgui.json5",
+          "name": "libgui.json5",
+          "type": "File",
+          "artifact": {
+            "size": 101,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/libgui.json5",
+            "MD5": "8fedeb67f790fe8c9a81964f01709347",
+            "path": "config/libgui.json5"
+          }
+        },
+        {
+          "id": "lithium.properties",
+          "name": "lithium.properties",
+          "type": "File",
+          "artifact": {
+            "size": 430,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/lithium.properties",
+            "MD5": "422e0797eef9c35fe7d8ecea0ac3f567",
+            "path": "config/lithium.properties"
+          }
+        },
+        {
+          "id": "memorysettings.json",
+          "name": "memorysettings.json",
+          "type": "File",
+          "artifact": {
+            "size": 1908,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/memorysettings.json",
+            "MD5": "296f41df61fdf467bc83a439ecabafdf",
+            "path": "config/memorysettings.json"
+          }
+        },
+        {
+          "id": "modernfix-mixins.properties",
+          "name": "modernfix-mixins.properties",
+          "type": "File",
+          "artifact": {
+            "size": 3814,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/modernfix-mixins.properties",
+            "MD5": "53435b905b6cf9d5b5b3a1d116535048",
+            "path": "config/modernfix-mixins.properties"
+          }
+        },
+        {
+          "id": "moderntrainparts-client.toml",
+          "name": "moderntrainparts-client.toml",
+          "type": "File",
+          "artifact": {
+            "size": 246,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/moderntrainparts-client.toml",
+            "MD5": "3ca597616740edaf44ac613f24b456c2",
+            "path": "config/moderntrainparts-client.toml"
+          }
+        },
+        {
+          "id": "moderntrainparts-common.toml",
+          "name": "moderntrainparts-common.toml",
+          "type": "File",
+          "artifact": {
+            "size": 2,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/moderntrainparts-common.toml",
+            "MD5": "81051bcc2cf1bedf378224b0a93e2877",
+            "path": "config/moderntrainparts-common.toml"
+          }
+        },
+        {
+          "id": "moderntrainparts-server.toml",
+          "name": "moderntrainparts-server.toml",
+          "type": "File",
+          "artifact": {
+            "size": 499,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/moderntrainparts-server.toml",
+            "MD5": "18bccb5909af12e492f5c9a96f4dbc6a",
+            "path": "config/moderntrainparts-server.toml"
+          }
+        },
+        {
+          "id": "modmenu.json",
+          "name": "modmenu.json",
+          "type": "File",
+          "artifact": {
+            "size": 814,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/modmenu.json",
+            "MD5": "e8f3869015601ad3afae3fa4412c307c",
+            "path": "config/modmenu.json"
+          }
+        },
+        {
+          "id": "molten_metals-common.json",
+          "name": "molten_metals-common.json",
+          "type": "File",
+          "artifact": {
+            "size": 165,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/molten_metals-common.json",
+            "MD5": "33def7fada4bc19239a3f6ffedad384c",
+            "path": "config/molten_metals-common.json"
+          }
+        },
+        {
+          "id": "moonlight-client.json",
+          "name": "moonlight-client.json",
+          "type": "File",
+          "artifact": {
+            "size": 277,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/moonlight-client.json",
+            "MD5": "aa6d33b12b9eb99db33095f691729998",
+            "path": "config/moonlight-client.json"
+          }
+        },
+        {
+          "id": "MouseTweaks.cfg",
+          "name": "MouseTweaks.cfg",
+          "type": "File",
+          "artifact": {
+            "size": 135,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/MouseTweaks.cfg",
+            "MD5": "ff577ca09e989c07c056c7cdff465be3",
+            "path": "config/MouseTweaks.cfg"
+          }
+        },
+        {
+          "id": "naturalist.json",
+          "name": "naturalist.json",
+          "type": "File",
+          "artifact": {
+            "size": 939,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/naturalist.json",
+            "MD5": "f16f1b6ad187df747e786322129c7db6",
+            "path": "config/naturalist.json"
+          }
+        },
+        {
+          "id": "naturescompass.json",
+          "name": "naturescompass.json",
+          "type": "File",
+          "artifact": {
+            "size": 1834,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/naturescompass.json",
+            "MD5": "ceb344e12636902d35f9bb7b78062c07",
+            "path": "config/naturescompass.json"
+          }
+        },
+        {
+          "id": "necronomicon.json5",
+          "name": "necronomicon.json5",
+          "type": "File",
+          "artifact": {
+            "size": 266,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/necronomicon.json5",
+            "MD5": "f5d72523e51844112485d6c21b8d51c3",
+            "path": "config/necronomicon.json5"
+          }
+        },
+        {
+          "id": "observable.json",
+          "name": "observable.json",
+          "type": "File",
+          "artifact": {
+            "size": 2,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/observable.json",
+            "MD5": "99914b932bd37a50b983c5e7c90ae93b",
+            "path": "config/observable.json"
+          }
+        },
+        {
+          "id": "openpartiesandclaims-server.toml",
+          "name": "openpartiesandclaims-server.toml",
+          "type": "File",
+          "artifact": {
+            "size": 37068,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/openpartiesandclaims-server.toml",
+            "MD5": "30013cd3ede6ea5db2338e06f7b5ead8",
+            "path": "config/openpartiesandclaims-server.toml"
+          }
+        },
+        {
+          "id": "puzzlesapi-iteminteractions-client.toml",
+          "name": "puzzlesapi-iteminteractions-client.toml",
+          "type": "File",
+          "artifact": {
+            "size": 2988,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/puzzlesapi-iteminteractions-client.toml",
+            "MD5": "f79cc373816ebde9fd9a1e76f6238fe5",
+            "path": "config/puzzlesapi-iteminteractions-client.toml"
+          }
+        },
+        {
+          "id": "puzzlesapi-iteminteractions-server.toml",
+          "name": "puzzlesapi-iteminteractions-server.toml",
+          "type": "File",
+          "artifact": {
+            "size": 675,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/puzzlesapi-iteminteractions-server.toml",
+            "MD5": "a8cda9b3a3072104ae6c27492b31dc07",
+            "path": "config/puzzlesapi-iteminteractions-server.toml"
+          }
+        },
+        {
+          "id": "puzzlesapi-slotcycling-client.toml",
+          "name": "puzzlesapi-slotcycling-client.toml",
+          "type": "File",
+          "artifact": {
+            "size": 1065,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/puzzlesapi-slotcycling-client.toml",
+            "MD5": "c8c660b8c997a8e1c6622cb4df128891",
+            "path": "config/puzzlesapi-slotcycling-client.toml"
+          }
+        },
+        {
+          "id": "railways-client.toml",
+          "name": "railways-client.toml",
+          "type": "File",
+          "artifact": {
+            "size": 1972,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/railways-client.toml",
+            "MD5": "03bd295a51031e4e8aacd5ffc479b6c9",
+            "path": "config/railways-client.toml"
+          }
+        },
+        {
+          "id": "railways-common.toml",
+          "name": "railways-common.toml",
+          "type": "File",
+          "artifact": {
+            "size": 337,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/railways-common.toml",
+            "MD5": "610bef1feadf0f47c94628067e90b6fb",
+            "path": "config/railways-common.toml"
+          }
+        },
+        {
+          "id": "railways-server.toml",
+          "name": "railways-server.toml",
+          "type": "File",
+          "artifact": {
+            "size": 1869,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/railways-server.toml",
+            "MD5": "23a53422546fbc996a56fd317d608092",
+            "path": "config/railways-server.toml"
+          }
+        },
+        {
+          "id": "refurbished_furniture.client.toml",
+          "name": "refurbished_furniture.client.toml",
+          "type": "File",
+          "artifact": {
+            "size": 1005,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/refurbished_furniture.client.toml",
+            "MD5": "59ddda1e30a6cd2b4d6436ca52df738d",
+            "path": "config/refurbished_furniture.client.toml"
+          }
+        },
+        {
+          "id": "refurbished_furniture.server.toml",
+          "name": "refurbished_furniture.server.toml",
+          "type": "File",
+          "artifact": {
+            "size": 7655,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/refurbished_furniture.server.toml",
+            "MD5": "4c98a0106b9e4da1f6c841dc055fe8f7",
+            "path": "config/refurbished_furniture.server.toml"
+          }
+        },
+        {
+          "id": "replaymod-rendersettings.json",
+          "name": "replaymod-rendersettings.json",
+          "type": "File",
+          "artifact": {
+            "size": 705,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/replaymod-rendersettings.json",
+            "MD5": "b707dd63f59ef9490f9f326c129e0ca0",
+            "path": "config/replaymod-rendersettings.json"
+          }
+        },
+        {
+          "id": "replaymod.json",
+          "name": "replaymod.json",
+          "type": "File",
+          "artifact": {
+            "size": 1811,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/replaymod.json",
+            "MD5": "1fec648e5ded93d24fcac141f12aec3a",
+            "path": "config/replaymod.json"
+          }
+        },
+        {
+          "id": "resourceful-config-web.json",
+          "name": "resourceful-config-web.json",
+          "type": "File",
+          "artifact": {
+            "size": 196,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/resourceful-config-web.json",
+            "MD5": "ff0a7f915b742fd5894dd2ffbef9500f",
+            "path": "config/resourceful-config-web.json"
+          }
+        },
+        {
+          "id": "ritchiesprojectilelib-server.toml",
+          "name": "ritchiesprojectilelib-server.toml",
+          "type": "File",
+          "artifact": {
+            "size": 647,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/ritchiesprojectilelib-server.toml",
+            "MD5": "0488db32dd630eee7b1562d9d8316244",
+            "path": "config/ritchiesprojectilelib-server.toml"
+          }
+        },
+        {
+          "id": "rrp.properties",
+          "name": "rrp.properties",
+          "type": "File",
+          "artifact": {
+            "size": 143,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/rrp.properties",
+            "MD5": "eab770fd6ea66dbe3194b260b630fe71",
+            "path": "config/rrp.properties"
+          }
+        },
+        {
+          "id": "sdrp-common.json",
+          "name": "sdrp-common.json",
+          "type": "File",
+          "artifact": {
+            "size": 126,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/sdrp-common.json",
+            "MD5": "5a67cdc92823a15337f4cbc1cf409c7d",
+            "path": "config/sdrp-common.json"
+          }
+        },
+        {
+          "id": "sidebar_buttons.json",
+          "name": "sidebar_buttons.json",
+          "type": "File",
+          "artifact": {
+            "size": 192,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/sidebar_buttons.json",
+            "MD5": "50226dcf1b68c34a0daaed60ed176f55",
+            "path": "config/sidebar_buttons.json"
+          }
+        },
+        {
+          "id": "sliceanddice-client.toml",
+          "name": "sliceanddice-client.toml",
+          "type": "File",
+          "artifact": {
+            "size": 33,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/sliceanddice-client.toml",
+            "MD5": "7a8c7c0f1926d114d379579234e67c4b",
+            "path": "config/sliceanddice-client.toml"
+          }
+        },
+        {
+          "id": "sliceanddice-common.toml",
+          "name": "sliceanddice-common.toml",
+          "type": "File",
+          "artifact": {
+            "size": 242,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/sliceanddice-common.toml",
+            "MD5": "2235485795a26cf62524a5e90a7ecfe4",
+            "path": "config/sliceanddice-common.toml"
+          }
+        },
+        {
+          "id": "smallships-client.toml",
+          "name": "smallships-client.toml",
+          "type": "File",
+          "artifact": {
+            "size": 1187,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/smallships-client.toml",
+            "MD5": "fdd1885375280fe43c0dabc66e5876b2",
+            "path": "config/smallships-client.toml"
+          }
+        },
+        {
+          "id": "smallships-common.toml",
+          "name": "smallships-common.toml",
+          "type": "File",
+          "artifact": {
+            "size": 6271,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/smallships-common.toml",
+            "MD5": "b33b35d577de6532b3d1b4e24846b098",
+            "path": "config/smallships-common.toml"
+          }
+        },
+        {
+          "id": "smoothchunk.json",
+          "name": "smoothchunk.json",
+          "type": "File",
+          "artifact": {
+            "size": 416,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/smoothchunk.json",
+            "MD5": "0ac2effacf817dc5e9de27c3c6311686",
+            "path": "config/smoothchunk.json"
+          }
+        },
+        {
+          "id": "sodium-extra-options.json",
+          "name": "sodium-extra-options.json",
+          "type": "File",
+          "artifact": {
+            "size": 1759,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/sodium-extra-options.json",
+            "MD5": "21b9b94357071edfd6047502d9667209",
+            "path": "config/sodium-extra-options.json"
+          }
+        },
+        {
+          "id": "sodium-extra.properties",
+          "name": "sodium-extra.properties",
+          "type": "File",
+          "artifact": {
+            "size": 360,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/sodium-extra.properties",
+            "MD5": "72b9d6dd6ada7b00ef334ee176054dbf",
+            "path": "config/sodium-extra.properties"
+          }
+        },
+        {
+          "id": "sodium-fingerprint.json",
+          "name": "sodium-fingerprint.json",
+          "type": "File",
+          "artifact": {
+            "size": 427,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/sodium-fingerprint.json",
+            "MD5": "c735dbd251824a5ac69cf83c2da1ed29",
+            "path": "config/sodium-fingerprint.json"
+          }
+        },
+        {
+          "id": "sodium-mixins.properties",
+          "name": "sodium-mixins.properties",
+          "type": "File",
+          "artifact": {
+            "size": 265,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/sodium-mixins.properties",
+            "MD5": "456d99888369486f42d6ea7f70294170",
+            "path": "config/sodium-mixins.properties"
+          }
+        },
+        {
+          "id": "sodium-options.json",
+          "name": "sodium-options.json",
+          "type": "File",
+          "artifact": {
+            "size": 632,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/sodium-options.json",
+            "MD5": "0526655acb6938560728d66ecb98fc90",
+            "path": "config/sodium-options.json"
+          }
+        },
+        {
+          "id": "config.json",
+          "name": "config.json",
+          "type": "File",
+          "artifact": {
+            "size": 117,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/spark/config.json",
+            "MD5": "fd707ecbb3f9675d81535e88b7712d0b",
+            "path": "config/spark/config.json"
+          }
+        },
+        {
+          "id": "storagedrawers-client.toml",
+          "name": "storagedrawers-client.toml",
+          "type": "File",
+          "artifact": {
+            "size": 630,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/storagedrawers-client.toml",
+            "MD5": "96543d804603fad3d2a34a1bd95df1b1",
+            "path": "config/storagedrawers-client.toml"
+          }
+        },
+        {
+          "id": "storagedrawers-common.toml",
+          "name": "storagedrawers-common.toml",
+          "type": "File",
+          "artifact": {
+            "size": 3979,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/storagedrawers-common.toml",
+            "MD5": "afd120400eaf5f4c5ecbc5073e619bee",
+            "path": "config/storagedrawers-common.toml"
+          }
+        },
+        {
+          "id": "styled-chat.json",
+          "name": "styled-chat.json",
+          "type": "File",
+          "artifact": {
+            "size": 3190,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/styled-chat.json",
+            "MD5": "038ab82a8f8d45b3de3410096fc4f4f5",
+            "path": "config/styled-chat.json"
+          }
+        },
+        {
+          "id": "supplementaries-client.json",
+          "name": "supplementaries-client.json",
+          "type": "File",
+          "artifact": {
+            "size": 3565,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/supplementaries-client.json",
+            "MD5": "9053d8ae8c7219f2abfd452f8f272367",
+            "path": "config/supplementaries-client.json"
+          }
+        },
+        {
+          "id": "supplementaries-common.json",
+          "name": "supplementaries-common.json",
+          "type": "File",
+          "artifact": {
+            "size": 10084,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/supplementaries-common.json",
+            "MD5": "a8248a9ea3ac781b55b35a0d329c90e2",
+            "path": "config/supplementaries-common.json"
+          }
+        },
+        {
+          "id": "toms_storage.json",
+          "name": "toms_storage.json",
+          "type": "File",
+          "artifact": {
+            "size": 328,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/toms_storage.json",
+            "MD5": "621d9e357e260bff619792b128cf3262",
+            "path": "config/toms_storage.json"
+          }
+        },
+        {
+          "id": "tramways-config.json",
+          "name": "tramways-config.json",
+          "type": "File",
+          "artifact": {
+            "size": 1121,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/tramways-config.json",
+            "MD5": "632c6dc84305308f3e6040edc9afc79b",
+            "path": "config/tramways-config.json"
+          }
+        },
+        {
+          "id": "travelersbackpack.json5",
+          "name": "travelersbackpack.json5",
+          "type": "File",
+          "artifact": {
+            "size": 8150,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/travelersbackpack.json5",
+            "MD5": "80d0f3f801f0505ad0928619ce0ed88b",
+            "path": "config/travelersbackpack.json5"
+          }
+        },
+        {
+          "id": "config.json5",
+          "name": "config.json5",
+          "type": "File",
+          "artifact": {
+            "size": 1180,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/vinery/config.json5",
+            "MD5": "9c64dafaa089498c6f34c6db3d216d84",
+            "path": "config/vinery/config.json5"
+          }
+        },
+        {
+          "id": "visualworkbench-client.toml",
+          "name": "visualworkbench-client.toml",
+          "type": "File",
+          "artifact": {
+            "size": 315,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/visualworkbench-client.toml",
+            "MD5": "e7857329c8e27a79077e0350264da2e4",
+            "path": "config/visualworkbench-client.toml"
+          }
+        },
+        {
+          "id": "visual_workbench.json",
+          "name": "visual_workbench.json",
+          "type": "File",
+          "artifact": {
+            "size": 11520,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/visual_workbench.json",
+            "MD5": "7c4eddfce31cc30fdf0c293a2142d4bd",
+            "path": "config/visual_workbench.json"
+          }
+        },
+        {
+          "id": "translations.properties",
+          "name": "translations.properties",
+          "type": "File",
+          "artifact": {
+            "size": 1182,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/voicechat/translations.properties",
+            "MD5": "4af29bbbf5267fe4298e80c2e6ebca63",
+            "path": "config/voicechat/translations.properties"
+          }
+        },
+        {
+          "id": "username-cache.json",
+          "name": "username-cache.json",
+          "type": "File",
+          "artifact": {
+            "size": 3010,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/voicechat/username-cache.json",
+            "MD5": "89345cb45807483667296b4752770d0f",
+            "path": "config/voicechat/username-cache.json"
+          }
+        },
+        {
+          "id": "voicechat-client.properties",
+          "name": "voicechat-client.properties",
+          "type": "File",
+          "artifact": {
+            "size": 4378,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/voicechat/voicechat-client.properties",
+            "MD5": "c42e682954a0d0801038385a74e9b743",
+            "path": "config/voicechat/voicechat-client.properties"
+          }
+        },
+        {
+          "id": "voicechat-server.properties",
+          "name": "voicechat-server.properties",
+          "type": "File",
+          "artifact": {
+            "size": 2371,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/voicechat/voicechat-server.properties",
+            "MD5": "77eff904229e9e32e904c1df4f1fcd0b",
+            "path": "config/voicechat/voicechat-server.properties"
+          }
+        },
+        {
+          "id": "voicechat-volumes.properties",
+          "name": "voicechat-volumes.properties",
+          "type": "File",
+          "artifact": {
+            "size": 37,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/voicechat/voicechat-volumes.properties",
+            "MD5": "fcb38654c898989fdf9b82707c3ee2f5",
+            "path": "config/voicechat/voicechat-volumes.properties"
+          }
+        },
+        {
+          "id": "watut-client.toml",
+          "name": "watut-client.toml",
+          "type": "File",
+          "artifact": {
+            "size": 2241,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/watut-client.toml",
+            "MD5": "8fc2a3c6fcaa24c678b81c6bac0cc962",
+            "path": "config/watut-client.toml"
+          }
+        },
+        {
+          "id": "watut-common.toml",
+          "name": "watut-common.toml",
+          "type": "File",
+          "artifact": {
+            "size": 144,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/watut-common.toml",
+            "MD5": "292397cff0ad268486e631c8022b048c",
+            "path": "config/watut-common.toml"
+          }
+        },
+        {
+          "id": "watut-item-arm-adjustments.json",
+          "name": "watut-item-arm-adjustments.json",
+          "type": "File",
+          "artifact": {
+            "size": 3355,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/watut-item-arm-adjustments.json",
+            "MD5": "304bbd2cec8a86f1226529489c0d1b0c",
+            "path": "config/watut-item-arm-adjustments.json"
+          }
+        },
+        {
+          "id": "xaerominimap-common.txt",
+          "name": "xaerominimap-common.txt",
+          "type": "File",
+          "artifact": {
+            "size": 145,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/xaerominimap-common.txt",
+            "MD5": "c4bb2d96ebd8182b307ef6b2fda27370",
+            "path": "config/xaerominimap-common.txt"
+          }
+        },
+        {
+          "id": "xaerominimap.txt",
+          "name": "xaerominimap.txt",
+          "type": "File",
+          "artifact": {
+            "size": 3642,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/xaerominimap.txt",
+            "MD5": "37f0fb4f100e3ea173a5c2955d128150",
+            "path": "config/xaerominimap.txt"
+          }
+        },
+        {
+          "id": "xaerominimap_entities.json",
+          "name": "xaerominimap_entities.json",
+          "type": "File",
+          "artifact": {
+            "size": 5531,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/xaerominimap_entities.json",
+            "MD5": "71086272395ab15f8fdaad8e2c7320da",
+            "path": "config/xaerominimap_entities.json"
+          }
+        },
+        {
+          "id": "xaeropatreon.txt",
+          "name": "xaeropatreon.txt",
+          "type": "File",
+          "artifact": {
+            "size": 0,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/xaeropatreon.txt",
+            "MD5": "d41d8cd98f00b204e9800998ecf8427e",
+            "path": "config/xaeropatreon.txt"
+          }
+        },
+        {
+          "id": "xaeroworldmap-common.txt",
+          "name": "xaeroworldmap-common.txt",
+          "type": "File",
+          "artifact": {
+            "size": 120,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/xaeroworldmap-common.txt",
+            "MD5": "5a2200d083554257d61384f2c486162b",
+            "path": "config/xaeroworldmap-common.txt"
+          }
+        },
+        {
+          "id": "xaeroworldmap.txt",
+          "name": "xaeroworldmap.txt",
+          "type": "File",
+          "artifact": {
+            "size": 1218,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/xaeroworldmap.txt",
+            "MD5": "61668053aa4dc58507cde11ed376502c",
+            "path": "config/xaeroworldmap.txt"
+          }
+        },
+        {
+          "id": "yacl.json5",
+          "name": "yacl.json5",
+          "type": "File",
+          "artifact": {
+            "size": 35,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/yacl.json5",
+            "MD5": "81d542abb72c4750c7218e0d975e3368",
+            "path": "config/yacl.json5"
+          }
+        },
+        {
+          "id": "yigd.json",
+          "name": "yigd.json",
+          "type": "File",
+          "artifact": {
+            "size": 5965,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/yigd.json",
+            "MD5": "15c542f043f4672d9d42052f2efd0e09",
+            "path": "config/yigd.json"
+          }
+        },
+        {
+          "id": "zoomify.json",
+          "name": "zoomify.json",
+          "type": "File",
+          "artifact": {
+            "size": 713,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/config/zoomify.json",
+            "MD5": "9724d512b38a85f4e133cf9e5dba357f",
+            "path": "config/zoomify.json"
+          }
+        },
+        {
+          "id": "betterchunkloading-fabric-1.20.1-5.1.jar",
+          "name": "betterchunkloading-fabric-1.20.1-5.1.jar",
+          "type": "File",
+          "artifact": {
+            "size": 56144,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/mods/betterchunkloading-fabric-1.20.1-5.1.jar",
+            "MD5": "02a57b7c4c5381fb84fcc4e58e680386",
+            "path": "mods/betterchunkloading-fabric-1.20.1-5.1.jar"
+          }
+        },
+        {
+          "id": "Chimes-v2.0.1-1.20.1-Fabric.jar",
+          "name": "Chimes-v2.0.1-1.20.1-Fabric.jar",
+          "type": "File",
+          "artifact": {
+            "size": 11844738,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/mods/Chimes-v2.0.1-1.20.1-Fabric.jar",
+            "MD5": "19c787b98182728444dc38f229e68a28",
+            "path": "mods/Chimes-v2.0.1-1.20.1-Fabric.jar"
+          }
+        },
+        {
+          "id": "chunksending-fabric-1.20.1-2.8.jar",
+          "name": "chunksending-fabric-1.20.1-2.8.jar",
+          "type": "File",
+          "artifact": {
+            "size": 11318,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/mods/chunksending-fabric-1.20.1-2.8.jar",
+            "MD5": "e0754cf0c89a2362d9cb91c897604cad",
+            "path": "mods/chunksending-fabric-1.20.1-2.8.jar"
+          }
+        },
+        {
+          "id": "Clumps-fabric-1.20.1-12.0.0.4.jar",
+          "name": "Clumps-fabric-1.20.1-12.0.0.4.jar",
+          "type": "File",
+          "artifact": {
+            "size": 21987,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/mods/Clumps-fabric-1.20.1-12.0.0.4.jar",
+            "MD5": "9bd27566262e06642637b78a6bc4fe8c",
+            "path": "mods/Clumps-fabric-1.20.1-12.0.0.4.jar"
+          }
+        },
+        {
+          "id": "configured-fabric-1.20.1-2.2.3.jar",
+          "name": "configured-fabric-1.20.1-2.2.3.jar",
+          "type": "File",
+          "artifact": {
+            "size": 591886,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/mods/configured-fabric-1.20.1-2.2.3.jar",
+            "MD5": "04b8682e530bb58a8514f9763331662d",
+            "path": "mods/configured-fabric-1.20.1-2.2.3.jar"
+          }
+        },
+        {
+          "id": "Controlling-fabric-1.20.1-12.0.2.jar",
+          "name": "Controlling-fabric-1.20.1-12.0.2.jar",
+          "type": "File",
+          "artifact": {
+            "size": 122778,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/mods/Controlling-fabric-1.20.1-12.0.2.jar",
+            "MD5": "87c6431504ff6a040da4533c933d6b12",
+            "path": "mods/Controlling-fabric-1.20.1-12.0.2.jar"
+          }
+        },
+        {
+          "id": "CraftTweaker-fabric-1.20.1-14.0.44.jar",
+          "name": "CraftTweaker-fabric-1.20.1-14.0.44.jar",
+          "type": "File",
+          "artifact": {
+            "size": 3984054,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/mods/CraftTweaker-fabric-1.20.1-14.0.44.jar",
+            "MD5": "3ecdf9b94b9dc4c2a8c6372660976d1f",
+            "path": "mods/CraftTweaker-fabric-1.20.1-14.0.44.jar"
+          }
+        },
+        {
+          "id": "create-discord-notifications-1.0.1.jar",
+          "name": "create-discord-notifications-1.0.1.jar",
+          "type": "File",
+          "artifact": {
+            "size": 8111688,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/mods/create-discord-notifications-1.0.1.jar",
+            "MD5": "92827507ecda7182cc098e8ee7be7f83",
+            "path": "mods/create-discord-notifications-1.0.1.jar"
+          }
+        },
+        {
+          "id": "create-man-of-many-planes-1.0.jar",
+          "name": "create-man-of-many-planes-1.0.jar",
+          "type": "File",
+          "artifact": {
+            "size": 1921476,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/mods/create-man-of-many-planes-1.0.jar",
+            "MD5": "908923c0084de928e4ecf6d1050053ef",
+            "path": "mods/create-man-of-many-planes-1.0.jar"
+          }
+        },
+        {
+          "id": "create-structures-0.1.1-1.20.1-FABRIC.jar",
+          "name": "create-structures-0.1.1-1.20.1-FABRIC.jar",
+          "type": "File",
+          "artifact": {
+            "size": 484457,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/mods/create-structures-0.1.1-1.20.1-FABRIC.jar",
+            "MD5": "ed0c2368482da1181e37e3e40831ba36",
+            "path": "mods/create-structures-0.1.1-1.20.1-FABRIC.jar"
+          }
+        },
+        {
+          "id": "createbb1.20.1.jar",
+          "name": "createbb1.20.1.jar",
+          "type": "File",
+          "artifact": {
+            "size": 158751,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/mods/createbb1.20.1.jar",
+            "MD5": "29c0bda73c209b89316813663e2e4dc1",
+            "path": "mods/createbb1.20.1.jar"
+          }
+        },
+        {
+          "id": "CreateTweaker-fabric-1.20.1-4.0.13.jar",
+          "name": "CreateTweaker-fabric-1.20.1-4.0.13.jar",
+          "type": "File",
+          "artifact": {
+            "size": 307384,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/mods/CreateTweaker-fabric-1.20.1-4.0.13.jar",
+            "MD5": "3440028cb5e3403c4e33a6447e476731",
+            "path": "mods/CreateTweaker-fabric-1.20.1-4.0.13.jar"
+          }
+        },
+        {
+          "id": "cupboard-fabric-1.20.1-2.7.jar",
+          "name": "cupboard-fabric-1.20.1-2.7.jar",
+          "type": "File",
+          "artifact": {
+            "size": 25668,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/mods/cupboard-fabric-1.20.1-2.7.jar",
+            "MD5": "a7a05a32b4a66d64c6c050666e16d744",
+            "path": "mods/cupboard-fabric-1.20.1-2.7.jar"
+          }
+        },
+        {
+          "id": "disable-elytra-1.0.0.jar",
+          "name": "disable-elytra-1.0.0.jar",
+          "type": "File",
+          "artifact": {
+            "size": 11838,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/mods/disable-elytra-1.0.0.jar",
+            "MD5": "6239c744ac1157e91e721226df32073d",
+            "path": "mods/disable-elytra-1.0.0.jar"
+          }
+        },
+        {
+          "id": "Epic-Knights-9.18.jar",
+          "name": "Epic-Knights-9.18.jar",
+          "type": "File",
+          "artifact": {
+            "size": 2571900,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/mods/Epic-Knights-9.18.jar",
+            "MD5": "d7e5c4936c573783c586be59e60cb21a",
+            "path": "mods/Epic-Knights-9.18.jar"
+          }
+        },
+        {
+          "id": "fabric-tab-2.0.0.jar",
+          "name": "fabric-tab-2.0.0.jar",
+          "type": "File",
+          "artifact": {
+            "size": 36037,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/mods/fabric-tab-2.0.0.jar",
+            "MD5": "06ecbf93d3bb95d742a29fe9d9690a0a",
+            "path": "mods/fabric-tab-2.0.0.jar"
+          }
+        },
+        {
+          "id": "Farmersrespite-Fabric-3.0.2.jar",
+          "name": "Farmersrespite-Fabric-3.0.2.jar",
+          "type": "File",
+          "artifact": {
+            "size": 733624,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/mods/Farmersrespite-Fabric-3.0.2.jar",
+            "MD5": "65e78c74a22af5efd28607685d069254",
+            "path": "mods/Farmersrespite-Fabric-3.0.2.jar"
+          }
+        },
+        {
+          "id": "framework-fabric-1.20.1-0.7.12.jar",
+          "name": "framework-fabric-1.20.1-0.7.12.jar",
+          "type": "File",
+          "artifact": {
+            "size": 1393788,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/mods/framework-fabric-1.20.1-0.7.12.jar",
+            "MD5": "89154eb502e44f37269cc4075016dc68",
+            "path": "mods/framework-fabric-1.20.1-0.7.12.jar"
+          }
+        },
+        {
+          "id": "ftb-library-fabric-2001.2.6.jar",
+          "name": "ftb-library-fabric-2001.2.6.jar",
+          "type": "File",
+          "artifact": {
+            "size": 780521,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/mods/ftb-library-fabric-2001.2.6.jar",
+            "MD5": "f9cd31f1552d99eb8b591c7b543a6c25",
+            "path": "mods/ftb-library-fabric-2001.2.6.jar"
+          }
+        },
+        {
+          "id": "ftb-quests-fabric-2001.4.9.jar",
+          "name": "ftb-quests-fabric-2001.4.9.jar",
+          "type": "File",
+          "artifact": {
+            "size": 1191817,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/mods/ftb-quests-fabric-2001.4.9.jar",
+            "MD5": "d0a7b2aef8c4ca1db5670dd5f11edaac",
+            "path": "mods/ftb-quests-fabric-2001.4.9.jar"
+          }
+        },
+        {
+          "id": "ftb-teams-fabric-2001.3.0.jar",
+          "name": "ftb-teams-fabric-2001.3.0.jar",
+          "type": "File",
+          "artifact": {
+            "size": 243962,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/mods/ftb-teams-fabric-2001.3.0.jar",
+            "MD5": "273629c8ea913e2e50707b06bcd801d0",
+            "path": "mods/ftb-teams-fabric-2001.3.0.jar"
+          }
+        },
+        {
+          "id": "geckolib-fabric-1.20.1-4.4.9.jar",
+          "name": "geckolib-fabric-1.20.1-4.4.9.jar",
+          "type": "File",
+          "artifact": {
+            "size": 1019731,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/mods/geckolib-fabric-1.20.1-4.4.9.jar",
+            "MD5": "43283e490633976f9e2b46c473a87b62",
+            "path": "mods/geckolib-fabric-1.20.1-4.4.9.jar"
+          }
+        },
+        {
+          "id": "gpumemleakfix-fabric-1.20.1-1.8.jar",
+          "name": "gpumemleakfix-fabric-1.20.1-1.8.jar",
+          "type": "File",
+          "artifact": {
+            "size": 6949,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/mods/gpumemleakfix-fabric-1.20.1-1.8.jar",
+            "MD5": "166ae7ae556227b7cfb74856b171ec74",
+            "path": "mods/gpumemleakfix-fabric-1.20.1-1.8.jar"
+          }
+        },
+        {
+          "id": "ledger-1.2.8.jar",
+          "name": "ledger-1.2.8.jar",
+          "type": "File",
+          "artifact": {
+            "size": 16743830,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/mods/ledger-1.2.8.jar",
+            "MD5": "461ffcd6d294f25d85130341d6e2cad3",
+            "path": "mods/ledger-1.2.8.jar"
+          }
+        },
+        {
+          "id": "magic_vibe_decorations-2.6.0-fabric-1.20.1.jar",
+          "name": "magic_vibe_decorations-2.6.0-fabric-1.20.1.jar",
+          "type": "File",
+          "artifact": {
+            "size": 2061375,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/mods/magic_vibe_decorations-2.6.0-fabric-1.20.1.jar",
+            "MD5": "08f888497ed562386d93876ab0cd3903",
+            "path": "mods/magic_vibe_decorations-2.6.0-fabric-1.20.1.jar"
+          }
+        },
+        {
+          "id": "memorysettings-fabric-1.20.1-5.5.jar",
+          "name": "memorysettings-fabric-1.20.1-5.5.jar",
+          "type": "File",
+          "artifact": {
+            "size": 20999,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/mods/memorysettings-fabric-1.20.1-5.5.jar",
+            "MD5": "e177393a91773c73abf0873f089b07ed",
+            "path": "mods/memorysettings-fabric-1.20.1-5.5.jar"
+          }
+        },
+        {
+          "id": "refurbished_furniture-fabric-1.20.1-1.0.8.jar",
+          "name": "refurbished_furniture-fabric-1.20.1-1.0.8.jar",
+          "type": "File",
+          "artifact": {
+            "size": 6094571,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/mods/refurbished_furniture-fabric-1.20.1-1.0.8.jar",
+            "MD5": "85bceaf3c8e2dc35dd2d0328b0b313a4",
+            "path": "mods/refurbished_furniture-fabric-1.20.1-1.0.8.jar"
+          }
+        },
+        {
+          "id": "Searchables-fabric-1.20.1-1.0.3.jar",
+          "name": "Searchables-fabric-1.20.1-1.0.3.jar",
+          "type": "File",
+          "artifact": {
+            "size": 80283,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/mods/Searchables-fabric-1.20.1-1.0.3.jar",
+            "MD5": "57cbf00f9bb837538a3a694cad095a11",
+            "path": "mods/Searchables-fabric-1.20.1-1.0.3.jar"
+          }
+        },
+        {
+          "id": "smoothchunk-fabric-1.20.1-3.8.jar",
+          "name": "smoothchunk-fabric-1.20.1-3.8.jar",
+          "type": "File",
+          "artifact": {
+            "size": 16300,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/mods/smoothchunk-fabric-1.20.1-3.8.jar",
+            "MD5": "ea2829190000e43e9e82d45fe0a72498",
+            "path": "mods/smoothchunk-fabric-1.20.1-3.8.jar"
+          }
+        },
+        {
+          "id": "squaremap-fabric-mc1.20.1-1.2.0.jar",
+          "name": "squaremap-fabric-mc1.20.1-1.2.0.jar",
+          "type": "File",
+          "artifact": {
+            "size": 8183654,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/mods/squaremap-fabric-mc1.20.1-1.2.0.jar",
+            "MD5": "e900a7c80ae3c52be312e91d3e552b09",
+            "path": "mods/squaremap-fabric-mc1.20.1-1.2.0.jar"
+          }
+        },
+        {
+          "id": "starbidous-portal-linking-fabric-1.0.0+1.20.1.jar",
+          "name": "starbidous-portal-linking-fabric-1.0.0+1.20.1.jar",
+          "type": "File",
+          "artifact": {
+            "size": 44114,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/mods/starbidous-portal-linking-fabric-1.0.0+1.20.1.jar",
+            "MD5": "290653616f0f305bc490136bb5e2e380",
+            "path": "mods/starbidous-portal-linking-fabric-1.0.0+1.20.1.jar"
+          }
+        },
+        {
+          "id": "Storage Drawers-fabric-1.20.1-12.10.4.jar",
+          "name": "Storage Drawers-fabric-1.20.1-12.10.4.jar",
+          "type": "File",
+          "artifact": {
+            "size": 986320,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/mods/Storage%20Drawers-fabric-1.20.1-12.10.4.jar",
+            "MD5": "b9b2a698e680519f936c4537f3e47e5d",
+            "path": "mods/Storage Drawers-fabric-1.20.1-12.10.4.jar"
+          }
+        },
+        {
+          "id": "supplementaries-1.20-3.1.11-fabric.jar",
+          "name": "supplementaries-1.20-3.1.11-fabric.jar",
+          "type": "File",
+          "artifact": {
+            "size": 17875076,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/mods/supplementaries-1.20-3.1.11-fabric.jar",
+            "MD5": "e4b3a40e0336ac3d6a55e285ce80dcc3",
+            "path": "mods/supplementaries-1.20-3.1.11-fabric.jar"
+          }
+        },
+        {
+          "id": "worldedit-mod-7.2.15.jar",
+          "name": "worldedit-mod-7.2.15.jar",
+          "type": "File",
+          "artifact": {
+            "size": 5825402,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/mods/worldedit-mod-7.2.15.jar",
+            "MD5": "bd0e7cff7896348faab92e43300d0639",
+            "path": "mods/worldedit-mod-7.2.15.jar"
+          }
+        },
+        {
+          "id": "options.txt",
+          "name": "options.txt",
+          "type": "File",
+          "artifact": {
+            "size": 9783,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/options.txt",
+            "MD5": "506626f7fb00d876c3a0b9adadb5d6ce",
+            "path": "options.txt"
+          }
+        },
+        {
+          "id": "Flintl0cks_v1.0.zip",
+          "name": "Flintl0cks_v1.0.zip",
+          "type": "File",
+          "artifact": {
+            "size": 35889,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/resourcepacks/Flintl0cks_v1.0.zip",
+            "MD5": "a7f3eb3479d7223b75ba91188387dca5",
+            "path": "resourcepacks/Flintl0cks_v1.0.zip"
+          }
+        },
+        {
+          "id": "servers.dat",
+          "name": "servers.dat",
+          "type": "File",
+          "artifact": {
+            "size": 3200,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/files/servers.dat",
+            "MD5": "41b4613ef7f075cd18deb9c4a0545214",
+            "path": "servers.dat"
+          }
+        }
+      ]
+    }
+  ]
+}
