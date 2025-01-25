@@ -70,7 +70,7 @@ jobs:
 
       - name: Upload Modpack to CurseForge
         run: |
-          curl -X POST "https://minecraft.curseforge.com/api/projects/YOUR_PROJECT_ID/upload-file" \
+          curl -X POST "https://minecraft.curseforge.com/api/projects/1181366/upload-file" \
           -H "x-api-token: ${{ secrets.CURSEFORGE_API_TOKEN }}" \
           -F "file=@build/cogworks-create-curseforge.zip" \
           -F "metadata={\"changelog\":\"${{ env.changelogs }}\",\"changelogType\":\"markdown\",\"releaseType\":\"release\"}" \
