@@ -8,7 +8,7 @@ on:
 
 jobs:
   build-and-release:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Checkout Repository
@@ -49,26 +49,8 @@ jobs:
         run: |
           mkdir -p build
           cd create/curseforge
-          zip -r ../../build/cogworks-create-curseforge.zip overrides/ modlist.html manifest.json modrinth.index.json
+          zip -r ../../build/cogworks-create-curseforge.zip overrides/ modlist.html manifest.json
           cd ../..
-
-      - name: Upload Modpack to GitHub Release
-        uses: softprops/action-gh-release@v2
-        with:
-          name: "Create Release v${{ env.current_version }} (CurseForge)"
-          tag_name: "Create-v${{ env.current_version }}-curseforge"
-          body: |
-            **Changelogs:**
-            ```diff
-            ${{ fromJSON(env.changelogs) }}
-            ```
-            
-            [Download the latest version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-curseforge.zip)
-          generate_release_notes: true
-          make_latest: true
-          files: build/cogworks-create-curseforge.zip
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install Wrangler CLI
         run: npm install -g wrangler
@@ -95,7 +77,7 @@ jobs:
           -F "gameVersions=[\"1.20.1\"]"
       
       - name: Notify Success
-        run: echo "Modpack successfully built & uploaded to GitHub, Cloudflare R2, and CurseForge"
+        run: echo "Modpack successfully built & uploaded to Cloudflare R2 and CurseForge"
 
   build-and-release-modrinth:
     runs-on: ubuntu-20.04
@@ -110,60 +92,12 @@ jobs:
           jq --arg version "$CURRENT_VERSION" '.versionId = $version' create/modrinth/modrinth.index.json > create/modrinth/modrinth.index.json.tmp
           mv create/modrinth/modrinth.index.json.tmp create/modrinth/modrinth.index.json
   
-      - name: Update Version in manifest.json
-        run: |
-          jq --arg version "$CURRENT_VERSION" '.version = $version' create/modrinth/manifest.json > create/modrinth/manifest.json.tmp
-          mv create/modrinth/manifest.json.tmp create/modrinth/manifest.json
-
       - name: Set Up Build Directory
         run: |
           mkdir -p build
           cd create/modrinth
           zip -r ../../build/cogworks-create-modrinth.zip overrides/ modlist.html manifest.json modrinth.index.json
           cd ../..
-
-      - name: Update Changelog in README
-        run: |
-          node -e "
-            const fs = require('fs');
-            const path = require('path');
-
-            const currentVersion = process.env.current_version;
-            const changelogs = JSON.parse(process.env.changelogs);
-
-            const readmePath = path.join(__dirname, 'create', 'modrinth', 'readme.md');
-            const readmeContent = fs.readFileSync(readmePath, 'utf8');
-
-            const updatedContent = readmeContent.replace(
-              /## Changelog[\\s\\S]*?## Support/,
-              \`## Changelog\\n**Version \${currentVersion}**:\\n\\\`\\\`\\\`diff\\n\${changelogs}\\n\\\`\\\`\\\`\\nYou can checkout the [previous changelogs here](https://github.com/cogworksmc/modpacks/tree/main/create/changelogs)\\n\\n## Support\`
-            );
-
-            fs.writeFileSync(readmePath, updatedContent);
-          "
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add create/modrinth/readme.md
-          git commit -m "Update changelog for version ${{ env.current_version }}" || echo "No changes to commit"
-          git push
-
-      - name: Upload Modpack to GitHub Release
-        uses: softprops/action-gh-release@v2
-        with:
-          name: "Create Release v${{ env.current_version }} (Modrinth)"
-          tag_name: "Create-v${{ env.current_version }}-modrinth"
-          body: |
-            **Changelogs:**
-            ```diff
-            ${{ fromJSON(env.changelogs) }}
-            ```
-            
-            [Download the latest version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-modrinth.zip)
-          generate_release_notes: true
-          make_latest: true
-          files: build/cogworks-create-modrinth.zip
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install Wrangler CLI
         run: npm install -g wrangler
@@ -182,11 +116,40 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
 
       - name: Notify Success
-        run: echo "Modpack successfully built & uploaded to GitHub, Cloudflare R2, and Modrinth"
+        run: echo "Modpack successfully built & uploaded to Cloudflare R2 and Modrinth"
+
+  upload-to-github:
+    runs-on: ubuntu-20.04
+    needs: [build-and-release-curseforge, build-and-release-modrinth]
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Upload Modpacks to GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: "Create Release v${{ env.current_version }}"
+          tag_name: "Create-v${{ env.current_version }}"
+          body: |
+            **Changelogs:**
+            ```diff
+            ${{ env.changelogs }}
+            ```
+            
+            [Download the latest CurseForge version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-curseforge.zip)
+            [Download the latest Modrinth version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-modrinth.zip)
+          generate_release_notes: true
+          make_latest: true
+          files: |
+            build/cogworks-create-curseforge.zip
+            build/cogworks-create-modrinth.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   send-discord-notification:
     runs-on: ubuntu-20.04
-    needs: [build-and-release-curseforge, build-and-release-modrinth]
+    needs: upload-to-github
 
     steps:
       - name: Send Discord Notification
@@ -200,7 +163,7 @@ jobs:
           description: |
             **Changelogs:**
                 ```diff
-                ${{ fromJSON(env.changelogs) }}
+                ${{ env.changelogs }}
                 ```
             [Download the latest CurseForge version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-curseforge.zip)
             [Download the latest Modrinth version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-modrinth.zip)
