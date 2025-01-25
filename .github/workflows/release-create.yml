@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-and-release:
+  determine-version-and-collect-changelogs:
     runs-on: ubuntu-24.04
 
     steps:
@@ -39,7 +39,7 @@ jobs:
 
   build-and-release-curseforge:
     runs-on: ubuntu-20.04
-    needs: build-and-release
+    needs: determine-version-and-collect-changelogs
 
     steps:
       - name: Checkout Repository
@@ -81,7 +81,7 @@ jobs:
 
   build-and-release-modrinth:
     runs-on: ubuntu-20.04
-    needs: build-and-release
+    needs: determine-version-and-collect-changelogs
 
     steps:
       - name: Checkout Repository
