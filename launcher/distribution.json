@@ -116,16 +116,6 @@
           ]
         },
         {
-          "id": "com.magistuarmory:magistuarmory:9.18@jar",
-          "name": "Epic Knights Mod",
-          "type": "FabricMod",
-          "artifact": {
-            "size": 2571900,
-            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/[1.20.1-fabric]-Epic-Knights-9.18.jar",
-            "MD5": "d7e5c4936c573783c586be59e60cb21a"
-          }
-        },
-        {
           "id": "net.celsiusqc:ad_astra_rocketed:1.0.3@jar",
           "name": "Ad Astra: Rocketed",
           "type": "FabricMod",
@@ -721,7 +711,7 @@
           "type": "FabricMod",
           "artifact": {
             "size": 159341,
-            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/creategoggles-1.20.1-0.5.5.g-[FABRIC].jar",
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/creategoggles-1.20.1-0.5.5.g.jar",
             "MD5": "90a77ee39b5957733a99f4dc7a0434f2"
           }
         },
@@ -923,6 +913,16 @@
             "size": 68347,
             "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/entityculling-fabric-1.7.1-mc1.20.1.jar",
             "MD5": "4bf7f15e6e245a9c4a298ea9ece560e1"
+          }
+        },
+        {
+          "id": "com.magistuarmory:magistuarmory:9.18@jar",
+          "name": "Epic Knights Mod",
+          "type": "FabricMod",
+          "artifact": {
+            "size": 2571900,
+            "url": "https://github.com/cogworksmc/modpacks/raw/refs/heads/main/launcher/servers/CogworksMC-1.20.1/fabricmods/required/Epic-Knights-9.18.jar",
+            "MD5": "d7e5c4936c573783c586be59e60cb21a"
           }
         },
         {
