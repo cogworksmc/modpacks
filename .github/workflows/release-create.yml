@@ -133,7 +133,7 @@ jobs:
         run: |
           mkdir -p build
           cd create/modrinth
-          zip -r ../../build/cogworks-create-modrinth.zip overrides/ modlist.html manifest.json modrinth.index.json
+          zip -r ../../build/cogworks-create-modrinth.mrpack overrides/ modlist.html manifest.json modrinth.index.json
           cd ../..
           echo "Built Modrinth modpack"
 
@@ -141,7 +141,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: cogworks-create-modrinth
-          path: build/cogworks-create-modrinth.zip
+          path: build/cogworks-create-modrinth.mrpack
 
       - name: Install Wrangler CLI
         run: npm install -g wrangler
@@ -167,7 +167,7 @@ jobs:
           -H "Authorization: ${{ secrets.MODRINTH_API_TOKEN }}" \
           -H "User-Agent: cogworksmc/modpacks/create/$VERSION (cogworksmc.com)" \
           -F "data={\"name\":\"Create Release v$VERSION\",\"version_number\":\"$VERSION\",\"changelog\":\"$CHANGELOGS\",\"game_versions\":[\"1.20.1\"],\"version_type\":\"release\",\"loaders\":[\"fabric\"]}" \
-          -F "file=@build/cogworks-create-modrinth.zip" && echo "Uploaded modpack to Modrinth"
+          -F "file=@build/cogworks-create-modrinth.mrpack" && echo "Uploaded modpack to Modrinth"
 
       - name: Notify Success
         run: echo "Modpack successfully built & uploaded to Cloudflare R2 and Modrinth"
@@ -213,12 +213,12 @@ jobs:
             ```
             
             [Download the latest CurseForge version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-curseforge.zip)
-            [Download the latest Modrinth version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-modrinth.zip)
+            [Download the latest Modrinth version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-modrinth.mrpack)
           generate_release_notes: true
           make_latest: true
           files: |
             cogworks-create-curseforge.zip
-            cogworks-create-modrinth.zip
+            cogworks-create-modrinth.mrpack
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -252,4 +252,4 @@ jobs:
             ${{ env.CHANGELOGS }}
             ```
             [Download the latest CurseForge version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-curseforge.zip)
-            [Download the latest Modrinth version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-modrinth.zip)
+            [Download the latest Modrinth version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-modrinth.mrpack)
