@@ -9,6 +9,7 @@ on:
 jobs:
   determine-version-and-collect-changelogs:
     runs-on: ubuntu-24.04
+    name: Determine Version and Collect Changelogs
 
     steps:
       - name: Checkout Repository
@@ -52,6 +53,7 @@ jobs:
   build-and-release-curseforge:
     runs-on: ubuntu-24.04
     needs: determine-version-and-collect-changelogs
+    name: Build and Release CurseForge Modpack
 
     steps:
       - name: Checkout Repository
@@ -109,6 +111,7 @@ jobs:
   build-and-release-modrinth:
     runs-on: ubuntu-20.04
     needs: determine-version-and-collect-changelogs
+    name: Build and Release Modrinth Modpack
 
     steps:
       - name: Checkout Repository
@@ -161,6 +164,7 @@ jobs:
   upload-to-github:
     runs-on: ubuntu-20.04
     needs: [build-and-release-curseforge, build-and-release-modrinth]
+    name: Upload to GitHub Releases
 
     steps:
       - name: Checkout Repository
@@ -196,6 +200,7 @@ jobs:
   send-discord-notification:
     runs-on: ubuntu-20.04
     needs: upload-to-github
+    name: Send Discord Notification
 
     steps:
       - name: Send Discord Notification
