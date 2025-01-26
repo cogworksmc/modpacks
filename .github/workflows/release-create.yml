@@ -31,7 +31,7 @@ jobs:
         run: |
           CHANGELOG_FILE="create/changelogs/version-${{ env.current_version }}.txt"
           if [ -f "$CHANGELOG_FILE" ]; then
-            CHANGELOGS=$(jq -R -s . < "$CHANGELOG_FILE")
+            CHANGELOGS=$(cat "$CHANGELOG_FILE")
             echo "changelogs=$CHANGELOGS" >> $GITHUB_ENV
             echo "Collected changelogs: $CHANGELOGS"
           else
@@ -40,7 +40,7 @@ jobs:
           fi
 
   build-and-release-curseforge:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     needs: determine-version-and-collect-changelogs
 
     steps:
@@ -54,6 +54,12 @@ jobs:
           zip -r ../../build/cogworks-create-curseforge.zip overrides/ modlist.html manifest.json
           cd ../..
           echo "Built CurseForge modpack"
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: cogworks-create-curseforge
+          path: build/cogworks-create-curseforge.zip
 
       - name: Install Wrangler CLI
         run: npm install -g wrangler
@@ -105,6 +111,12 @@ jobs:
           cd ../..
           echo "Built Modrinth modpack"
 
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: cogworks-create-modrinth
+          path: build/cogworks-create-modrinth.zip
+
       - name: Install Wrangler CLI
         run: npm install -g wrangler
 
@@ -131,20 +143,25 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Decode Changelogs
-        run: |
-          echo "decoded_changelogs=$(echo ${{ env.changelogs }} | jq -r .)" >> $GITHUB_ENV
-          echo "Decoded changelogs: ${{ env.decoded_changelogs }}"
+      - name: Download CurseForge Artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: cogworks-create-curseforge
+
+      - name: Download Modrinth Artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: cogworks-create-modrinth
 
       - name: Upload Modpacks to GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          name: "Create Release v${{ env.current_version }}"
+          name: "Create Release v${{ env.current_version }} (CurseForge and Modrinth)"
           tag_name: "Create-v${{ env.current_version }}"
           body: |
             **Changelogs:**
             ```diff
-            ${{ env.decoded_changelogs }}
+            ${{ env.changelogs }}
             ```
             
             [Download the latest CurseForge version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-curseforge.zip)
@@ -152,8 +169,8 @@ jobs:
           generate_release_notes: true
           make_latest: true
           files: |
-            build/cogworks-create-curseforge.zip
-            build/cogworks-create-modrinth.zip
+            cogworks-create-curseforge.zip
+            cogworks-create-modrinth.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -164,7 +181,7 @@ jobs:
     steps:
       - name: Send Discord Notification
         run: |
-          DECODED_CHANGELOGS=$(echo ${{ env.changelogs }} | jq -r .)
+          DECODED_CHANGELOGS=$(echo ${{ env.changelogs }})
           echo "Sending Discord notification with changelogs: $DECODED_CHANGELOGS"
           curl -H "Content-Type: application/json" \
                -X POST \
