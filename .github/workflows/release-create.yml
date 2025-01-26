@@ -237,8 +237,8 @@ jobs:
           color: 0xFFA500
           description: |
             **Changelogs:**
-                ```diff
-                ${{ env.CHANGELOGS }}
-                ```
+            ```diff
+            ${{ env.CHANGELOGS }}
+            ```
             [Download the latest CurseForge version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-curseforge.zip)
             [Download the latest Modrinth version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-modrinth.zip)
