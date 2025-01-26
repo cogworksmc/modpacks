@@ -25,6 +25,7 @@ jobs:
           VERSION=$(basename "$CHANGELOG_FILE" .txt | sed 's/version-//')
           echo "current_version=$VERSION" >> $GITHUB_ENV
           echo "Determined version: $VERSION"
+          echo "$VERSION" > version.txt
 
       - name: Collect Changelogs from File
         id: changelogs
@@ -34,10 +35,19 @@ jobs:
             CHANGELOGS=$(cat "$CHANGELOG_FILE")
             echo "changelogs=$CHANGELOGS" >> $GITHUB_ENV
             echo "Collected changelogs: $CHANGELOGS"
+            echo "$CHANGELOGS" > changelogs.txt
           else
             echo "Changelog file $CHANGELOG_FILE does not exist."
             exit 1
           fi
+
+      - name: Upload Version and Changelogs
+        uses: actions/upload-artifact@v4
+        with:
+          name: version-and-changelogs
+          path: |
+            version.txt
+            changelogs.txt
 
   build-and-release-curseforge:
     runs-on: ubuntu-24.04
@@ -46,6 +56,11 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
+
+      - name: Download Version and Changelogs
+        uses: actions/download-artifact@v4
+        with:
+          name: version-and-changelogs
 
       - name: Set Up Build Directory
         run: |
@@ -80,26 +95,34 @@ jobs:
 
       - name: Upload Modpack to CurseForge
         run: |
+          VERSION=$(cat version.txt)
+          CHANGELOGS=$(cat changelogs.txt)
           curl -X POST "https://minecraft.curseforge.com/api/projects/1181366/upload-file" \
           -H "X-Api-Token: ${{ secrets.CURSEFORGE_API_TOKEN }}" \
           -F "file=@build/cogworks-create-curseforge.zip" \
-          -F "metadata={\"changelog\":\"${{ env.changelogs }}\",\"changelogType\":\"markdown\",\"releaseType\":\"release\"}" \
+          -F "metadata={\"changelog\":\"$CHANGELOGS\",\"changelogType\":\"markdown\",\"releaseType\":\"release\"}" \
           -F "gameVersions=[\"1.20.1\"]" && echo "Uploaded modpack to CurseForge"
 
       - name: Notify Success
         run: echo "Modpack successfully built & uploaded to Cloudflare R2 and CurseForge"
 
   build-and-release-modrinth:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-20.04
     needs: determine-version-and-collect-changelogs
 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
+      - name: Download Version and Changelogs
+        uses: actions/download-artifact@v4
+        with:
+          name: version-and-changelogs
+
       - name: Update Version in modrinth.index.json
         run: |
-          jq --arg version "${{ env.current_version }}" '.versionId = $version' create/modrinth/modrinth.index.json > create/modrinth/modrinth.index.json.tmp
+          VERSION=$(cat version.txt)
+          jq --arg version "$VERSION" '.versionId = $version' create/modrinth/modrinth.index.json > create/modrinth/modrinth.index.json.tmp
           mv create/modrinth/modrinth.index.json.tmp create/modrinth/modrinth.index.json
           echo "Updated version in modrinth.index.json"
 
@@ -136,12 +159,17 @@ jobs:
         run: echo "Modpack successfully built & uploaded to Cloudflare R2 and Modrinth"
 
   upload-to-github:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-20.04
     needs: [build-and-release-curseforge, build-and-release-modrinth]
 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
+
+      - name: Download Version and Changelogs
+        uses: actions/download-artifact@v4
+        with:
+          name: version-and-changelogs
 
       - name: Download CurseForge Artifact
         uses: actions/download-artifact@v4
@@ -154,22 +182,13 @@ jobs:
           name: cogworks-create-modrinth
 
       - name: Upload Modpacks to GitHub Release
-        uses: softprops/action-gh-release@v2
-        with:
-          name: "Create Release v${{ env.current_version }} (CurseForge and Modrinth)"
-          tag_name: "Create-v${{ env.current_version }}"
-          body: |
-            **Changelogs:**
-            ```diff
-            ${{ env.changelogs }}
-            ```
-            
-            [Download the latest CurseForge version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-curseforge.zip)
-            [Download the latest Modrinth version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-modrinth.zip)
-          generate_release_notes: true
-          make_latest: true
-          files: |
-            cogworks-create-curseforge.zip
+        run: |
+          VERSION=$(cat version.txt)
+          CHANGELOGS=$(cat changelogs.txt)
+          gh release create "Create-v$VERSION" \
+            --title "Create Release v$VERSION (CurseForge and Modrinth)" \
+            --notes "**Changelogs:**\n\`\`\`diff\n$CHANGELOGS\n\`\`\`\n\n[Download the latest CurseForge version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-curseforge.zip)\n[Download the latest Modrinth version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-modrinth.zip)" \
+            cogworks-create-curseforge.zip \
             cogworks-create-modrinth.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -181,14 +200,14 @@ jobs:
     steps:
       - name: Send Discord Notification
         run: |
-          DECODED_CHANGELOGS=$(echo ${{ env.changelogs }})
-          echo "Sending Discord notification with changelogs: $DECODED_CHANGELOGS"
+          CHANGELOGS=$(cat changelogs.txt)
+          echo "Sending Discord notification with changelogs: $CHANGELOGS"
           curl -H "Content-Type: application/json" \
                -X POST \
                -d '{
                      "embeds": [{
                        "title": "Create Modpack v${{ env.current_version }} has been released!",
-                       "description": "**Changelogs**\n```diff\n'"$DECODED_CHANGELOGS"'\n```\n[Download the latest CurseForge version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-curseforge.zip)\n[Download the latest Modrinth version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-modrinth.zip)",
+                       "description": "**Changelogs**\n```diff\n'"$CHANGELOGS"'\n```\n[Download the latest CurseForge version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-curseforge.zip)\n[Download the latest Modrinth version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-modrinth.zip)",
                        "color": 0xFFA500
                      }]
                    }' \
