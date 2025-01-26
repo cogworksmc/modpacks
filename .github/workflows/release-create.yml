@@ -185,14 +185,28 @@ jobs:
         with:
           name: cogworks-create-modrinth
 
-      - name: Upload Modpacks to GitHub Release
+      - name: Set Environment Variables
         run: |
-          VERSION=$(cat version.txt)
-          CHANGELOGS=$(cat changelogs.txt)
-          gh release create "Create-v$VERSION" \
-            --title "Create Release v$VERSION (CurseForge and Modrinth)" \
-            --notes "**Changelogs:**\n\`\`\`diff\n$CHANGELOGS\n\`\`\`\n\n[Download the latest CurseForge version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-curseforge.zip)\n[Download the latest Modrinth version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-modrinth.zip)" \
-            cogworks-create-curseforge.zip \
+          echo "VERSION=$(cat version.txt)" >> $GITHUB_ENV
+          echo "CHANGELOGS=$(cat changelogs.txt)" >> $GITHUB_ENV
+
+      - name: Upload Modpacks to GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: "Create Release v${{ env.VERSION }} (CurseForge and Modrinth)"
+          tag_name: "Create-v${{ env.VERSION }}"
+          body: |
+            **Changelogs:**
+            ```diff
+            ${{ env.CHANGELOGS }}
+            ```
+            
+            [Download the latest CurseForge version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-curseforge.zip)
+            [Download the latest Modrinth version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-modrinth.zip)
+          generate_release_notes: true
+          make_latest: true
+          files: |
+            cogworks-create-curseforge.zip
             cogworks-create-modrinth.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -203,17 +217,28 @@ jobs:
     name: Send Discord Notification
 
     steps:
-      - name: Send Discord Notification
+      - name: Download Version and Changelogs
+        uses: actions/download-artifact@v4
+        with:
+          name: version-and-changelogs
+
+      - name: Set Environment Variables
         run: |
-          CHANGELOGS=$(cat changelogs.txt)
-          echo "Sending Discord notification with changelogs: $CHANGELOGS"
-          curl -H "Content-Type: application/json" \
-               -X POST \
-               -d '{
-                     "embeds": [{
-                       "title": "Create Modpack v${{ env.current_version }} has been released!",
-                       "description": "**Changelogs**\n```diff\n'"$CHANGELOGS"'\n```\n[Download the latest CurseForge version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-curseforge.zip)\n[Download the latest Modrinth version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-modrinth.zip)",
-                       "color": 0xFFA500
-                     }]
-                   }' \
-               ${{ secrets.DISCORD_WEBHOOK_URL }}
+          echo "VERSION=$(cat version.txt)" >> $GITHUB_ENV
+          echo "CHANGELOGS=$(cat changelogs.txt)" >> $GITHUB_ENV
+
+      - name: Send Discord Notification
+        uses: sarisia/actions-status-discord@v1
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          nodetail: true
+          content: "Hey <@&1329954969268523139>"
+          title: "Create Modpack v${{ env.VERSION }} has been released!"
+          color: 0xFFA500
+          description: |
+            **Changelogs:**
+                ```diff
+                ${{ env.CHANGELOGS }}
+                ```
+            [Download the latest CurseForge version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-curseforge.zip)
+            [Download the latest Modrinth version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-modrinth.zip)
