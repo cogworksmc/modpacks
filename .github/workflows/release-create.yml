@@ -154,10 +154,21 @@ jobs:
 
       - name: Upload to Cloudflare R2
         run: |
-          wrangler r2 object put cogworks/modpacks/cogworks-create-modrinth.zip --file build/cogworks-create-modrinth.zip && echo "Uploaded Modrinth modpack to Cloudflare R2"
+          wrangler r2 object put cogworks/modpacks/cogworks-create-modrinth.mrpack --file build/cogworks-create-modrinth.mrpack && echo "Uploaded Modrinth modpack to Cloudflare R2"
         env:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+
+      - name: Upload Modpack to Modrinth
+        run: |
+          VERSION=$(cat version.txt)
+          CHANGELOGS=$(cat changelogs.txt)
+          curl -X POST "https://api.modrinth.com/v2/project/cogworks-create/version" \
+          -H "Authorization: ${{ secrets.MODRINTH_API_TOKEN }}" \
+          -H "User-Agent: cogworksmc/modpacks/create/$VERSION (cogworksmc.com)" \
+          -F "data={\"name\":\"Create Release v$VERSION\",\"version_number\":\"$VERSION\",\"changelog\":\"$CHANGELOGS\",\"game_versions\":[\"1.20.1\"],\"version_type\":\"release\",\"loaders\":[\"fabric\"]}" \
+          -F "file=@build/cogworks-create-modrinth.zip" && echo "Uploaded modpack to Modrinth"
+
       - name: Notify Success
         run: echo "Modpack successfully built & uploaded to Cloudflare R2 and Modrinth"
 
