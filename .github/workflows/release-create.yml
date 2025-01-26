@@ -90,7 +90,7 @@ jobs:
         run: echo "Modpack successfully built & uploaded to Cloudflare R2 and CurseForge"
 
   build-and-release-modrinth:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     needs: determine-version-and-collect-changelogs
 
     steps:
@@ -136,7 +136,7 @@ jobs:
         run: echo "Modpack successfully built & uploaded to Cloudflare R2 and Modrinth"
 
   upload-to-github:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     needs: [build-and-release-curseforge, build-and-release-modrinth]
 
     steps:
