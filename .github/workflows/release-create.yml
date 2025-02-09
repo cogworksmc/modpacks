@@ -39,9 +39,7 @@ jobs:
           VERSION=$(cat version.txt)
           CHANGELOG_FILE="create/changelogs/version-${VERSION}.diff"
           if [ -f "$CHANGELOG_FILE" ]; then
-            CHANGELOGS=$(cat "$CHANGELOG_FILE" | base64)
-            echo "Collected changelogs: $CHANGELOGS"
-            echo "$CHANGELOGS" > changelogs.txt
+            cat "$CHANGELOG_FILE" > changelogs.txt
           else
             echo "Changelog file $CHANGELOG_FILE does not exist."
             exit 1
@@ -197,7 +195,7 @@ jobs:
       - name: Set Environment Variables & Create Release
         run: |
           export VERSION=$(cat version.txt)
-          export CHANGELOGS=$(cat changelogs.txt | base64 --decode)
+          export CHANGELOGS=$(jq -Rs . < changelogs.txt)
           curl -X POST \
           -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
           -H "Content-Type: application/json" \
@@ -231,7 +229,7 @@ jobs:
       - name: Set Environment Variables & Send Discord Notification
         run: |
           export VERSION=$(cat version.txt)
-          export CHANGELOGS=$(cat changelogs.txt | base64 --decode)
+          export CHANGELOGS=$(jq -Rs . < changelogs.txt)
           curl -X POST \
           -H "Content-Type: application/json" \
           -d '{
