@@ -179,7 +179,7 @@ jobs:
       - name: Set Environment Variables
         run: |
           echo "VERSION=$(cat version.txt)" >> $GITHUB_ENV
-          echo "CHANGELOGS=$(cat changelogs.txt)" >> $GITHUB_ENV
+          echo "CHANGELOGS=$(cat changelogs.txt | sed 's/+/\\+/g' | sed 's/-/\\-/g')" >> $GITHUB_ENV
 
       - name: Upload Modpacks to GitHub Release
         uses: softprops/action-gh-release@v2
@@ -216,7 +216,7 @@ jobs:
       - name: Set Environment Variables
         run: |
           echo "VERSION=$(cat version.txt)" >> $GITHUB_ENV
-          echo "CHANGELOGS=$(cat changelogs.txt)" >> $GITHUB_ENV
+          echo "CHANGELOGS=$(cat changelogs.txt | sed 's/+/\\+/g' | sed 's/-/\\-/g')" >> $GITHUB_ENV
 
       - name: Send Discord Notification
         uses: sarisia/actions-status-discord@v1
