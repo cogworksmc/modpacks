@@ -18,12 +18,12 @@ jobs:
       - name: Determine Version Number from Changelog
         id: determine_version
         run: |
-          CHANGELOG_FILE=$(ls create/changelogs/version-*.txt | sort -V | tail -n 1)
+          CHANGELOG_FILE=$(ls create/changelogs/version-*.diff | sort -V | tail -n 1)
           if [ -z "$CHANGELOG_FILE" ]; then
             echo "No changelog file found."
             exit 1
           fi
-          VERSION=$(basename "$CHANGELOG_FILE" .txt | sed 's/version-//')
+          VERSION=$(basename "$CHANGELOG_FILE" .diff | sed 's/version-//')
           echo "current_version=$VERSION" >> $GITHUB_ENV
           echo "Determined version: $VERSION"
           echo "$VERSION" > version.txt
@@ -31,7 +31,7 @@ jobs:
       - name: Collect Changelogs from File
         id: changelogs
         run: |
-          CHANGELOG_FILE="create/changelogs/version-${{ env.current_version }}.txt"
+          CHANGELOG_FILE="create/changelogs/version-${{ env.current_version }}.diff"
           if [ -f "$CHANGELOG_FILE" ]; then
             CHANGELOGS=$(cat "$CHANGELOG_FILE")
             echo "changelogs=$CHANGELOGS" >> $GITHUB_ENV
