@@ -33,7 +33,7 @@ jobs:
         run: |
           CHANGELOG_FILE="create/changelogs/version-${{ env.current_version }}.diff"
           if [ -f "$CHANGELOG_FILE" ]; then
-            CHANGELOGS=$(cat "$CHANGELOG_FILE" | sed 's/+/\\+/g' | sed 's/-/\\-/g')
+            CHANGELOGS=$(cat "$CHANGELOG_FILE" | jq -sRr @uri)
             echo "changelogs=$CHANGELOGS" >> $GITHUB_ENV
             echo "Collected changelogs: $CHANGELOGS"
             echo "$CHANGELOGS" > changelogs.txt
@@ -96,7 +96,7 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
 
       - name: Notify Success
-        run: echo "Modpack successfully built & uploaded to Cloudflare R2 and CurseForge"
+        run: echo "Modpack successfully built & uploaded to Cloudflare R2"
 
   build-and-release-modrinth:
     runs-on: ubuntu-20.04
@@ -150,7 +150,7 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
 
       - name: Notify Success
-        run: echo "Modpack successfully built & uploaded to Cloudflare R2 and Modrinth"
+        run: echo "Modpack successfully built & uploaded to Cloudflare R2"
 
   upload-to-github:
     runs-on: ubuntu-20.04
@@ -179,7 +179,7 @@ jobs:
       - name: Set Environment Variables
         run: |
           echo "VERSION=$(cat version.txt)" >> $GITHUB_ENV
-          echo "CHANGELOGS=$(cat changelogs.txt | sed 's/+/\\+/g' | sed 's/-/\\-/g')" >> $GITHUB_ENV
+          echo "CHANGELOGS=$(cat changelogs.txt | jq -sRr @uri)" >> $GITHUB_ENV
 
       - name: Upload Modpacks to GitHub Release
         uses: softprops/action-gh-release@v2
@@ -216,7 +216,7 @@ jobs:
       - name: Set Environment Variables
         run: |
           echo "VERSION=$(cat version.txt)" >> $GITHUB_ENV
-          echo "CHANGELOGS=$(cat changelogs.txt | sed 's/+/\\+/g' | sed 's/-/\\-/g')" >> $GITHUB_ENV
+          echo "CHANGELOGS=$(cat changelogs.txt | jq -sRr @uri)" >> $GITHUB_ENV
 
       - name: Send Discord Notification
         uses: sarisia/actions-status-discord@v1
