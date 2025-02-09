@@ -195,7 +195,7 @@ jobs:
       - name: Set Environment Variables & Create Release
         run: |
           VERSION=$(cat version.txt)
-          CHANGELOGS=$(changelogs.txt)
+          CHANGELOGS=$(cat changelogs.txt)
       
           curl -X POST \
             -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
