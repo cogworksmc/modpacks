@@ -194,22 +194,22 @@ jobs:
 
       - name: Set Environment Variables & Create Release
         run: |
-          export VERSION=$(cat version.txt)
-          export CHANGELOGS=$(jq -Rs . < changelogs.txt)
+          VERSION=$(cat version.txt)
+          CHANGELOGS=$(jq -Rs '.' < changelogs.txt)  # Ensure proper JSON formatting
+      
           curl -X POST \
-          -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-          -H "Content-Type: application/json" \
-          -d '{
-            "tag_name": "Create-v'${VERSION}'",
-            "target_commitish": "main",
-            "name": "Create Release v'${VERSION}' (CurseForge and Modrinth)",
-            "body": "**Changelogs:**\n```diff\n'${CHANGELOGS}'\n```\n\n[Download the latest CurseForge version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-curseforge.zip)\n[Download the latest Modrinth version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-modrinth.mrpack)",
-            "draft": false,
-            "prerelease": false,
-            "generate_release_notes": true
-          }' \
-          https://api.github.com/repos/CogworksMC/modpacks/releases
-
+            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            -d "$(jq -n --arg tag_name "Create-v$VERSION" \
+                          --arg target_commitish "main" \
+                          --arg name "Create Release v$VERSION (CurseForge and Modrinth)" \
+                          --arg body "**Changelogs:**\n\`\`\`diff\n$(cat changelogs.txt)\n\`\`\`\n\n[Download the latest CurseForge version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-curseforge.zip)\n[Download the latest Modrinth version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-modrinth.mrpack)" \
+                          --argjson draft false \
+                          --argjson prerelease false \
+                          --argjson generate_release_notes true \
+                          '{tag_name: $tag_name, target_commitish: $target_commitish, name: $name, body: $body, draft: $draft, prerelease: $prerelease, generate_release_notes: $generate_release_notes}')" \
+            https://api.github.com/repos/CogworksMC/modpacks/releases
+      
   send-discord-notification:
     runs-on: ubuntu-20.04
     needs: upload-to-github
@@ -226,18 +226,18 @@ jobs:
         with:
           name: changelogs
 
-      - name: Set Environment Variables & Send Discord Notification
+      - name: Send Discord Webhook
         run: |
-          export VERSION=$(cat version.txt)
-          export CHANGELOGS=$(jq -Rs . < changelogs.txt)
+          VERSION=$(cat version.txt)
+          CHANGELOGS=$(jq -Rs '.' < changelogs.txt)  # Ensures proper JSON formatting
+      
           curl -X POST \
-          -H "Content-Type: application/json" \
-          -d '{
-            "content": "Hey <@&1329954969268523139>",
-            "embeds": [{
-              "title": "Create Modpack v'${VERSION}' has been released!",
-              "color": 16753920,
-              "description": "**Changelogs:**\n```diff\n'${CHANGELOGS}'\n```\n[Download the latest CurseForge version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-curseforge.zip)\n[Download the latest Modrinth version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-modrinth.mrpack)"
-            }]
-          }' \
-          ${{ secrets.DISCORD_WEBHOOK_URL }}
+            -H "Content-Type: application/json" \
+            -d "$(jq -n --arg content 'Hey <@&1329954969268523139>' \
+                          --arg title "Create Modpack v$VERSION has been released!" \
+                          --arg description "**Changelogs:**\n\`\`\`diff\n$(cat changelogs.txt)\n\`\`\`\n[Download the latest CurseForge version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-curseforge.zip)\n[Download the latest Modrinth version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-modrinth.mrpack)" \
+                          --argjson color 16753920 \
+                          '{content: $content, embeds: [{title: $title, color: $color, description: $description}]}')" \
+            ${{ secrets.DISCORD_WEBHOOK_URL }}
+        
+
