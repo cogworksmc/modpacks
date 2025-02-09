@@ -1,19 +1,36 @@
 {
   "animation_settings": {
-    "animation": true,
-    "water": true,
-    "lava": true,
-    "fire": true,
-    "portal": true,
-    "block_animations": true,
-    "sculk_sensor": true
+    "animation": false,
+    "water": false,
+    "lava": false,
+    "fire": false,
+    "portal": false,
+    "block_animations": false,
+    "sculk_sensor": false
   },
   "particle_settings": {
     "particles": false,
     "rain_splash": true,
     "block_break": true,
     "block_breaking": true,
-    "other": {}
+    "other": {
+      "create:air": false,
+      "create:air_flow": false,
+      "create:basin_fluid": false,
+      "create:cube": false,
+      "create:fluid_drip": false,
+      "create:fluid_particle": false,
+      "create:rotation_indicator": false,
+      "create:soul": false,
+      "create:soul_base": false,
+      "create:soul_expanding_perimeter": false,
+      "create:soul_perimeter": false,
+      "create:steam_jet": false,
+      "ad_astra:acid_rain": false,
+      "ad_astra:large_flame": false,
+      "ad_astra:large_smoke": false,
+      "ad_astra:oxygen_bubble": false
+    }
   },
   "detail_settings": {
     "sky": true,

@@ -1,0 +1,9 @@
+- Remove Figura
++ Add Cosmetica
++ Add Aviator Dreams
++ Add BetterF3
++ Add Chatheads
++ Add Ad Extendra 
++ Add Tinkers Construct
++ Add Immersive Machienery 
++ Add Lootr
