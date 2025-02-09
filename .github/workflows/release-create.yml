@@ -33,7 +33,7 @@ jobs:
         run: |
           CHANGELOG_FILE="create/changelogs/version-${{ env.current_version }}.diff"
           if [ -f "$CHANGELOG_FILE" ]; then
-            CHANGELOGS=$(cat "$CHANGELOG_FILE")
+            CHANGELOGS=$(cat "$CHANGELOG_FILE" | sed 's/+/\\+/g' | sed 's/-/\\-/g')
             echo "changelogs=$CHANGELOGS" >> $GITHUB_ENV
             echo "Collected changelogs: $CHANGELOGS"
             echo "$CHANGELOGS" > changelogs.txt
@@ -95,16 +95,6 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
 
-      - name: Upload Modpack to CurseForge
-        run: |
-          VERSION=$(cat version.txt)
-          CHANGELOGS=$(cat changelogs.txt)
-          curl -X POST "https://minecraft.curseforge.com/api/projects/1181366/upload-file" \
-          -H "X-Api-Token: ${{ secrets.CURSEFORGE_API_TOKEN }}" \
-          -F "file=@build/cogworks-create-curseforge.zip" \
-          -F "metadata={\"changelog\":\"$CHANGELOGS\",\"changelogType\":\"markdown\",\"releaseType\":\"release\"}" \
-          -F "gameVersions=[\"1.20.1\"]" && echo "Uploaded modpack to CurseForge"
-
       - name: Notify Success
         run: echo "Modpack successfully built & uploaded to Cloudflare R2 and CurseForge"
 
@@ -158,16 +148,6 @@ jobs:
         env:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
-
-      - name: Upload Modpack to Modrinth
-        run: |
-          VERSION=$(cat version.txt)
-          CHANGELOGS=$(cat changelogs.txt)
-          curl -X POST "https://api.modrinth.com/v2/project/cogworks-create/version" \
-          -H "Authorization: ${{ secrets.MODRINTH_API_TOKEN }}" \
-          -H "User-Agent: cogworksmc/modpacks/create/$VERSION (cogworksmc.com)" \
-          -F "data={\"name\":\"Create Release v$VERSION\",\"version_number\":\"$VERSION\",\"changelog\":\"$CHANGELOGS\",\"game_versions\":[\"1.20.1\"],\"version_type\":\"release\",\"loaders\":[\"fabric\"]}" \
-          -F "file=@build/cogworks-create-modrinth.mrpack" && echo "Uploaded modpack to Modrinth"
 
       - name: Notify Success
         run: echo "Modpack successfully built & uploaded to Cloudflare R2 and Modrinth"

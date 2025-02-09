@@ -15,10 +15,18 @@ Welcome to the Cogworks Create Modpack! This modpack is designed to enhance your
 
 ## Installation
 
-To install the modpack, follow these steps:
+### CurseForge
 
-1. Download the modpack from [Github](https://github.com/cogworksmc/modpacks/releases/latest/download/create-modpack.zip) or the [Cogworks CDN](https://cdn.cogworksmc.com/modpacks/create-modpack.zip).
-2. Open the CurseForge or Modrinth launcher.
+1. Download the modpack from [GitHub](https://github.com/cogworksmc/modpacks/releases/latest/download/cogworks-create-curseforge.zip) or the [Cogworks CDN](https://cdn.cogworksmc.com/modpacks/cogworks-create-curseforge.zip).
+2. Open the CurseForge launcher.
+3. Click on the "Import" button and select the downloaded zip file.
+4. Wait for the launcher to import the modpack.
+5. Launch Minecraft and enjoy!
+
+### Modrinth
+
+1. Download the modpack from [GitHub](https://github.com/cogworksmc/modpacks/releases/latest/download/cogworks-create-modrinth.mrpack) or the [Cogworks CDN](https://cdn.cogworksmc.com/modpacks/cogworks-create-modrinth.mrpack).
+2. Open the Modrinth launcher.
 3. Click on the "Import" button and select the downloaded zip file.
 4. Wait for the launcher to import the modpack.
 5. Launch Minecraft and enjoy!
