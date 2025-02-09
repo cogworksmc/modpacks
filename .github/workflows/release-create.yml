@@ -195,8 +195,8 @@ jobs:
       - name: Set Environment Variables & Create Release
         run: |
           VERSION=$(cat version.txt)
-          CHANGELOGS=$(jq -Rs '.' < changelogs.txt)  # Ensure proper JSON formatting
-
+          CHANGELOGS=$(cat changelogs.txt)  # Read changelogs directly
+      
           # Check if release already exists
           if curl -s -o /dev/null -w "%{http_code}" -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/repos/CogworksMC/modpacks/releases/tags/Create-v$VERSION | grep -q "200"; then
             echo "Release already exists. Skipping creation."
@@ -207,14 +207,14 @@ jobs:
               -d "$(jq -n --arg tag_name "Create-v$VERSION" \
                             --arg target_commitish "main" \
                             --arg name "Create Release v$VERSION (CurseForge and Modrinth)" \
-                            --arg body "**Changelogs:**\n\`\`\`diff\n$(cat changelogs.txt | sed 's/$/\\n/')\n\`\`\`\n\n[Download the latest CurseForge version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-curseforge.zip)\n[Download the latest Modrinth version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-modrinth.mrpack)" \
+                            --arg body "**Changelogs:**\n\`\`\`diff\n$(echo "$CHANGELOGS" | sed 's/$/\\n/' | tr -d '\n')\n\`\`\`\n\n[Download the latest CurseForge version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-curseforge.zip)\n[Download the latest Modrinth version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-modrinth.mrpack)" \
                             --argjson draft false \
                             --argjson prerelease false \
                             --argjson generate_release_notes true \
                             '{tag_name: $tag_name, target_commitish: $target_commitish, name: $name, body: $body, draft: $draft, prerelease: $prerelease, generate_release_notes: $generate_release_notes}')" \
               https://api.github.com/repos/CogworksMC/modpacks/releases
           fi
-
+        
   send-discord-notification:
     runs-on: ubuntu-20.04
     needs: upload-to-github
@@ -234,14 +234,15 @@ jobs:
       - name: Send Discord Webhook
         run: |
           VERSION=$(cat version.txt)
-          CHANGELOGS=$(jq -Rs '.' < changelogs.txt)  # Ensures proper JSON formatting
-
+          CHANGELOGS=$(cat changelogs.txt)  # Read changelogs directly
+      
+          # Properly escape newlines within the changelog and JSON structure
           curl -X POST \
             -H "Content-Type: application/json" \
             -d "$(jq -n --arg content 'Hey <@&1329954969268523139>' \
                           --arg title "Create Modpack v$VERSION has been released!" \
-                          --arg description "**Changelogs:**\n\`\`\`diff\n$(cat changelogs.txt | sed 's/$/\\n/')\n\`\`\`\n[Download the latest CurseForge version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-curseforge.zip)\n[Download the latest Modrinth version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-modrinth.mrpack)" \
+                          --arg description "**Changelogs:**\n\`\`\`diff\n$(echo "$CHANGELOGS" | sed 's/$/\\n/' | tr -d '\n')\n\`\`\`\n[Download the latest CurseForge version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-curseforge.zip)\n[Download the latest Modrinth version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-modrinth.mrpack)" \
                           --argjson color 16753920 \
                           '{content: $content, embeds: [{title: $title, color: $color, description: $description}]}')" \
             ${{ secrets.DISCORD_WEBHOOK_URL }}
-
+        
