@@ -195,7 +195,7 @@ jobs:
       - name: Set Environment Variables & Create Release
         run: |
           VERSION=$(cat version.txt)
-          CHANGELOGS=$(jq -Rs '.' < changelogs.txt)  # Ensure proper JSON formatting
+          CHANGELOGS=$(changelogs.txt)
       
           curl -X POST \
             -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
@@ -203,7 +203,7 @@ jobs:
             -d "$(jq -n --arg tag_name "Create-v$VERSION" \
                           --arg target_commitish "main" \
                           --arg name "Create Release v$VERSION (CurseForge and Modrinth)" \
-                          --arg body "**Changelogs:**\n\`\`\`diff\n$(cat changelogs.txt)\n\`\`\`\n\n[Download the latest CurseForge version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-curseforge.zip)\n[Download the latest Modrinth version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-modrinth.mrpack)" \
+                          --arg body "**Changelogs:**\n\`\`\`diff\n$($CHANGELOGS)\n\`\`\`\n\n[Download the latest CurseForge version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-curseforge.zip)\n[Download the latest Modrinth version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-modrinth.mrpack)" \
                           --argjson draft false \
                           --argjson prerelease false \
                           --argjson generate_release_notes true \
@@ -229,15 +229,15 @@ jobs:
       - name: Send Discord Webhook
         run: |
           VERSION=$(cat version.txt)
-          CHANGELOGS=$(jq -Rs '.' < changelogs.txt)  # Ensures proper JSON formatting
+          CHANGELOGS=$(cat changelogs.txt)
       
           curl -X POST \
             -H "Content-Type: application/json" \
             -d "$(jq -n --arg content 'Hey <@&1329954969268523139>' \
                           --arg title "Create Modpack v$VERSION has been released!" \
-                          --arg description "**Changelogs:**\n\`\`\`diff\n$(cat changelogs.txt)\n\`\`\`\n[Download the latest CurseForge version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-curseforge.zip)\n[Download the latest Modrinth version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-modrinth.mrpack)" \
+                          --arg description "**Changelogs:**\n\`\`\`diff\n$CHANGELOGS\n\`\`\`\n[Download the latest CurseForge version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-curseforge.zip)\n[Download the latest Modrinth version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-modrinth.mrpack)" \
                           --argjson color 16753920 \
                           '{content: $content, embeds: [{title: $title, color: $color, description: $description}]}')" \
             ${{ secrets.DISCORD_WEBHOOK_URL }}
         
-
+    
