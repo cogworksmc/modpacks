@@ -33,7 +33,7 @@ jobs:
         run: |
           CHANGELOG_FILE="create/changelogs/version-${{ env.current_version }}.diff"
           if [ -f "$CHANGELOG_FILE" ]; then
-            CHANGELOGS=$(cat "$CHANGELOG_FILE" | jq -sRr @uri)
+            CHANGELOGS=$(cat "$CHANGELOG_FILE" | base64)
             echo "changelogs=$CHANGELOGS" >> $GITHUB_ENV
             echo "Collected changelogs: $CHANGELOGS"
             echo "$CHANGELOGS" > changelogs.txt
@@ -179,7 +179,7 @@ jobs:
       - name: Set Environment Variables
         run: |
           echo "VERSION=$(cat version.txt)" >> $GITHUB_ENV
-          echo "CHANGELOGS=$(cat changelogs.txt | jq -sRr @uri)" >> $GITHUB_ENV
+          echo "CHANGELOGS=$(cat changelogs.txt | base64 --decode)" >> $GITHUB_ENV
 
       - name: Upload Modpacks to GitHub Release
         uses: softprops/action-gh-release@v2
@@ -216,7 +216,7 @@ jobs:
       - name: Set Environment Variables
         run: |
           echo "VERSION=$(cat version.txt)" >> $GITHUB_ENV
-          echo "CHANGELOGS=$(cat changelogs.txt | jq -sRr @uri)" >> $GITHUB_ENV
+          echo "CHANGELOGS=$(cat changelogs.txt | base64 --decode)" >> $GITHUB_ENV
 
       - name: Send Discord Notification
         uses: sarisia/actions-status-discord@v1
