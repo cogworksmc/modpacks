@@ -19,28 +19,33 @@ jobs:
         id: determine_version
         run: |
           CHANGELOG_FILE=$(ls create/changelogs/version-*.diff | sort -V | tail -n 1)
+
           if [ -z "$CHANGELOG_FILE" ]; then
-            echo "No changelog file found."
-            exit 1
+          echo "No changelog file found."
+          exit 1
           fi
+
           VERSION=$(basename "$CHANGELOG_FILE" .diff | sed 's/version-//')
-          echo "current_version=$VERSION" >> $GITHUB_ENV
+          export VERSION
           echo "Determined version: $VERSION"
           echo "$VERSION" > version.txt
+
 
       - name: Collect Changelogs from File
         id: changelogs
         run: |
-          CHANGELOG_FILE="create/changelogs/version-${{ env.current_version }}.diff"
+          CHANGELOG_FILE="create/changelogs/version-${{ steps.determine_version.outputs.VERSION }}.diff"
+
           if [ -f "$CHANGELOG_FILE" ]; then
-            CHANGELOGS=$(cat "$CHANGELOG_FILE" | base64)
-            echo "changelogs=$CHANGELOGS" >> $GITHUB_ENV
+            CHANGELOGS=$(base64 < "$CHANGELOG_FILE")
+            export CHANGELOGS
             echo "Collected changelogs: $CHANGELOGS"
             echo "$CHANGELOGS" > changelogs.txt
           else
             echo "Changelog file $CHANGELOG_FILE does not exist."
             exit 1
           fi
+
 
       - name: Upload Version and Changelogs
         uses: actions/upload-artifact@v4
@@ -178,18 +183,18 @@ jobs:
 
       - name: Set Environment Variables
         run: |
-          echo "VERSION=$(cat version.txt)" >> $GITHUB_ENV
-          echo "CHANGELOGS=$(cat changelogs.txt | base64 --decode)" >> $GITHUB_ENV
+          export VERSION=$(cat version.txt)
+          export CHANGELOGS=$(cat changelogs.txt | base64 --decode)
 
       - name: Upload Modpacks to GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          name: "Create Release v${{ env.VERSION }} (CurseForge and Modrinth)"
-          tag_name: "Create-v${{ env.VERSION }}"
+          name: "Create Release v${VERSION} (CurseForge and Modrinth)"
+          tag_name: "Create-v${VERSION}"
           body: |
             **Changelogs:**
             ```diff
-            ${{ env.CHANGELOGS }}
+            ${CHANGELOGS}
             ```
             
             [Download the latest CurseForge version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-curseforge.zip)
@@ -215,8 +220,8 @@ jobs:
 
       - name: Set Environment Variables
         run: |
-          echo "VERSION=$(cat version.txt)" >> $GITHUB_ENV
-          echo "CHANGELOGS=$(cat changelogs.txt | base64 --decode)" >> $GITHUB_ENV
+          export VERSION=$(cat version.txt)
+          export CHANGELOGS=$(cat changelogs.txt | base64 --decode)
 
       - name: Send Discord Notification
         uses: sarisia/actions-status-discord@v1
@@ -224,12 +229,12 @@ jobs:
           webhook: ${{ secrets.DISCORD_WEBHOOK_URL }}
           nodetail: true
           content: "Hey <@&1329954969268523139>"
-          title: "Create Modpack v${{ env.VERSION }} has been released!"
+          title: "Create Modpack v${VERSION} has been released!"
           color: 0xFFA500
           description: |
             **Changelogs:**
             ```diff
-            ${{ env.CHANGELOGS }}
+            ${CHANGELOGS}
             ```
             [Download the latest CurseForge version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-curseforge.zip)
             [Download the latest Modrinth version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-modrinth.mrpack)
