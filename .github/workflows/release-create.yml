@@ -19,26 +19,27 @@ jobs:
         id: determine_version
         run: |
           CHANGELOG_FILE=$(ls create/changelogs/version-*.diff | sort -V | tail -n 1)
-
           if [ -z "$CHANGELOG_FILE" ]; then
-          echo "No changelog file found."
-          exit 1
+            echo "No changelog file found."
+            exit 1
           fi
-
           VERSION=$(basename "$CHANGELOG_FILE" .diff | sed 's/version-//')
-          export VERSION
           echo "Determined version: $VERSION"
           echo "$VERSION" > version.txt
 
+      - name: Upload Version
+        uses: actions/upload-artifact@v4
+        with:
+          name: version
+          path: version.txt
 
       - name: Collect Changelogs from File
         id: changelogs
         run: |
-          CHANGELOG_FILE="create/changelogs/version-${{ steps.determine_version.outputs.VERSION }}.diff"
-
+          VERSION=$(cat version.txt)
+          CHANGELOG_FILE="create/changelogs/version-${VERSION}.diff"
           if [ -f "$CHANGELOG_FILE" ]; then
-            CHANGELOGS=$(base64 < "$CHANGELOG_FILE")
-            export CHANGELOGS
+            CHANGELOGS=$(cat "$CHANGELOG_FILE" | base64)
             echo "Collected changelogs: $CHANGELOGS"
             echo "$CHANGELOGS" > changelogs.txt
           else
@@ -46,14 +47,11 @@ jobs:
             exit 1
           fi
 
-
-      - name: Upload Version and Changelogs
+      - name: Upload Changelogs
         uses: actions/upload-artifact@v4
         with:
-          name: version-and-changelogs
-          path: |
-            version.txt
-            changelogs.txt
+          name: changelogs
+          path: changelogs.txt
 
   build-and-release-curseforge:
     runs-on: ubuntu-24.04
@@ -67,7 +65,12 @@ jobs:
       - name: Download Version and Changelogs
         uses: actions/download-artifact@v4
         with:
-          name: version-and-changelogs
+          name: version
+
+      - name: Download Changelogs
+        uses: actions/download-artifact@v4
+        with:
+          name: changelogs
 
       - name: Set Up Build Directory
         run: |
@@ -115,7 +118,12 @@ jobs:
       - name: Download Version and Changelogs
         uses: actions/download-artifact@v4
         with:
-          name: version-and-changelogs
+          name: version
+
+      - name: Download Changelogs
+        uses: actions/download-artifact@v4
+        with:
+          name: changelogs
 
       - name: Update Version in modrinth.index.json
         run: |
@@ -169,7 +177,12 @@ jobs:
       - name: Download Version and Changelogs
         uses: actions/download-artifact@v4
         with:
-          name: version-and-changelogs
+          name: version
+
+      - name: Download Changelogs
+        uses: actions/download-artifact@v4
+        with:
+          name: changelogs
 
       - name: Download CurseForge Artifact
         uses: actions/download-artifact@v4
@@ -216,7 +229,12 @@ jobs:
       - name: Download Version and Changelogs
         uses: actions/download-artifact@v4
         with:
-          name: version-and-changelogs
+          name: version
+
+      - name: Download Changelogs
+        uses: actions/download-artifact@v4
+        with:
+          name: changelogs
 
       - name: Set Environment Variables
         run: |
