@@ -7,9 +7,9 @@ on:
   workflow_dispatch:
 
 jobs:
-  determine-version-and-collect-changelogs:
+  package-modpacks:
     runs-on: ubuntu-24.04
-    name: Determine Version and Collect Changelogs
+    name: Build, Upload, and Release Modpacks
 
     steps:
       - name: Checkout Repository
@@ -27,14 +27,7 @@ jobs:
           echo "Determined version: $VERSION"
           echo "$VERSION" > version.txt
 
-      - name: Upload Version
-        uses: actions/upload-artifact@v4
-        with:
-          name: version
-          path: version.txt
-
       - name: Collect Changelogs from File
-        id: changelogs
         run: |
           VERSION=$(cat version.txt)
           CHANGELOG_FILE="create/changelogs/version-${VERSION}.diff"
@@ -45,40 +38,32 @@ jobs:
             exit 1
           fi
 
-      - name: Upload Changelogs
-        uses: actions/upload-artifact@v4
-        with:
-          name: changelogs
-          path: changelogs.txt
+      - name: Update modrinth.index.json with Version
+        run: |
+          VERSION=$(cat version.txt)
+          jq --arg version "$VERSION" '.versionId = $version' create/modrinth/modrinth.index.json > create/modrinth/modrinth.index.json.tmp
+          mv create/modrinth/modrinth.index.json.tmp create/modrinth/modrinth.index.json
 
-  build-and-release-curseforge:
-    runs-on: ubuntu-24.04
-    needs: determine-version-and-collect-changelogs
-    name: Build and Release CurseForge Modpack
-
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
-
-      - name: Download Version and Changelogs
-        uses: actions/download-artifact@v4
-        with:
-          name: version
-
-      - name: Download Changelogs
-        uses: actions/download-artifact@v4
-        with:
-          name: changelogs
-
-      - name: Set Up Build Directory
+      - name: Create Build Directory and Archive Modrinth
         run: |
           mkdir -p build
+          cd create/modrinth
+          zip -r ../../build/cogworks-create-modrinth.mrpack overrides/ modlist.html manifest.json modrinth.index.json
+          cd ../..
+
+      - name: Create Archive CurseForge
+        run: |
           cd create/curseforge
           zip -r ../../build/cogworks-create-curseforge.zip overrides/ modlist.html manifest.json
           cd ../..
-          echo "Built CurseForge modpack"
 
-      - name: Upload Artifact
+      - name: Upload Modrinth Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: cogworks-create-modrinth
+          path: build/cogworks-create-modrinth.mrpack
+
+      - name: Upload CurseForge Artifact
         uses: actions/upload-artifact@v4
         with:
           name: cogworks-create-curseforge
@@ -87,162 +72,47 @@ jobs:
       - name: Install Wrangler CLI
         run: npm install -g wrangler
 
-      - name: Configure Wrangler
-        run: |
-          wrangler login
+      - name: Authenticate Wrangler
+        run: wrangler login
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
 
-      - name: Upload to Cloudflare R2
+      - name: Upload Modrinth to Cloudflare R2
+        run: |
+          wrangler r2 object put cogworks/modpacks/cogworks-create-modrinth.mrpack --file build/cogworks-create-modrinth.mrpack
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+
+      - name: Upload CurseForge to Cloudflare R2
         run: |
           wrangler r2 object put cogworks/modpacks/cogworks-create-curseforge.zip --file build/cogworks-create-curseforge.zip
-          echo "Uploaded CurseForge modpack to Cloudflare R2"
         env:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
 
-      - name: Notify Success
-        run: echo "Modpack successfully built & uploaded to Cloudflare R2"
-
-  build-and-release-modrinth:
-    runs-on: ubuntu-20.04
-    needs: determine-version-and-collect-changelogs
-    name: Build and Release Modrinth Modpack
-
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
-
-      - name: Download Version and Changelogs
-        uses: actions/download-artifact@v4
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
         with:
-          name: version
-
-      - name: Download Changelogs
-        uses: actions/download-artifact@v4
-        with:
-          name: changelogs
-
-      - name: Update Version in modrinth.index.json
-        run: |
-          VERSION=$(cat version.txt)
-          jq --arg version "$VERSION" '.versionId = $version' create/modrinth/modrinth.index.json > create/modrinth/modrinth.index.json.tmp
-          mv create/modrinth/modrinth.index.json.tmp create/modrinth/modrinth.index.json
-          echo "Updated version in modrinth.index.json"
-
-      - name: Set Up Build Directory
-        run: |
-          mkdir -p build
-          cd create/modrinth
-          zip -r ../../build/cogworks-create-modrinth.mrpack overrides/ modlist.html manifest.json modrinth.index.json
-          cd ../..
-          echo "Built Modrinth modpack"
-
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: cogworks-create-modrinth
-          path: build/cogworks-create-modrinth.mrpack
-
-      - name: Install Wrangler CLI
-        run: npm install -g wrangler
-
-      - name: Configure Wrangler
-        run: |
-          wrangler login
+          tag_name: Create-v${{ steps.determine_version.outputs.version || 'unknown' }}
+          name: Create Release v${{ steps.determine_version.outputs.version || 'unknown' }} (CurseForge and Modrinth)
+          body_path: changelogs.txt
+          files: |
+            build/cogworks-create-curseforge.zip
+            build/cogworks-create-modrinth.mrpack
         env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Upload to Cloudflare R2
-        run: |
-          wrangler r2 object put cogworks/modpacks/cogworks-create-modrinth.mrpack --file build/cogworks-create-modrinth.mrpack && echo "Uploaded Modrinth modpack to Cloudflare R2"
-        env:
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
-
-      - name: Notify Success
-        run: echo "Modpack successfully built & uploaded to Cloudflare R2"
-
-  upload-to-github:
-    runs-on: ubuntu-20.04
-    needs: [build-and-release-curseforge, build-and-release-modrinth]
-    name: Upload to GitHub Releases
-
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
-
-      - name: Download Version and Changelogs
-        uses: actions/download-artifact@v4
-        with:
-          name: version
-
-      - name: Download Changelogs
-        uses: actions/download-artifact@v4
-        with:
-          name: changelogs
-
-      - name: Download CurseForge Artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: cogworks-create-curseforge
-
-      - name: Download Modrinth Artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: cogworks-create-modrinth
-
-      - name: Set Environment Variables & Create Release
+      - name: Send Discord Notification
         run: |
           VERSION=$(cat version.txt)
-          CHANGELOGS=$(cat changelogs.txt)  # Read changelogs directly
-      
-          # Check if release already exists
-          if curl -s -o /dev/null -w "%{http_code}" -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/repos/CogworksMC/modpacks/releases/tags/Create-v$VERSION | grep -q "200"; then
-            echo "Release already exists. Skipping creation."
-          else
-            curl -X POST \
-              -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-              -H "Content-Type: application/json" \
-              -d "$(jq -n --arg tag_name "Create-v$VERSION" \
-                            --arg target_commitish "main" \
-                            --arg name "Create Release v$VERSION (CurseForge and Modrinth)" \
-                            --arg body "**Changelogs:**\n\`\`\`diff\n$(echo "$CHANGELOGS" | sed 's/$/\\n/' | tr -d '\n')\n\`\`\`\n\n[Download the latest CurseForge version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-curseforge.zip)\n[Download the latest Modrinth version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-modrinth.mrpack)" \
-                            --argjson draft false \
-                            --argjson prerelease false \
-                            --argjson generate_release_notes true \
-                            '{tag_name: $tag_name, target_commitish: $target_commitish, name: $name, body: $body, draft: $draft, prerelease: $prerelease, generate_release_notes: $generate_release_notes}')" \
-              https://api.github.com/repos/CogworksMC/modpacks/releases
-          fi
-        
-  send-discord-notification:
-    runs-on: ubuntu-20.04
-    needs: upload-to-github
-    name: Send Discord Notification
+          CHANGELOGS=$(cat changelogs.txt)
 
-    steps:
-      - name: Download Version and Changelogs
-        uses: actions/download-artifact@v4
-        with:
-          name: version
-
-      - name: Download Changelogs
-        uses: actions/download-artifact@v4
-        with:
-          name: changelogs
-
-      - name: Send Discord Webhook
-        run: |
-          VERSION=$(cat version.txt)
-          CHANGELOGS=$(cat changelogs.txt)  # Read changelogs directly
-      
-          # Properly escape newlines within the changelog and JSON structure
           curl -X POST \
             -H "Content-Type: application/json" \
             -d "$(jq -n --arg content 'Hey <@&1329954969268523139>' \
                           --arg title "Create Modpack v$VERSION has been released!" \
-                          --arg description "**Changelogs:**\n\`\`\`diff\n$(echo "$CHANGELOGS" | sed 's/$/\\n/' | tr -d '\n')\n\`\`\`\n[Download the latest CurseForge version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-curseforge.zip)\n[Download the latest Modrinth version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-modrinth.mrpack)" \
+                          --arg description "**Changelogs:**\n\n\`\`\`diff\n$(echo "$CHANGELOGS" | sed 's/$/\\n/' | tr -d '\n')\n\`\`\`\n[Download the latest CurseForge version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-curseforge.zip)\n[Download the latest Modrinth version here](https://cdn.cogworksmc.com/modpacks/cogworks-create-modrinth.mrpack)" \
                           --argjson color 16753920 \
                           '{content: $content, embeds: [{title: $title, color: $color, description: $description}]}')" \
             ${{ secrets.DISCORD_WEBHOOK_URL }}
-        
